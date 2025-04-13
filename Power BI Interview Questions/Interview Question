@@ -1,0 +1,47 @@
+1. What is append and merge query?
+
+Merge in power bi is like vlookup in excel
+we merge two table based on one common column
+it will merge two table horizontaly
+
+Append in power bi means we stack two table below other
+we combin both vertically 
+the column of both table should be same 
+
+2. Reference vs. Duplicate in Power Query
+
+Duplicate - it is independent table of original table, no effect if original table changes
+all steps are copied from original table
+
+Reference - it is depends on original table, every changes in orginal table also reflects in reference table
+it has only source steps in applied steps, it pointed to source
+
+3. What is query folding?
+
+Query Folding is the process where Power BI pushes the transformation back to data source.
+
+You can check if a step supports Query Folding by right-clicking the step in Power Query and 
+clicking "View Native Query". If it's clickable, folding is working!
+
+It support only SQL databases, MS SQL server, SAP Hana and Azure SQL database
+
+Excel, CSV, NOSQL database and web data not supports query folding
+
+We can filter, remove/rename/add columns, remove duplicates in query folding
+
+It will make power bi fast because transformation done by source system, so less data processed by power bi
+making reports load and refresh faster
+
+It uses less memory as power bi needs to handle less raw data
+
+Query folding is required to incremental refresh to work properly 
+
+4. What is parameter?
+
+
+
+
+
+
+
+
