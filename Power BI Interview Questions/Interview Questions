@@ -1,0 +1,130 @@
+
+🔹 Basic Concepts
+
+1. What is Power BI?  
+   A Microsoft BI tool to visualize data, build reports, and share insights across organizations.
+
+2. Components of Power BI  
+   - Power BI Desktop: Report creation tool  
+   - Power BI Service: Cloud-based sharing platform  
+   - Power BI Mobile: App for viewing reports  
+   - Gateway: Connects on-premise data to cloud  
+   - Report Server: Host reports on-premises
+
+3. Desktop vs. Service  
+   - Desktop: Design reports  
+   - Service: Share/publish reports, schedule refreshes
+
+4. Types of Filters  
+   - Visual Level: Only for one visual  
+   - Page Level: Affects all visuals on the page  
+   - Report Level: Applies to all pages
+
+5. What is DAX?  
+   Data Analysis Expressions – used to write formulas for calculations in Power BI.
+
+6. Calculated Column vs Measure  
+   - Column: Row-level, stored in table  
+   - Measure: Evaluated at query-time, used in visuals
+
+7. Relationships  
+   Define how tables connect using common fields (1:many, many:1, many:many).
+
+8. Slicers  
+   Visual filter to select specific values and filter visuals.
+
+9. SUM() vs SUMX()  
+   - SUM: Aggregates a column  
+   - SUMX: Row-wise calculation using an expression
+
+10. Star vs Snowflake Schema  
+   - Star: Central fact with direct dimension links  
+   - Snowflake: Dimensions normalized into sub-tables
+
+---
+
+### 🔹 Intermediate Concepts
+
+1. Joins in Power BI  
+   Inner, Left Outer, Right Outer, Full Outer, Anti Joins – done in Power Query.
+
+2. Direct Query vs Import Mode  
+   - Import: Data loaded in memory  
+   - Direct Query: Queries run on live DB
+
+3. Many-to-Many Relationship  
+   Use bridge tables or composite models with proper relationships.
+
+4. Quick Measures  
+   Predefined DAX calculations (e.g., % change, running total).
+
+5. Improve Performance  
+   - Use Import mode  
+   - Reduce visuals  
+   - Optimize DAX  
+   - Use summarization
+
+6. Row-Level Security (RLS)  
+   Restrict data per user using DAX filters on roles.
+
+7. Bookmarks  
+   Save report states (filters, visuals) for storytelling/navigation.
+
+8. Time Intelligence DAX  
+   Functions like YTD(), MTD(), SAMEPERIODLASTYEAR(), DATESYTD()
+
+9. ALL(), ALLEXCEPT(), REMOVEFILTERS()  
+   - ALL(): Remove all filters  
+   - ALLEXCEPT(): Keep selected filters  
+   - REMOVEFILTERS(): Similar to ALL, more readable
+
+10. Drill Through / Down / Up  
+   - Drill down: Navigate to details  
+   - Drill up: Go back to higher level  
+   - Drill through: Go to another page with detailed view
+
+---
+
+### 🔹 Scenario-Based
+
+1. FY Calendar (Apr–Mar)  
+   Use Power Query or DAX to define fiscal year columns.
+
+2. Current vs Previous Month Sales  
+   Use `SAMEPERIODLASTYEAR()` or custom DAX with date shifts.
+
+3. Handle Missing Values  
+   Use Power Query’s Replace, Fill Down, or Conditional Column logic.
+
+4. Wrong Sales Total Debug  
+   Check relationships, aggregation logic, filter context, and DAX.
+
+5. Common Power Query Steps  
+   Remove rows/columns, change types, merge/append, unpivot, split columns.
+
+---
+
+### 🔹 DAX Short Notes
+
+1. YoY Growth DAX  
+   ```DAX
+   YoY = DIVIDE([Sales] - [Sales LY], [Sales LY])
+   ```
+
+2. Running Total  
+   ```DAX
+   RunningTotal = CALCULATE(SUM(Sales[Amount]), FILTER(ALLSELECTED(Date), Date <= MAX(Date)))
+   ```
+
+3. EARLIER() vs EARLIEST()  
+   Used in row context to access outer row context values; EARLIER() is more common.
+
+4. Context Transition  
+   Happens when row context is converted to filter context (e.g., in measures).
+
+5. DAX Variables  
+   Improve readability and performance.  
+   ```DAX
+   VAR total = SUM(Sales[Amount])  
+   RETURN total / 1000
+   ```
