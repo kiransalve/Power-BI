@@ -1,0 +1,15 @@
+How to make FY year India Calender in Power BI?
+
+FY Year = 
+VAR CurrentYear = YEAR(Calender[Date])
+VAR FYStartYear = IF(Calender[MonthIndex] > 3, CurrentYear, CurrentYear-1)
+VAR FYEndYearLast2Digit = RIGHT(FORMAT(FYStartYear+1, "0000"),2)
+RETURN "FY" & FYStartYear & "-" & FYEndYearLast2Digit
+
+Lets say
+CurrentYear = 2023
+FYStartYear = Jan-Mar = 2022, Apr-Dec = 2023
+FYEndYearLast2Digit =
+FORMAT(FYStartYear+1, "0000") // this will give next year in string format
+RIGHT(...,2) // this gives last two digits of year (22)
+RETURN "FY" & FYStartYear & "-" & FYEndYearLast2Digit // this will concat FY with year
