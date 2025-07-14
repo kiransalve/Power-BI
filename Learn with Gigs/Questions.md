@@ -137,3 +137,11 @@ A Dimension Table contains descriptive, categorical data — like names, regions
 
 They usually have a primary key that connects to the fact table and are used for filtering, grouping, or slicing data.
 
+13. What is the difference between Star Schema and Snowflake Schema?
+
+In Power BI and data warehousing, Star Schema and Snowflake Schema are two popular ways of organizing data models. They define how fact and dimension tables are structured and related.
+
+In a star schema, we have a central fact table directly connected to dimension tables. The dimensions are usually denormalized, meaning all descriptive fields are in one single table per dimension.
+
+In a snowflake schema, dimensions are normalized — meaning they are broken into multiple related tables. For example, a Product dimension may be split into Product, Category, and Subcategory.
+
