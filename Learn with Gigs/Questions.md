@@ -145,3 +145,21 @@ In a star schema, we have a central fact table directly connected to dimension t
 
 In a snowflake schema, dimensions are normalized — meaning they are broken into multiple related tables. For example, a Product dimension may be split into Product, Category, and Subcategory.
 
+14. What is Composite Model in Power BI?
+
+A Composite Model in Power BI allows you to combine multiple data sources in the same data model, using both:
+
+Import mode (faster, cached in memory)
+
+DirectQuery mode (real-time connection to database)
+
+Example
+
+Let’s say I’m building a sales dashboard:
+
+I import Product and Customer tables (static data)
+
+I use DirectQuery for the Sales Fact table (which updates frequently)
+
+Power BI lets me model them together using Composite Model
+
