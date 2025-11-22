@@ -1,43 +1,67 @@
 1. What is difference between Append and Merge Query?
 
-Appending, stacks data from multiple tables vertically, adding rows to an existing table
-Merging combines data from different tables based on a shared column, creating new columns in the resulting table. 
+Append, Combine rows of two or more tables vertically, When all tables have same columns
 
-In my Power BI reporting work, Once I had multiple monthly Excel files that has hq wise weekly sales planing given by sales executive and
+Merge, Combines data from two tables based on a common column, creating new columns in the resulting table. 
 
-I need to stack all files into one so that we can analyse that planing vs actual sales and also needed to combine zone and region also 
+Kind of Join :
 
-So that time I copy the folder path where all excel files are kept and then import that folder in power BI,
-I have extracted data from content column using power query, like making custom column and giving M-Code - Excel.Workbook([Content]) and then expanded tables.
-also i have merge region and zone from master data, HQ as column column - Here I have used default Left Outer join
+a. Left Outer Join means all from First, matching from second
 
-Left Outer Join means all from First, matching from second
-Right Outer Join means all from second, matching from first 
-full outer join means all from both
-inner join means only matching
+b. Right Outer Join means all from second, matching from first 
 
-Using this I created dynamically consolidated sales plan tracker that updates automatically when new month added.
+c. Full outer join means all from both - produce null if no match found
+
+d. Inner join means only matching
+
+e. Left Anti
+
+f. Right Anti
+
+g. Anti Inner
+
+https://www.youtube.com/watch?v=77POcNaCrcI
 
 2. What is Query Folding?
 
 Query folding is the process of pushing data transformation steps back to the data source for execution, like filters, joins, grouping
-we can check this by right-clicking a step in Power Query and selecting "View Native Query" — if it's greyed out, folding is not happening.
+
+We can check this by right-clicking a step in Power Query and selecting "View Native Query" — if it's greyed out, folding is not happening.
+
+Example: Relational Database SQL Server, MySQL, Oracle, SAP Hana etc.
+
+Database engines are much faster than Power BI at: Filtering, Group By, Joins, Selecting columns, Sorting, Removing duplicates
+
+If folding happens → database does the processing → Power BI receives only the final, small result.
+
+It helps Faster refresh, Less RAM used, Better performance, Less load on Power BI
+
 
 3. What is difference between copy and reference?
    
-Copy Query
+Copy Query :
+
 Creates a completely separate copy of the original query.
+
 Changes in the original query will not affect the copied one.
 
-Reference Query
+Reference Query :
+
 Creates a linked version of the original query.
+
 If you change the original query, the referenced one will also reflect those changes.
 
 4. What is M-Code?
 
-M Code is the formula language used in Power Query (in Power BI, Excel, etc.) to clean, transform, and shape data before loading it into your model.
+M Code is the formula language used in Power Query to clean and transform data before loading it into your model.
+
 It’s called M because it was originally named “Mashup” language.
+
 It's functional and case sensitive language
+
+Whenever we click: Remove Columns, Filter Rows, Merge Queries, Group By, Change Types Power BI automatically writes M code in the background.
+
+We can see it in: Home → Advanced Editor
 
 5. What is a Parameter in Power BI?
    
@@ -47,12 +71,22 @@ We can used it values like file paths, date ranges, thresholds, or region names.
 6. What is Incremental Refresh in Power BI?
    
 Incremental Refresh means Power BI refreshes only new or changed data, instead of loading the entire dataset every time.
+
 It is useful because faster refresh times, less memory and CPU uses and ideal for large dataset
 
 Let’s say you have 5 years of sales data: The first time, Power BI loads all 5 years
+
 Next time, it only refreshes the latest 1 month (or as defined) instead of reloading everything
 
+Incremental Refresh requires:
+
 It need Power BI Pro or premium per user licence 
+
+Date column
+
+RangeStart & RangeEnd parameters
+
+https://www.youtube.com/watch?v=fJ4LQ28-68k
 
 7. What types of relationships are there?
 
@@ -82,6 +116,8 @@ Bridge → Target Table
 
 Now both tables are indirectly connected through the bridge.
 
+https://www.youtube.com/watch?v=BbKQ5eWjE-Y
+
 9. What is Bi-Directional Filtering in Power BI?
 
 Bi-directional filtering means that filters flow in both directions between two related tables — from Table A to B and from Table B to A.
@@ -93,6 +129,8 @@ By default, filter flows from Customer to Sales (one-directional), meaning if yo
 But with bi-directional filtering, you can also: Filter Customers based on sales
 
 example only show customers who made purchases in June
+
+https://www.youtube.com/watch?v=wMppYKKn-rc
 
 10. What are Relationship Modifiers in Power BI (DAX)?
 
