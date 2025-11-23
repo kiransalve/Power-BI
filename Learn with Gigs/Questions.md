@@ -118,19 +118,45 @@ Now both tables are indirectly connected through the bridge.
 
 https://www.youtube.com/watch?v=BbKQ5eWjE-Y
 
-9. What is Bi-Directional Filtering in Power BI?
+9. What is Bi-Directional Filtering in Power BI? and how to resolve it?
 
 Bi-directional filtering means that filters flow in both directions between two related tables — from Table A to B and from Table B to A.
 
-Let’s say you have Customer Table and Sales Table with one to many relationship
+In a normal one-to-many relationship, filters go:
 
-By default, filter flows from Customer to Sales (one-directional), meaning if you select a customer, you see their sales.
+Dimension table → Fact table
 
-But with bi-directional filtering, you can also: Filter Customers based on sales
+Example: If you filter Product Category, the visuals that use Sales get filtered.
 
-example only show customers who made purchases in June
+But filtering Sales does NOT filter the Product table.
+
+When you enable bi-directional filtering, the filter travels:
+
+Dimension → Fact and Fact → Dimension
+
+Makes relationships behave like both tables are affecting each other.
+
+Bi-directional filtering can create:
+
+Ambiguous relationships
+
+Circular relationships
 
 https://www.youtube.com/watch?v=wMppYKKn-rc
+
+Resolving :
+
+https://www.youtube.com/watch?v=rOGjSt4AVts
+
+If you only need cross-filtering in a single measure, NOT the whole model:
+
+Total Sales by Product :=
+CALCULATE(
+    SUM(Sales[Amount]),
+    CROSSFILTER(Product[ProductID], Sales[ProductID], BOTH)
+)
+
+Filters apply both ways only inside this measure
 
 10. What are Relationship Modifiers in Power BI (DAX)?
 
@@ -142,46 +168,74 @@ Example: You have two date columns (Invoice Date & Payment Date), and only one a
 
 Total Payment = CALCULATE(SUM(Sales[Amount]), USERELATIONSHIP(Sales[Payment Date], Calendar[Date]))
 
+https://www.youtube.com/watch?v=W4Vl6ox_BpM
+
 CROSSFILTER() - Change the filter direction (single or both) in a specific measure
 
 Sales Both = CALCULATE(SUM(Sales[Amount]), CROSSFILTER(Sales[ProductID], Product[ProductID], BOTH))
 
-REMOVEFILTERS() or ALL() - Ignore filters from a related table 
+https://www.youtube.com/watch?v=KPEiLH5J-Cw
 
-Total Sales All Regions = CALCULATE(SUM(Sales[Amount]), REMOVEFILTERS(Region))
 
-TREATAS() - Apply a custom filter between unrelated tables
 
-CALCULATE(SUM(Sales[Amount]), TREATAS(VALUES(Target[ProductID]), Sales[ProductID]))
+ALL() - Returns all rows in a table, or all values in column ignoring any filter that might have been applied
+
+REMOVEFILTERS() - Removes filters from a column or table similar to ALL, but does not return a table, it only clears filters.
+
+https://www.youtube.com/watch?v=XsGPPWxOIJc
+
+
+
+TREATAS() is used to apply the values of one column (a table expression) as filters on another column—even if there is no relationship between the tables.
+
+https://www.youtube.com/watch?v=PJCrLxdY-gE
+
+give example of date and buget table (with month level)
 
 11. Difference between Removefilter() and all()?
 
 In DAX, both REMOVEFILTERS() and ALL() are used to remove filters from a table or column, but they serve slightly different purposes.
 
 REMOVEFILTERS() is used purely to clear filters from the specified column or table in the current context. 
+
 It doesn’t return any data — it simply removes the filter effect, which is helpful when we want to ignore slicers or visual filters temporarily.
 
 On the other hand, ALL() not only removes filters but also returns the entire table or column, making it ideal for calculations like percent of total, ranks, and grand totals, where we need to consider the full dataset regardless of current filters.
 
 12. What are Fact and Dimension Tables in Power BI or Data Modeling?
 
-A Fact Table contains quantitative, measurable data — like sales, revenue, profit, or quantities. These tables are usually large and store transaction-level or aggregated numeric values.
+A Fact Table contains quantitative, measurable data — like sales, revenue, profit, or quantities. 
+
+These tables are usually large and store transaction-level or aggregated numeric values.
 
 It typically includes foreign keys that link to dimension tables, along with metrics like:
 
 Sales Amount, Quantity ,Cost,Discount
 
-A Dimension Table contains descriptive, categorical data — like names, regions, product categories, customer segments, etc. These tables are smaller and help provide context to the facts.
+types = Transaction, Snapshot, Accumulating Snapshot, Factless, and Aggregate.
+
+A Dimension Table contains descriptive, categorical data — like names, regions, product categories, customer segments, etc. 
+
+These tables are smaller and help provide context to the facts.
 
 They usually have a primary key that connects to the fact table and are used for filtering, grouping, or slicing data.
 
+types = Conformed, Role-Playing, SCD Types 1–2–3, Junk, Degenerate, Outrigger, and Hierarchical dimensions.
+
+https://www.youtube.com/watch?v=_0IdAb9Z5n4
+
 13. What is the difference between Star Schema and Snowflake Schema?
 
-In Power BI and data warehousing, Star Schema and Snowflake Schema are two popular ways of organizing data models. They define how fact and dimension tables are structured and related.
+In a star schema, we have a central fact table directly connected to dimension tables and no dim table connected to other dim table.
 
-In a star schema, we have a central fact table directly connected to dimension tables. The dimensions are usually denormalized, meaning all descriptive fields are in one single table per dimension.
+The dimensions are usually denormalized, meaning all descriptive fields are in one single table per dimension.
 
-In a snowflake schema, dimensions are normalized — meaning they are broken into multiple related tables. For example, a Product dimension may be split into Product, Category, and Subcategory.
+In a snowflake schema, dimensions are normalized — meaning they are broken into multiple related tables. 
+
+here one dim table connected to multiple dim tables.
+
+For example, a Product dimension may be split into Product, Category, and Subcategory.
+
 
 14. What is Composite Model in Power BI?
 
@@ -193,11 +247,21 @@ DirectQuery mode (real-time connection to database)
 
 Example
 
-Let’s say I’m building a sales dashboard:
+Let’s say we are building a sales dashboard:
 
-I import Product and Customer tables (static data)
+we import Product and Customer tables (static data)
 
-I use DirectQuery for the Sales Fact table (which updates frequently)
+We use DirectQuery for the Sales Fact table (which updates frequently)
 
 Power BI lets me model them together using Composite Model
 
+https://www.youtube.com/watch?v=sq5kY5WPq0g
+
+15. import and direct query in power BI?
+
+import - Power BI imports a copy of the data into its in-memory engine (VertiPaq).
+
+direct - Power BI does not store data. Every visual sends a live SQL query to the database
+
+https://www.youtube.com/watch?v=J_keoBQ5EGk
+https://www.youtube.com/watch?v=J_keoBQ5EGk
