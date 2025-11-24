@@ -393,3 +393,21 @@ On any visual, you can drag extra fields into the Tooltip area (in Fields pane).
 
 Power BI will show these fields inside the tooltip when hovering.
 
+21. What is Decomposition Tree?
+
+A Decomposition Tree is an AI-powered Power BI visual used to break down a metric step-by-step across different dimensions to understand why a value is high/low.
+
+It allows users to drill down interactively and see contribution at each level.
+
+Use it when you want to answer questions like:
+
+Why is sales low this month?
+
+Which region → segment → product contributed most to profit?
+
+Which store is causing the highest return rate?
+
+A decomposition tree helps break down a metric into multiple levels to identify key contributors. It supports AI splits, dynamic drill-down, and is mainly used for root-cause analysis. It's ideal when users want flexibility to explore data in any order instead of a fixed hierarchy.
+
+https://www.youtube.com/watch?v=Nm5ImMmi-y8
+
