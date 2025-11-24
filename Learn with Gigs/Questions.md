@@ -341,5 +341,18 @@ View Order details from aggregated sales
 
 Jump into Year → Quarter → Month → Day analysis
 
-
 https://www.youtube.com/watch?v=k-uWcjbLv0E
+
+18. Whatif parameter?
+
+A What-If Parameter lets users increase/decrease a value and see changes in dashboards.
+
+When you create a What-If parameter, Power BI automatically creates:
+
+A table (e.g., Discount Table with values 0% to 20%)
+
+A slicer
+
+A measure (the selected value)
+
+https://www.youtube.com/watch?v=28PDdA3SROU&t=134s
