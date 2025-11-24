@@ -355,4 +355,41 @@ A slicer
 
 A measure (the selected value)
 
+used in forecasting and scenario testing
+
 https://www.youtube.com/watch?v=28PDdA3SROU&t=134s
+
+19. Tell few scenarios where waterfall charts is useful?
+
+To plot annual profit by showingv various sources of revenue and arrive at the total profit or loss
+
+20. What are Tooltip and explain its types?
+
+A Tooltip in Power BI is a small pop-up that appears when you hover over a visual.
+
+It shows additional information without cluttering the main report.
+
+Types :
+
+1. Default Tooltip (Auto Tooltip)
+
+Automatically provided by Power BI
+
+Shows basic information like category, value, date, etc
+
+You don't need to create anything — it appears automatically.
+
+2. Report Page Tooltip (Custom Tooltip Page)
+
+You manually design a separate tooltip report page.
+
+Highly customizable
+
+Can show charts, KPIs, trends
+
+3. Visual-Level Tooltip Fields
+
+On any visual, you can drag extra fields into the Tooltip area (in Fields pane).
+
+Power BI will show these fields inside the tooltip when hovering.
+
