@@ -259,9 +259,42 @@ https://www.youtube.com/watch?v=sq5kY5WPq0g
 
 15. import and direct query in power BI?
 
-import - Power BI imports a copy of the data into its in-memory engine (VertiPaq).
+Import mode -
 
-direct - Power BI does not store data. Every visual sends a live SQL query to the database
+Power BI imports a copy of the data into its in-memory engine (VertiPaq).
 
-https://www.youtube.com/watch?v=J_keoBQ5EGk
+Data is stored inside the .pbix file
+
+there is 1 GB of limit for the data we want to publish to power bi service
+
+it has fast performance than any other mode.
+
+Disadvantages - 
+
+Large dataset → .pbix becomes heavy
+
+Data not real-time
+
+Refresh limits in Service (for power bi pro - 8 schedule refresh per day and refresh must complete within 2 hours and for premium - 48 schedule refresh per day)
+
+Power BI does NOT store data.
+
+Direct Query Mode - 
+
+Power BI does not store data. Every visual sends a live SQL query to the database
+
+The data view section removed from report.
+
+no limit on data as we have "live" data
+
+has performance issue 
+
+limited use of DAX function - 
+
+Time Intelligence Function - TOTALYTD, TOTALMTD, TOTALQTD
+
+SAMEPERIODLASTYEAR
+
+DATESYTD, DATESMTD
+
 https://www.youtube.com/watch?v=J_keoBQ5EGk
