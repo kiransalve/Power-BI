@@ -283,6 +283,8 @@ Direct Query Mode -
 
 Power BI does not store data. Every visual sends a live SQL query to the database
 
+the data will be pulled by query to database with every user interaction
+
 The data view section removed from report.
 
 no limit on data as we have "live" data
@@ -298,3 +300,46 @@ SAMEPERIODLASTYEAR
 DATESYTD, DATESMTD
 
 https://www.youtube.com/watch?v=J_keoBQ5EGk
+
+16. What is bookmarks in Power BI?
+
+In Power BI, a bookmark is essentially a snapshot of the current state of a report page. It captures things like:
+
+Filters and slicers applied
+
+Selected visuals
+
+Sort order
+
+Visibility of visuals (show/hide)
+
+Drill state (expanded/collapsed visuals)
+
+We can save this state and later return to it with a click. Bookmarks are mainly used for:
+
+Navigation: Creating buttons that take users to different views or report pages.
+
+Storytelling / presentations: Showing different insights step by step.
+
+Switching views: For example, switching between a detailed view and a summary view.
+
+Dynamic visuals: Toggling visual elements like charts or tables on/off without creating separate pages.
+
+https://www.youtube.com/watch?v=1RfJOlaqSUw
+
+17. Drill Throgh
+
+Drillthrough lets the user select a value (for example, a customer, product, region, or date) → right-click → Drillthrough → Detail Page, and the destination page automatically filters to show details about that selected item.
+
+Typical drillthrough scenarios:
+
+View Customer details from a summary sales page
+
+View Product-level analysis from a category-level report
+
+View Order details from aggregated sales
+
+Jump into Year → Quarter → Month → Day analysis
+
+
+https://www.youtube.com/watch?v=k-uWcjbLv0E
