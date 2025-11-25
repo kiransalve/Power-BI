@@ -411,3 +411,26 @@ A decomposition tree helps break down a metric into multiple levels to identify 
 
 https://www.youtube.com/watch?v=Nm5ImMmi-y8
 
+22. What is RLS ( Row level Security )?
+
+RLS is a way to restric the data on the basis of logged in user 
+
+RLS allows you to filter rows of data for different users.
+
+Example:
+
+Sales Manager of North Region sees only North data
+
+Sales Manager of South Region sees only South data
+
+It protect sensetive data
+
+Gives personalized views without creating separate reports
+
+
+We can have two types of RLS static and dynamic
+
+Userprinciplename() : shows the username of currently logged in user in both Power bi dekstop and servive
+
+https://www.youtube.com/watch?v=r5XCpeQxXl4
+Username() : shows dekstop name in power bi dekstop and username in power bi service.
