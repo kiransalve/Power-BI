@@ -509,8 +509,30 @@ Columns :
 
 Works on row context means used for row by row calculation, takes up space in RAM and recalculates itself only on data source refresh 
 
+28. What is difference between Count() and CountA() function?
 
+Count() :
 
+Counts only numeric values in a column.
 
+Ignores text, blanks, and logical values.
 
+Example: COUNT([Sales]) → counts only rows with numbers.
 
+COUNTA() :
+
+Counts all non-blank values (text, numbers, dates, TRUE/FALSE).
+
+Only blanks are ignored.
+
+Example: COUNTA([CustomerName]) → counts names (text values)
+
+29. Explain Calculate() function?
+
+CALCULATE() perform calculations after modifying the existing filter context.
+
+It allows you to override, add, or remove filters.
+
+It is used for all advanced DAX calculations like YTD, MTD, LY, conditional totals, etc.
+
+Sales_India = CALCULATE( SUM(Sales[Amount]), Sales[Country] = "India" )
