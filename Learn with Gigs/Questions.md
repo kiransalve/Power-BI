@@ -441,6 +441,8 @@ Power BI Pro - User based license basically for developers can leverage all cont
 
 you can share dashboard/report to only pro user
 
+it has limit of storage per license 10 GB
+
 Power BI Premium - Licesing based on didicated capacity content can be viewed without additional per user total
 
 it has two types - 
@@ -449,4 +451,7 @@ premium per user - per user license but wih premium users
 
 premium by capacity - you pay for dedicated capacity and then many users (free also) can consume content till capacity
 
+it has limit of storage per license 100 TB
+
+can make paginated reports 
 
