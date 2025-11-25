@@ -622,3 +622,14 @@ Used when total cannot be calculated directly from one column
 Used when we dont want to create additional columns to evaluate
 
 
+33. Sales = Calculate(Sum[amt], product[product] = "apple"), make it using calculatetable().
+
+Sales =
+SUMX(
+    CALCULATETABLE(
+        Sales,
+        Product[product] = "apple"
+    ),
+    Sales[amt]
+)
+
