@@ -427,10 +427,26 @@ It protect sensetive data
 
 Gives personalized views without creating separate reports
 
-
 We can have two types of RLS static and dynamic
 
 Userprinciplename() : shows the username of currently logged in user in both Power bi dekstop and servive
 
 https://www.youtube.com/watch?v=r5XCpeQxXl4
+
 Username() : shows dekstop name in power bi dekstop and username in power bi service.
+
+23. Difference between power bi pro and premium licence?
+
+Power BI Pro - User based license basically for developers can leverage all content creation and interaction features
+
+you can share dashboard/report to only pro user
+
+Power BI Premium - Licesing based on didicated capacity content can be viewed without additional per user total
+
+it has two types - 
+
+premium per user - per user license but wih premium users
+
+premium by capacity - you pay for dedicated capacity and then many users (free also) can consume content till capacity
+
+
