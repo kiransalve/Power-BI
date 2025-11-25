@@ -536,3 +536,42 @@ It allows you to override, add, or remove filters.
 It is used for all advanced DAX calculations like YTD, MTD, LY, conditional totals, etc.
 
 Sales_India = CALCULATE( SUM(Sales[Amount]), Sales[Country] = "India" )
+
+30. How can you create a one row table using DAX?
+
+Using ROW() : 
+
+We can use Row() function to get this done
+
+OneRowTable =
+ROW(
+    "Year", 2024,
+    "Country", "India",
+    "Sales", 150000
+)
+
+Using {} with SELECTCOLUMNS() :
+
+OneRowTable =
+SELECTCOLUMNS(
+    { (1) },
+    "Category", "Electronics",
+    "Amount", 5000
+)
+
+{ (1) } creates a table with a single value.
+
+Then SELECTCOLUMNS adds your custom columns.
+
+Using DATATABLE() — If you want data types fixed :
+
+OneRowTable =
+DATATABLE(
+    "Product", STRING,
+    "Price", INTEGER,
+    {
+        { "Laptop", 60000 }
+    }
+)
+
+
