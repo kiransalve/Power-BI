@@ -574,4 +574,24 @@ DATATABLE(
     }
 )
 
+31. Difference between Hasonevalue(), Hasonefilter(), isfilter() functions?
+
+HASONEVALUE(): Checks whether ONLY ONE distinct value exists in a column.
+
+HASONEFILTER() : Checks whether a column (or table) has exactly one filter applied.
+
+ISFILTERED() : Checks whether any filter is applied on a column or table.
+
+Returns TRUE when:
+
+Slicer applied
+
+Manual filter applied
+
+Visual level filter
+
+Page level filter
+
+Report level filter
+
 
