@@ -647,4 +647,36 @@ CALCULATE(
     )
 )
 
-2. SUMMERIZE(SALES
+2. SUMMERIZE(SALES, CALENDER[YEAR], PRODUCT[CATEGORY], "SUM OF SALES", SUM[REVENUE])
+
+Sales_Summarize =
+SUMMARIZECOLUMNS(
+    'Date'[Fiscal Year],
+    'Sales Register'[Item Description],
+    "Sales of product",
+    SUM('Sales Register'[AMOUNT])
+)
+
+35. Difference between Related() and Lookupvalue() function?
+
+RELATED() :
+
+Purpose: Returns a value from a related table via an existing relationship.
+
+Requirement: There must be a relationship defined in the model between the tables.
+
+Returns: A single value for the current row
+
+LOOKUPVALUE() : 
+
+Purpose: Returns a value from a column in another table without needing a relationship.
+
+Requirement: You specify matching columns manually.
+
+Returns: The value from the row where the condition matches.
+
+
+
+
+
+
