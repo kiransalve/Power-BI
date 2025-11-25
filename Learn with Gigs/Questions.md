@@ -594,4 +594,31 @@ Page level filter
 
 Report level filter
 
+32. What is difference between Sum() and SumX() function?
+
+SUM() :
+
+SUM() adds all numeric values of a single column.
+
+Works only on one column
+
+No row-by-row logic
+
+Fast and simple aggregation
+
+Total Sales = SUM(Sales[Amount]) // Just sums the column Amount.
+
+
+SUMX() :
+
+SUMX() evaluates an expression row-by-row and then adds the results.
+
+Works on a row context
+
+Allows calculations per row
+
+Used when total cannot be calculated directly from one column
+
+Used when we dont want to create additional columns to evaluate
+
 
