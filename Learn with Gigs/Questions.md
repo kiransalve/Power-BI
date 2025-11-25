@@ -455,3 +455,49 @@ it has limit of storage per license 100 TB
 
 can make paginated reports 
 
+24. What is Dataflow?
+
+A Dataflow is a cloud-based ETL (Extract, Transform, Load) process in Power BI Service 
+
+It allows you to extract data from multiple sources, transform it using Power Query, and store it in a reusable format (CDM entities) for use in multiple datasets and reports.
+
+25. What is Data Gateway and explain its types?
+
+Data Gateways basically act like a bridge creating connection between our local machine to Power BI Service
+
+Types :
+
+Personal Mode gateway : 
+
+can only be used by you, can't be used with other apps or services, only supports scheduled refresh in power bi
+
+Enterprise Mode gateway :
+
+can be shared and used by multiple users, can be used by power bi , power apps, flow etc
+
+supports schedule refresh and live query (dataflow) for power bi
+
+26. What are different access levels that one can have in a workplace?
+
+Power BI Admin :
+
+Person owns/manage the workplace with full control over other members in workplace
+
+Member :
+
+The Developer of report has a member access having capabilities of doing modifications, sharing report through apps, managing gatways, and many more 
+
+Member can give contributor and viewer access while adding new people in the workplace
+
+Contributor :
+
+Contributes by doing modifications if any and publishing it to the service.
+
+can give only viewer access to the new people added to the workplace.
+
+Viewer :
+
+The Business/End User are given Viewer's access who can only view the report shared to them
+
+
+
