@@ -499,5 +499,18 @@ Viewer :
 
 The Business/End User are given Viewer's access who can only view the report shared to them
 
+27. What is difference between calculated measure and calculated column?
+
+Measure :
+
+Works on filter context, return different data results depending on filters applied, not stored in RAM and can be reused for other measures
+
+Columns :
+
+Works on row context means used for row by row calculation, takes up space in RAM and recalculates itself only on data source refresh 
+
+
+
+
 
 
