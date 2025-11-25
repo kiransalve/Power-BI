@@ -633,3 +633,18 @@ SUMX(
     Sales[amt]
 )
 
+34. Optmize these DAX codes
+ 
+1. CALCULATE(SUM(REVENUE), REGION="INDIA")
+
+ANSWER : 
+
+CALCULATE(
+    SUM(Sales[REVENUE]),
+    FILTER(
+        VALUES(Sales[REGION]),
+        Sales[REGION] = "INDIA"
+    )
+)
+
+2. SUMMERIZE(SALES
