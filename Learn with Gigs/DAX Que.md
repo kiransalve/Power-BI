@@ -100,3 +100,27 @@ TotalYTD =
     var total_ytd_restricted = TOTALYTD([CY Sales],'Date'[Date], 'Date'[Date] <= max_selected_date)
     RETURN total_ytd_restricted
 ```
+
+4. HOW TO GET WEEKEND AND WEEKDAYS SALES?
+
+```
+Weekday Sales = 
+CALCULATE(
+    [CY Sales],
+    FILTER(
+        ALL('Date'),
+        WEEKDAY('Date'[Date], 2) <= 5
+    )
+)
+```
+
+```
+Weekend Sales = 
+CALCULATE(
+    [CY Sales],
+    FILTER(
+        ALL('Date'),
+        WEEKDAY('Date'[Date], 2) > 5
+    )
+)
+```
