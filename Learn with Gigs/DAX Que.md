@@ -50,3 +50,31 @@ EOMONTH(
 
 DILELYA TARKHEPASUN PUDHE KINVA MAGE JAUN TYA MAHINYACHA SHEVATCHA DIVAS DETO
 
+3. CAN YOU CALCULATE YTD CALCULATION IN DIRECT QUERY MODE?
+
+DirectQuery does not support many DAX Time-Intelligence functions like:
+
+❌ TOTALYTD()
+❌ DATESYTD()
+❌ PREVIOUSYEAR()
+❌ SAMEPERIODLASTYEAR()
+
+YTD_SALES = 
+    CALCULATE(
+            [CY SALES],
+            FILTER(
+                ALL("DATE"),
+                "DATE"[DATE] <= MAX("DATE"[DATE]) && 
+                YEAR("DATE"[DATE]) = YEAR(MAX("DATE"[DATE]))
+            )
+        )
+
+
+
+
+
+
+
+
+
+
