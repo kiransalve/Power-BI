@@ -156,4 +156,20 @@ SUMX(
     [CY Sales]
 )
 
+8. How to get activate inactive relationship in DAX.
+
+In your data model, you may have multiple relationships between two tables, but only one can be active at a time.
+
+USERELATIONSHIP temporarily activates an inactive relationship for the calculation
+
+Inactive Revenue =
+CALCULATE(
+    [CY Sales],
+    USERELATIONSHIP('Date'[Date], 'Sales Register'[Shipping Date])
+)
+
+
+
+
+ 
 ```
