@@ -724,8 +724,12 @@ Instead of importing new data, choose “Pick a published dataset”.
 Now you can build different reports from the same dataset without duplicating the data.
 
 
+40. How can you create a Data Alert if something is going above threshold?
+
+After Power BI dashboard published on power bi service, at the bottom of card, KPI or Gauge visual click on three dots
 
 
+41. 
 
 
 
