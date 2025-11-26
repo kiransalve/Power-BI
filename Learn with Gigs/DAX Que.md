@@ -166,6 +166,17 @@ CALCULATE(
     USERELATIONSHIP('Date'[Date], 'Sales Register'[Shipping Date])
 )
 
+9. If one column have data like this RS1000 then how to get only number in power query?
+
+Method 1
+
+= Text.Select([ColumnName], {"0".."9"})
+
+Method 2
+
+Home → Split Column → By Non-Digit to Digit
+
+
 
 
 
