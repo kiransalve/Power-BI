@@ -1,3 +1,4 @@
+```
 1. What is difference between Append and Merge Query?
 
 Append, Combine rows of two or more tables vertically, When all tables have same columns
@@ -676,7 +677,20 @@ Requirement: You specify matching columns manually.
 Returns: The value from the row where the condition matches.
 
 
+36. Will Related() function work in any measure if you have many to many relationship between two tables, why?
 
+RELATED() retrieves a value from a related table.
 
+It only works along a one-to-many (or many-to-one) relationship, from the “many” side to the “one” side.
 
+In a many-to-many relationship:
 
+There isn’t a single row on the “other side” for each row in the current table — multiple matches exist.
+
+RELATED() cannot resolve multiple values.
+
+Use LOOKUPVALUE() if you can define a unique match.
+
+Or, better, use bridging tables (a “dimension” table) to break the many-to-many into two one-to-many relationships.
+
+```
