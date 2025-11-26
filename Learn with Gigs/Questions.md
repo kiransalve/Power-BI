@@ -784,6 +784,21 @@ Date (Due)
 
 In Power BI, this is implemented either by duplicating the dimension or by using inactive relationships with USERELATIONSHIP() inside measures.
 
+43. How good are you in writing DAX queries?
 
+I am very comfortable writing DAX and have strong hands-on experience with both basic and advanced DAX.
+I work confidently with CALCULATE, FILTER, SUMX, and all Time-Intelligence functions like YTD, MTD, LY, rolling periods, and moving averages.
+I also understand evaluation context deeply—row context vs filter context, context transition, role-playing dimensions, active/inactive relationships, and performance-optimized DAX.
+
+I regularly use functions like:
+• RANKX, TOPN
+• ALL, ALLEXCEPT, ALLSELECTED
+• TREATAS, CROSSFILTER
+• USERELATIONSHIP, RELATED, RELATEDTABLE
+• CALCULATETABLE for virtual tables
+
+I can write complex measures like dynamic period selection, rolling 12-month, dynamic segmentation, ABC analysis, and KPI comparisons.
+
+Overall, I am very strong in DAX and can build optimized, accurate measures even for complicated business requirements.
 ```
 
