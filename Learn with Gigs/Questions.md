@@ -947,6 +947,40 @@ CALCULATE(
 Both conditions apply.
 
 
+57. can i make like this -> CALCULATE([TOTAL SALES], [TOTAL COST] > 5000)
+
+NO,
+Because CALCULATE does NOT accept a measure-to-measure comparison as a filter.
+
+Why it doesn't work?
+
+The filter inside CALCULATE must be:
+
+a column filter, or
+
+a table expression that returns rows
+
+But this expression:
+
+[TOTAL COST] > 5000
+
+is a measure, not a column → so DAX has no row context to evaluate it.
+
+If you want to filter rows where Cost > 5000, you must use the column, not the measure:
+CALCULATE([TOTAL SALES], Sales[Cost] > 5000)
+
+If you want to filter using a measure
+CALCULATE(
+    [TOTAL SALES],
+    FILTER(
+        ALL(Sales),
+        [TOTAL COST] > 5000
+    )
+)
+
+This works because FILTER creates a row-by-row table, and the measure can evaluate row context.
+
+
 
 
 ```
