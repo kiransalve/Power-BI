@@ -1,3 +1,4 @@
+```
 1. GIve last 3 months sales.
 ```
 Last 3 Month Sale = 
@@ -138,3 +139,18 @@ CALCULATE(
 )
 ```
 
+6. Top 5 Product Sales
+
+```
+Top 5 Products = 
+CALCULATE(
+    [CY Sales],
+    FILTER(
+        VALUES('Sales Register'[Item Description]), // gives unique values
+        RANKX('Sales Register', 
+        [CY Sales],,
+        DESC, 
+        Dense) <=5))
+
+
+```
