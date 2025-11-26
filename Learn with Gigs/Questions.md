@@ -693,4 +693,42 @@ Use LOOKUPVALUE() if you can define a unique match.
 
 Or, better, use bridging tables (a “dimension” table) to break the many-to-many into two one-to-many relationships.
 
+37. What will you do if some of your visual are not filtering out on clicking a perticular visual?
+
+1. We check "Edit Interaction"
+
+2. We check relationship in model view
+
+
+38. How to create contant line?
+
+Select your visual (e.g., column chart, line chart).
+
+Go to the Analytics pane (next to the Fields pane).
+
+Under X-axis / Y-axis, you’ll see “Constant Line” or “Average Line”.
+
+Click Add → a constant line appears on the chart.
+
+
+39. Can you use one dataset to create different reports, if yes, how?
+
+Publish your dataset to the Power BI Service.
+
+Dataset can come from Power BI Desktop (.pbix) or dataflow.
+
+In Power BI Service, click “Create → Report”.
+
+Instead of importing new data, choose “Pick a published dataset”.
+
+Now you can build different reports from the same dataset without duplicating the data.
+
+
+
+
+
+
+
+
 ```
+
