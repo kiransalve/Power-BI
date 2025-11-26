@@ -729,9 +729,35 @@ Now you can build different reports from the same dataset without duplicating th
 After Power BI dashboard published on power bi service, at the bottom of card, KPI or Gauge visual click on three dots
 
 
-41. 
+41. How to Convert Star Schema → Snowflake Schema?
+
+A Star Schema means:
+
+One central fact table
+
+Surrounding dimension tables
+
+Dimensions are denormalized (flattened)
+
+No sub-dimensions
+
+A Snowflake Schema means:
+
+Dimension tables are normalized (broken into multiple related tables)
+
+More relationships
+
+More tables with less duplicate data
 
 
+To convert to Snowflake, you normalize each dime
+
+1. Identify Repeating Attribute Groups in Dimensions
+
+2. Split the dimension into multiple tables
+
+
+To convert Star → Snowflake, break each large dimension table into smaller normalized hierarchy tables and create relationships between them.
 
 
 ```
