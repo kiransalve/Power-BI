@@ -1,5 +1,5 @@
 1. GIve last 3 months sales.
-
+```
 Last 3 Month Sale = 
 VAR SelectedDate =
     IF(
@@ -15,7 +15,7 @@ CALCULATE(
         SelectedDate,
         -3,
         MONTH))
-
+```
 DATESINPERIOD(
     DATE COLUMN TO FILTER,
         DATE WHERE FROM TO START,
