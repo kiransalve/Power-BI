@@ -92,10 +92,11 @@ CALCULATE(
 )
 ```
 
+3. HOW TO RESTRICT OUR TOTALYTD TO LAST SALES DATE?
 
-
-
-
-
-
-
+```
+TotalYTD = 
+    var max_selected_date = MAX('Sales Register'[Invoice Date])
+    var total_ytd_restricted = TOTALYTD([CY Sales],'Date'[Date], 'Date'[Date] <= max_selected_date)
+    RETURN total_ytd_restricted
+```
