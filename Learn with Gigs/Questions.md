@@ -800,5 +800,73 @@ I regularly use functions like:
 I can write complex measures like dynamic period selection, rolling 12-month, dynamic segmentation, ABC analysis, and KPI comparisons.
 
 Overall, I am very strong in DAX and can build optimized, accurate measures even for complicated business requirements.
+
+44. Explain Row Context vs Filter Context.
+
+Row Context:
+
+Row-by-row evaluation. Exists in calculated columns & iterators like SUMX.
+
+Example:
+In a calculated column:
+SalesAmount = Sales[Qty] * Sales[Price]
+
+Each row has its own context.
+
+Filter Context:
+Filters applied from slicers, visuals, relationships, CALCULATE, etc.
+
+Example:
+Total Sales = SUM(Sales[Amount])
+
+This respects filters like Year, Region, Product.
+
+45. What is Context Transition?
+
+When a row context becomes filter context, usually inside CALCULATE or measures.
+
+Inside a row context (like SUMX), CALCULATE converts the current row into filter context.
+
+
+46. Difference between CALCULATE and CALCULATETABLE?
+
+CALCULATE → returns a scalar (single value).
+CALCULATETABLE → returns a table.
+
+47. Difference between ALL, ALLEXCEPT, ALLSELECTED?
+
+ALL: Removes all filters from the specified table/columns.
+ALLEXCEPT: Removes all filters except the mentioned columns.
+ALLSELECTED: Removes filters but preserves filters coming from visuals (user selections)
+
+48. RELATED() vs LOOKUPVALUE()?
+
+RELATED():
+Uses existing relationship to fetch a single value from a dimension table → works only with one-to-many.
+
+LOOKUPVALUE():
+Does not require relationships, performs lookup based on matching column values.
+Used when relationship doesn’t exist or is complex.
+
+
+49. When does a measure ignore slicers? How to control?
+
+A measure ignores slicers when using:
+
+ALL()
+REMOVEFILTERS()
+Using a different table not connected in model
+Using disconnected slicers
+
+You control it using:
+
+KEEPFILTERS
+TREATAS
+CROSSFILTER
+Removing ALL()
+
+
+
+
 ```
 
