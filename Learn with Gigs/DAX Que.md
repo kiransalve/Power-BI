@@ -124,3 +124,17 @@ CALCULATE(
     )
 )
 ```
+
+5. Cumalative Sum over the year?
+
+```
+Cumulative Sales = 
+CALCULATE(
+    [CY Sales],
+    FILTER(
+        ALLSELECTED('Date'[Date]),           -- removes only the date filter within the selected year(s)
+        'Date'[Date] <= MAX('Date'[Date])    -- up to current date
+    )
+)
+```
+
