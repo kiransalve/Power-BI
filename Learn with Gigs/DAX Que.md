@@ -77,7 +77,20 @@ YTD_SALES =
             )
         )
 ```
+MTD
 
+```
+MTD_Sales_DQ =
+CALCULATE(
+    [CY Sales],
+    FILTER(
+        ALL('Date'),
+        'Date'[Date] <= MAX('Date'[Date]) &&
+        MONTH('Date'[Date]) = MONTH(MAX('Date'[Date])) &&
+        YEAR('Date'[Date]) = YEAR(MAX('Date'[Date]))
+    )
+)
+```
 
 
 
