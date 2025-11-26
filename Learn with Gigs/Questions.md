@@ -759,6 +759,31 @@ To convert to Snowflake, you normalize each dime
 
 To convert Star → Snowflake, break each large dimension table into smaller normalized hierarchy tables and create relationships between them.
 
+42. What is a Role-Playing Dimension?
+
+A Role-Playing Dimension is one physical dimension table that is used multiple times for different roles in the data model.
+
+Example:
+
+You have one Date dimension, but your fact table has multiple date columns:
+
+FactSales
+Order Date
+Ship Date
+Invoice Date
+Due Date
+
+All of these represent different roles of the same Date table
+
+So the Date dimension plays several roles:
+
+Date (Order)
+Date (Ship)
+Date (Invoice)
+Date (Due)
+
+In Power BI, this is implemented either by duplicating the dimension or by using inactive relationships with USERELATIONSHIP() inside measures.
+
 
 ```
 
