@@ -866,7 +866,32 @@ CROSSFILTER
 Removing ALL()
 
 
+50. What is a Virtual Table? Example?
 
+A table created inside a DAX expression (not physical).
 
+Example:
+
+SUMX(
+    FILTER(Sales, Sales[Qty] > 10),
+    Sales[Amount]
+)
+
+FILTER returns a virtual table, evaluated row by row.
+
+51. Purpose of TREATAS()?
+
+To apply filters from a disconnected table to another table.
+
+Selected Sales =
+CALCULATE(
+    [CY Sales],
+    TREATAS(VALUES(Disconnected[Month]), Date[Month])
+)
+
+52. How does RANKX work internally?
+
+RANKX creates a virtual table, computes a measure for each row, sorts it, and then assigns the rank.
+Ranks change when slicer changes because the underlying virtual table changes.
 ```
 
