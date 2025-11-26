@@ -893,5 +893,61 @@ CALCULATE(
 
 RANKX creates a virtual table, computes a measure for each row, sorts it, and then assigns the rank.
 Ranks change when slicer changes because the underlying virtual table changes.
+
+53. What is EARLIER()?
+
+Used when you have row context inside row context (nested).
+
+Example:
+Ranking within a calculated column before RANKX existed.
+
+
+54. Why does a measure show circular dependency?
+
+Occurs when:
+
+A measure depends on itself
+
+Two measures refer to each other
+
+A calculated column references a measure that depends on that column
+
+Fix:
+Rewrite logic using iterators, avoid mutual references, separate base measures.
+
+55. Why Time Intelligence doesn't work in DirectQuery?
+
+Because time-intelligence requires:
+
+Full date table in memory
+
+Ability to fetch entire date ranges
+
+DAX engine performs date operations before query
+
+In DirectQuery, the data stays in SQL, so DAX cannot generate date ranges like YTD, PYTD.
+
+Workaround:
+Use server-side SQL logic or custom DAX without built-ins.
+
+56. What happens when multiple filters are used inside CALCULATE?
+
+All filters are combined using AND logic
+(unless you use OR/PARAMETER logic manually).
+
+Example:
+
+CALCULATE(
+    [Sales],
+    Product[Category] = "A",
+    Region[Zone] = "West"
+)
+
+
+Both conditions apply.
+
+
+
+
 ```
 
