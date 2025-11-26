@@ -145,4 +145,15 @@ CALCULATE(
         Dense) <=5))
 
 
+7. Sales of CBC using Calculate table?
+
+ABP Sales using CT =
+SUMX(
+    CALCULATETABLE(
+        'Sales Register',
+        'Sales Register'[Customer Name] = "CBC Enterprises"
+    ),
+    [CY Sales]
+)
+
 ```
