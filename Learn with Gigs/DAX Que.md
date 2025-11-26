@@ -36,6 +36,7 @@ DATESINPERIOD(
 ```
 2. GIVE LAST 12 MONTHS ROLLING SALES EXCULDING CURRENT MONTH?
 
+```
 Rolling12M_ExclCurrent = 
 CALCULATE(
     [CY Sales],
@@ -51,6 +52,7 @@ EOMONTH(
     DATE,
     NO. OF MONTH FORWARD/BACKWARD
     )
+```
 
 DILELYA TARKHEPASUN PUDHE KINVA MAGE JAUN TYA MAHINYACHA SHEVATCHA DIVAS DETO
 
@@ -63,6 +65,7 @@ DirectQuery does not support many DAX Time-Intelligence functions like:
 ❌ PREVIOUSYEAR()
 ❌ SAMEPERIODLASTYEAR()
 
+```
 YTD_SALES = 
     CALCULATE(
             [CY SALES],
@@ -72,7 +75,7 @@ YTD_SALES =
                 YEAR("DATE"[DATE]) = YEAR(MAX("DATE"[DATE]))
             )
         )
-
+```
 
 
 
