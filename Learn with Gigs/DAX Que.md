@@ -29,13 +29,24 @@ DATESINPERIOD(
         KITI MAGE KINVA PUDHE JAYCH AAHE,
         KAY FILTER KARAYCH AAHE - DIVAS/MAHINA/VARSH
       )
-      
 
+2. GIVE LAST 12 MONTHS ROLLING SALES EXCULDING CURRENT MONTH?
 
+Rolling12M_ExclCurrent = 
+CALCULATE(
+    [CY Sales],
+    DATESINPERIOD(
+        'Date'[Date],
+        EOMONTH(MAX('Date'[Date]), -1),   -- Last date of previous month
+        -10,
+        MONTH
+    )
+)
 
+EOMONTH(
+    DATE,
+    NO. OF MONTH FORWARD/BACKWARD
+    )
 
+DILELYA TARKHEPASUN PUDHE KINVA MAGE JAUN TYA MAHINYACHA SHEVATCHA DIVAS DETO
 
-
-
-
-        
