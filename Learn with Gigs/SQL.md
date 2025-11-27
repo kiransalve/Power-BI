@@ -84,4 +84,12 @@ rn = 1 → first/unique record (kept)
 rn > 1 → duplicate records (deleted) 
 
 
+5. Second highest salasy using subqueries?
+
+SELECT MAX(salary) AS Second_Highest_Salary
+FROM employees
+WHERE salary < (SELECT MAX(salary) FROM employees);
+
+
+
 ```
