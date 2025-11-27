@@ -45,6 +45,20 @@ CALCULATE(
 )
 
 
+3. How to append multiple file with same columns
+
+
+Load all files from a folder
+
+Go to Home → Get Data → Folder.
+
+Browse to the folder containing all your files.
+
+Click Combine & Transform Data.
+
+Power Query will automatically combine files with the same structure.
+
+Power BI automatically creates a sample file and appends the rest.
 
 
 ```
