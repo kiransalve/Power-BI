@@ -113,5 +113,25 @@ RETURN
 IF([Rankbycustomer] <= TopN, [CY Sales])
 
 
+8. How to caclculate YTD Sales (for fiscal year apr-mar) using TOTALYTD()?
+
+Sales YTD =
+TOTALYTD(
+    [CY Sales],
+    'Date'[Date],
+    "03/31"          -- fiscal year end
+)
+
+9. How to caclculate YTD Sales (for fiscal year apr-mar) using DATESYTD()?
+
+Sales YTD =
+CALCULATE(
+    [CY Sales],
+    DATESYTD('Date'[Date], "03/31")
+)
+
+
+
+
 
 ```
