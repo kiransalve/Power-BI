@@ -26,5 +26,25 @@ Expand the second table → you get all combinations.
 (Power Query doesn’t have a direct “Cross Join” button, but you can achieve it by adding an Index column to both tables and merging on 1 = 1.)
 
 
+2. How to get sales of material containing "Bio"
+
+Method 1
+
+Sales_KemBio =
+CALCULATE(
+    SUM(Sales[Amount]),
+    SEARCH("kem bio", Sales[Material], 1, 0) > 0
+)
+
+Method 2
+
+Sales_KemBio =
+CALCULATE(
+    SUM(Sales[Amount]),
+    CONTAINSSTRING(Sales[Material], "kem bio")
+)
+
+
+
 
 ```
