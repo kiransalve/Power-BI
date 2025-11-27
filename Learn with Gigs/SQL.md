@@ -1,4 +1,5 @@
 ```
+
 1. Differerece between primary key and foreign key ?
 
 Primary Key
@@ -66,7 +67,21 @@ It works like a WHERE clause but is applied on grouped results — not on indivi
 
 WHERE filters rows before grouping, HAVING filters groups after aggregation
 
- 
+
+4. Query to Delete Duplicate Records (Keeping Only One)
+
+WITH CTE AS (
+    SELECT *,
+        ROW_NUMBER() OVER (PARTITION BY EmpID, Name, City ORDER BY EmpID) AS rn
+    FROM Employees
+)
+DELETE FROM CTE WHERE rn > 1;
+
+ROW_NUMBER() assigns sequence numbers to duplicate rows.
+
+rn = 1 → first/unique record (kept)
+
+rn > 1 → duplicate records (deleted) 
 
 
 ```
