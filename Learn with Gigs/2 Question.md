@@ -130,8 +130,13 @@ CALCULATE(
     DATESYTD('Date'[Date], "03/31")
 )
 
-
-
-
-
 ```
+| Feature                            | **TOTALYTD()**                                          | **DATESYTD()**                                                                |
+| ---------------------------------- | ------------------------------------------------------- | ----------------------------------------------------------------------------- |
+| **Type**                           | Calculation function                                    | Date table function (returns a table of dates)                                |
+| **Purpose**                        | Calculates a YTD value (sum, count, etc.) automatically | Returns the set of dates that represent the YTD period, used inside CALCULATE |
+| **Does aggregation?**              | ✅ Yes                                                   | ❌ No (needs aggregation separately)                                           |
+| **Use case**                       | When you want a direct measure (like YTD sales)         | When you need more control and want to pass YTD dates into CALCULATE          |
+| **Syntax simplicity**              | Easy                                                    | More flexible                                                                 |
+| **Supports Fiscal Year end date?** | Yes (optional parameter)                                | Yes (optional parameter)                                                      |
+
