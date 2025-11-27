@@ -62,4 +62,19 @@ Power BI automatically creates a sample file and appends the rest.
 
 Use Folder load if you expect new files to be added regularly — Power BI will automatically include them after refresh.
 
+
+4. We want a default selection in a Power BI visual (or measure) where:
+By default, the measure shows CBS Enterprises sales
+If the user selects a different customer, it shows sales for the selected customer
+
+
+Customer_Sales :=
+VAR SelectedCustomer = SELECTEDVALUE(Customers[CustomerName], "CBS Enterprises")
+RETURN
+CALCULATE(
+    SUM(Sales[Amount]),
+    Customers[CustomerName] = SelectedCustomer
+)
+
+
 ```
