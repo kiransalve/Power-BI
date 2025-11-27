@@ -97,5 +97,21 @@ CALCULATE(
 Rankbycustomer = RANKX(ALLSELECTED('Sales Register'[Customer Name]), [CY Sales],, DESC,Dense)
 
 
+7. How to get sales of Top N customer?
+
+Top N Values =
+VAR selected_top = SELECTEDVALUE('Top'[top], "Top 5")   -- default Top 5
+VAR TopN =
+    SWITCH(
+        selected_top,
+        "Top 3", 3,
+        "Top 5", 5,
+        "Top 10", 10,
+        5
+    )
+RETURN
+IF([Rankbycustomer] <= TopN, [CY Sales])
+
+
 
 ```
