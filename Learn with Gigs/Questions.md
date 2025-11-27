@@ -1,4 +1,5 @@
 ```
+
 1. What is difference between Append and Merge Query?
 
 Append, Combine rows of two or more tables vertically, When all tables have same columns
@@ -979,6 +980,42 @@ CALCULATE(
 )
 
 This works because FILTER creates a row-by-row table, and the measure can evaluate row context.
+
+
+58. How to Optimize Power BI Model?
+
+1. Keep only those columns your users needs in report.
+
+2. Similar to columns, keep only those rows you need.
+
+3. Aggregate your data whenever possible.
+
+4. Use proper Data Types, avoid using Text data types if column has number
+
+5. Avoid using calculated columns whenever possible
+
+6. Try to push all calculations to data source or use power query editor
+
+7. Reduce column cardinality
+
+
+59. What is Cardinality?
+
+Cardinality refers to the number of unique values in a column or the nature of the relationship between tables.
+
+| Cardinality Type       | Meaning                                                     | Example                              |
+| ---------------------- | ----------------------------------------------------------- | ------------------------------------ |
+| **One-to-One (1:1)**   | One record in Table A relates to only one record in Table B | One employee → one ID card           |
+| **One-to-Many (1:M)**  | One record in Table A can relate to many in Table B         | One customer → many orders           |
+| **Many-to-One (M:1)**  | Opposite of one-to-many                                     | Many orders → belong to one customer |
+| **Many-to-Many (M:M)** | Multiple records in both tables relate to each other        | Students ↔ Courses                   |
+
+
+| Cardinality Type       | Description                   | Example                                        |
+| ---------------------- | ----------------------------- | ---------------------------------------------- |
+| **High Cardinality**   | Column has many unique values | Email, Phone number, Invoice ID                |
+| **Low Cardinality**    | Column has few unique values  | Gender (Male/Female), Status (Active/Inactive) |
+| **Medium Cardinality** | Not too many, not too few     | City names, Product categories                 |
 
 
 
