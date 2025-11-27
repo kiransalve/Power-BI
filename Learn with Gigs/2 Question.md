@@ -79,7 +79,6 @@ CALCULATE(
 
 5. How to calculate working days between two dates
 
-
 WorkingDays =
 VAR StartDate = Sales[StartDate]
 VAR EndDate = Sales[EndDate]
@@ -93,7 +92,9 @@ CALCULATE(
     )
 )
 
+6. How to get rank by customer?
 
+Rankbycustomer = RANKX(ALLSELECTED('Sales Register'[Customer Name]), [CY Sales],, DESC,Dense)
 
 
 
