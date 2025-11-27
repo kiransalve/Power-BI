@@ -60,5 +60,6 @@ Power Query will automatically combine files with the same structure.
 
 Power BI automatically creates a sample file and appends the rest.
 
+Use Folder load if you expect new files to be added regularly — Power BI will automatically include them after refresh.
 
 ```
