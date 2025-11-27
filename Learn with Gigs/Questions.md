@@ -1010,6 +1010,8 @@ This works because FILTER creates a row-by-row table, and the measure can evalua
 
 Cardinality refers to the number of unique values in a column or the nature of the relationship between tables.
 
+```
+
 | Cardinality Type       | Meaning                                                     | Example                              |
 | ---------------------- | ----------------------------------------------------------- | ------------------------------------ |
 | **One-to-One (1:1)**   | One record in Table A relates to only one record in Table B | One employee → one ID card           |
@@ -1024,8 +1026,36 @@ Cardinality refers to the number of unique values in a column or the nature of t
 | **Low Cardinality**    | Column has few unique values  | Gender (Male/Female), Status (Active/Inactive) |
 | **Medium Cardinality** | Not too many, not too few     | City names, Product categories                 |
 
+```
+60. Find the rows in Table A that are not in Table B in Power BI.
 
-60. 
+Usin DAX Function
+
+ExtraRecords =
+EXCEPT(
+    'TableA',
+    'TableB'
+)
+
+EXCEPT returns all rows in TableA that do not exist in TableB.
+
+The columns must have the same names and order (or you can select specific columns)
+
+
+Using Power Query (Merge Queries → Anti Join)
+
+Go to Home → Merge Queries.
+
+Select TableA as first, TableB as second.
+
+Join on all columns (select all).
+
+In Join Kind, choose Left Anti.
+
+Left Anti = Only rows in TableA that don’t exist in TableB.
+
+Click OK → You will get the 2 extra rows.
+
 
 ```
 
