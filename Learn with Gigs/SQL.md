@@ -58,4 +58,15 @@ If the same city appears in both tables, it will show multiple times.
 
 UNION removes duplicate rows and is slower, while UNION ALL returns all rows including duplicates and is faster.
 
+
+3. Use of Having"
+
+The HAVING clause in SQL is used to filter records after aggregation (after GROUP BY).
+It works like a WHERE clause but is applied on grouped results — not on individual rows.
+
+WHERE filters rows before grouping, HAVING filters groups after aggregation
+
+ 
+
+
 ```
