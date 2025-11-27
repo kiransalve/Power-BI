@@ -994,9 +994,16 @@ This works because FILTER creates a row-by-row table, and the measure can evalua
 
 5. Avoid using calculated columns whenever possible
 
-6. Try to push all calculations to data source or use power query editor
+6. Try to push all calculations to data source using query folding or use power query editor
 
 7. Reduce column cardinality
+
+8. Try to use more and more variable in your measures, calculated columns and tables.
+
+9. Do not use Bi-directional filtering in data model, Instead Crossfilter.
+
+10. Try to use Report Level tooltip instead of standared tooltip for better performance.
+
 
 
 59. What is Cardinality?
@@ -1018,7 +1025,7 @@ Cardinality refers to the number of unique values in a column or the nature of t
 | **Medium Cardinality** | Not too many, not too few     | City names, Product categories                 |
 
 
-
+60. 
 
 ```
 
