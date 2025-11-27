@@ -1,4 +1,4 @@
-```
+
 
 1. What is difference between Append and Merge Query?
 
@@ -1010,7 +1010,7 @@ This works because FILTER creates a row-by-row table, and the measure can evalua
 
 Cardinality refers to the number of unique values in a column or the nature of the relationship between tables.
 
-```
+
 
 | Cardinality Type       | Meaning                                                     | Example                              |
 | ---------------------- | ----------------------------------------------------------- | ------------------------------------ |
@@ -1026,7 +1026,7 @@ Cardinality refers to the number of unique values in a column or the nature of t
 | **Low Cardinality**    | Column has few unique values  | Gender (Male/Female), Status (Active/Inactive) |
 | **Medium Cardinality** | Not too many, not too few     | City names, Product categories                 |
 
-```
+
 60. Find the rows in Table A that are not in Table B in Power BI.
 
 Usin DAX Function
@@ -1057,5 +1057,5 @@ Left Anti = Only rows in TableA that don’t exist in TableB.
 Click OK → You will get the 2 extra rows.
 
 
-```
+
 
