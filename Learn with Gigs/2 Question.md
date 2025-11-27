@@ -77,4 +77,24 @@ CALCULATE(
 )
 
 
+5. How to calculate working days between two dates
+
+
+WorkingDays =
+VAR StartDate = Sales[StartDate]
+VAR EndDate = Sales[EndDate]
+RETURN
+CALCULATE(
+    COUNTROWS(
+        FILTER(
+            CALENDAR(StartDate, EndDate),
+            WEEKDAY([Date], 2) < 6   -- 2: Monday=1, Sunday=7, so <6 = Mon-Fri
+        )
+    )
+)
+
+
+
+
+
 ```
