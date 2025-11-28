@@ -119,7 +119,7 @@ RangeStart & RangeEnd parameters
 
 https://www.youtube.com/watch?v=fJ4LQ28-68k
 
-7. What types of relationships are there?
+# 7. What types of relationships are there?
 
 -> One-to-Many (1:*) – One value in Table A matches many in Table B.
 
