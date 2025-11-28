@@ -1,8 +1,8 @@
 
 
-1. What is difference between Append and Merge Query?
+# 1. What is difference between Append and Merge Query?
 
-Append, Combine rows of two or more tables vertically, When all tables have same columns
+Append, Combine rows of two or more tables vertically, When all tables have same columns, same order and same data types
 
 Merge, Combines data from two tables based on a common column, creating new columns in the resulting table. 
 
