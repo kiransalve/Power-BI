@@ -190,7 +190,7 @@ CALCULATE(
 
 Filters apply both ways only inside this measure
 
-10. What are Relationship Modifiers in Power BI (DAX)?
+# 10. What are Relationship Modifiers in Power BI (DAX)?
 
 Relationship Modifiers are DAX functions used to override or modify the default relationships and filter behavior between tables in Power BI.
 
@@ -216,15 +216,13 @@ REMOVEFILTERS() - Removes filters from a column or table similar to ALL, but doe
 
 https://www.youtube.com/watch?v=XsGPPWxOIJc
 
-
-
 TREATAS() is used to apply the values of one column (a table expression) as filters on another column—even if there is no relationship between the tables.
 
 https://www.youtube.com/watch?v=PJCrLxdY-gE
 
 give example of date and buget table (with month level)
 
-11. Difference between Removefilter() and all()?
+# 11. Difference between Removefilter() and all()?
 
 In DAX, both REMOVEFILTERS() and ALL() are used to remove filters from a table or column, but they serve slightly different purposes.
 
