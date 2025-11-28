@@ -93,10 +93,13 @@ We can see it in: Home → Advanced Editor
 
 # 5. What is a Parameter in Power BI?
    
-A parameter is a user-defined value that you can use to make your queries dynamic and flexible in Power BI.
-We can used it values like file paths, date ranges, thresholds, or region names.
+In Power Query, a Parameter is a dynamic value that can be reused in queries to make your data transformations more flexible, reusable, and user-controlled.
 
-6. What is Incremental Refresh in Power BI?
+Think of it like a variable that you can change once, and it updates everywhere it’s used.
+
+We can used it values like file paths, date ranges and incremental refresh rules (RangeStart and RangeEnd)
+
+# 6. What is Incremental Refresh in Power BI?
    
 Incremental Refresh means Power BI refreshes only new or changed data, instead of loading the entire dataset every time.
 
