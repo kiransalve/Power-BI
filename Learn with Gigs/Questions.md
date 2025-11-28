@@ -41,6 +41,28 @@ If folding happens → database does the processing → Power BI receives only t
 
 It helps Faster refresh, Less RAM used, Better performance, Less load on Power BI
 
+Filtering rows (Table.SelectRows)
+
+Sorting data (Table.Sort)
+
+Removing columns (Table.RemoveColumns)
+
+Renaming columns (Table.RenameColumns)
+
+Changing data types (when done early in the query)
+
+Merging queries (joins)
+
+Grouping data
+
+Aggregating data (Table.Group)
+
+Expanding related tables or fields
+
+Appending tables (Union)
+
+Selecting top rows
+
 https://www.phdata.io/blog/query-folding-in-power-bi-the-secret-to-faster-data-refresh-performance/
 
 # 3. What is difference between copy and reference?
