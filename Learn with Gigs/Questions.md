@@ -28,6 +28,9 @@ https://www.youtube.com/watch?v=77POcNaCrcI
 
 Query folding is the process of pushing data transformation steps back to the data source for execution, like filters, joins, grouping
 
+As you connect to your data source and begin shaping your data, 
+Power BI tries to translate each transformation you apply into the source’s native query language, such as SQL
+
 We can check this by right-clicking a step in Power Query and selecting "View Native Query" — if it's greyed out, folding is not happening.
 
 Example: Relational Database SQL Server, MySQL, Oracle, SAP Hana etc.
