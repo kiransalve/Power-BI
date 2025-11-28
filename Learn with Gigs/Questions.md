@@ -135,7 +135,8 @@ Power BI automatically detects this if columns name and data types are same in b
 
 -> One-to-One (1:1) - Both tables have unique values in the join column.
 
-8. How to handle many to many?
+
+# 8. How to handle many to many?
 
 We can use bridge table with distinct values
 
