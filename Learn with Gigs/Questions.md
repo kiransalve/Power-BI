@@ -79,7 +79,7 @@ Creates a linked version of the original query.
 
 If you change the original query, the referenced one will also reflect those changes.
 
-4. What is M-Code?
+# 4. What is M-Code?
 
 M Code is the formula language used in Power Query to clean and transform data before loading it into your model.
 
