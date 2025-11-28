@@ -41,8 +41,9 @@ If folding happens → database does the processing → Power BI receives only t
 
 It helps Faster refresh, Less RAM used, Better performance, Less load on Power BI
 
+https://www.phdata.io/blog/query-folding-in-power-bi-the-secret-to-faster-data-refresh-performance/
 
-3. What is difference between copy and reference?
+# 3. What is difference between copy and reference?
    
 Copy Query :
 
