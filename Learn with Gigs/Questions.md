@@ -150,7 +150,7 @@ Now both tables are indirectly connected through the bridge.
 
 https://www.youtube.com/watch?v=BbKQ5eWjE-Y
 
-9. What is Bi-Directional Filtering in Power BI? and how to resolve it?
+# 9. What is Bi-Directional Filtering in Power BI? and how to resolve it?
 
 Bi-directional filtering means that filters flow in both directions between two related tables — from Table A to B and from Table B to A.
 
