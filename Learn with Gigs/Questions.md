@@ -91,7 +91,7 @@ Whenever we click: Remove Columns, Filter Rows, Merge Queries, Group By, Change 
 
 We can see it in: Home → Advanced Editor
 
-5. What is a Parameter in Power BI?
+# 5. What is a Parameter in Power BI?
    
 A parameter is a user-defined value that you can use to make your queries dynamic and flexible in Power BI.
 We can used it values like file paths, date ranges, thresholds, or region names.
