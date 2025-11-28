@@ -16,15 +16,15 @@ c. Full outer join means all from both - produce null if no match found
 
 d. Inner join means only matching
 
-e. Left Anti
+e. Left Anti - uncommon from left
 
-f. Right Anti
+f. Right Anti - uncommon from right
 
-g. Anti Inner
+g. Anti Inner - only uncommon
 
 https://www.youtube.com/watch?v=77POcNaCrcI
 
-2. What is Query Folding?
+# 2. What is Query Folding?
 
 Query folding is the process of pushing data transformation steps back to the data source for execution, like filters, joins, grouping
 
