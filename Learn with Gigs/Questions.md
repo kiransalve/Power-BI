@@ -33,7 +33,7 @@ Power BI tries to translate each transformation you apply into the source’s na
 
 We can check this by right-clicking a step in Power Query and selecting "View Native Query" — if it's greyed out, folding is not happening.
 
-Example: Relational Database SQL Server, MySQL, Oracle, SAP Hana etc.
+Example: Relational Database that has query engine SQL Server, MySQL, Oracle, SAP Hana etc.
 
 Database engines are much faster than Power BI at: Filtering, Group By, Joins, Selecting columns, Sorting, Removing duplicates
 
