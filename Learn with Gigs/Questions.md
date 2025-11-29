@@ -92,6 +92,10 @@ Whenever we click: Remove Columns, Filter Rows, Merge Queries, Group By, Change 
 
 We can see it in: Home → Advanced Editor
 
+M code is used mostly when point-and-click options in Power Query aren’t enough
+
+we use it when our qty data have kg and we need to remove it, we do Text.RemoveAny([QTY], "kg","KG")
+
 # 5. What is a Parameter in Power BI?
    
 In Power Query, a Parameter is a dynamic value that can be reused in queries to make your data transformations more flexible, reusable, and user-controlled.
