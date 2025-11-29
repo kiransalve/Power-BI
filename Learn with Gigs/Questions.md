@@ -1,4 +1,4 @@
-
+<img width="1366" height="768" alt="image" src="https://github.com/user-attachments/assets/0ae283f8-8b38-4f7e-9d46-e9dac4429b68" /><img width="1366" height="768" alt="image" src="https://github.com/user-attachments/assets/b3ab499d-4bfc-4f20-8a1a-29ae5a6e9e91" />
 
 # 1. What is difference between Append and Merge Query?
 
@@ -78,6 +78,8 @@ Reference Query :
 Creates a linked version of the original query.
 
 If you change the original query, the referenced one will also reflect those changes.
+
+we have used it to create start schema.  Raw table → cleaned → multiple dimensions/fact tables.
 
 # 4. What is M-Code?
 
