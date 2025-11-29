@@ -94,7 +94,7 @@ We can see it in: Home → Advanced Editor
 
 M code is used mostly when point-and-click options in Power Query aren’t enough
 
-we use it when our qty data have kg and we need to remove it, we do Text.RemoveAny([QTY], "kg","KG")
+we use it when we need new columns
 
 # 5. What is a Parameter in Power BI?
    
