@@ -979,7 +979,7 @@ CALCULATE(
     TREATAS(VALUES(Disconnected[Month]), Date[Month])
 )
 
-52. How does RANKX work internally?
+# 52. How does RANKX work internally?
 
 RANKX creates a virtual table, computes a measure for each row, sorts it, and then assigns the rank.
 Ranks change when slicer changes because the underlying virtual table changes.
