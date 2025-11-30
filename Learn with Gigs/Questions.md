@@ -595,7 +595,7 @@ Viewer :
 
 The Business/End User are given Viewer's access who can only view the report shared to them
 
-27. What is difference between calculated measure and calculated column?
+# 27. What is difference between calculated measure and calculated column?
 
 Measure :
 
@@ -605,7 +605,7 @@ Columns :
 
 Works on row context means used for row by row calculation, takes up space in RAM and recalculates itself only on data source refresh 
 
-28. What is difference between Count() and CountA() function?
+# 28. What is difference between Count() and CountA() function?
 
 Count() :
 
@@ -623,7 +623,7 @@ Only blanks are ignored.
 
 Example: COUNTA([CustomerName]) → counts names (text values)
 
-29. Explain Calculate() function?
+# 29. Explain Calculate() function?
 
 CALCULATE() perform calculations after modifying the existing filter context.
 
@@ -670,7 +670,7 @@ DATATABLE(
     }
 )
 
-31. Difference between Hasonevalue(), Hasonefilter(), isfilter() functions?
+# 31. Difference between Hasonevalue(), Hasonefilter(), isfilter() functions?
 
 HASONEVALUE(): Checks whether ONLY ONE distinct value exists in a column.
 
@@ -718,7 +718,7 @@ Used when total cannot be calculated directly from one column
 Used when we dont want to create additional columns to evaluate
 
 
-33. Sales = Calculate(Sum[amt], product[product] = "apple"), make it using calculatetable().
+# 33. Sales = Calculate(Sum[amt], product[product] = "apple"), make it using calculatetable().
 
 Sales =
 SUMX(
@@ -753,7 +753,7 @@ SUMMARIZECOLUMNS(
     SUM('Sales Register'[AMOUNT])
 )
 
-35. Difference between Related() and Lookupvalue() function?
+# 35. Difference between Related() and Lookupvalue() function?
 
 RELATED() :
 
@@ -772,7 +772,7 @@ Requirement: You specify matching columns manually.
 Returns: The value from the row where the condition matches.
 
 
-36. Will Related() function work in any measure if you have many to many relationship between two tables, why?
+# 36. Will Related() function work in any measure if you have many to many relationship between two tables, why?
 
 RELATED() retrieves a value from a related table.
 
@@ -788,14 +788,13 @@ Use LOOKUPVALUE() if you can define a unique match.
 
 Or, better, use bridging tables (a “dimension” table) to break the many-to-many into two one-to-many relationships.
 
-37. What will you do if some of your visual are not filtering out on clicking a perticular visual?
+# 37. What will you do if some of your visual are not filtering out on clicking a perticular visual?
 
 1. We check "Edit Interaction"
 
 2. We check relationship in model view
 
-
-38. How to create contant line?
+# 38. How to create contant line?
 
 Select your visual (e.g., column chart, line chart).
 
@@ -805,8 +804,7 @@ Under X-axis / Y-axis, you’ll see “Constant Line” or “Average Line”.
 
 Click Add → a constant line appears on the chart.
 
-
-39. Can you use one dataset to create different reports, if yes, how?
+# 39. Can you use one dataset to create different reports, if yes, how?
 
 Publish your dataset to the Power BI Service.
 
@@ -819,12 +817,11 @@ Instead of importing new data, choose “Pick a published dataset”.
 Now you can build different reports from the same dataset without duplicating the data.
 
 
-40. How can you create a Data Alert if something is going above threshold?
+# 40. How can you create a Data Alert if something is going above threshold?
 
 After Power BI dashboard published on power bi service, at the bottom of card, KPI or Gauge visual click on three dots
 
-
-41. How to Convert Star Schema → Snowflake Schema?
+# 41. How to Convert Star Schema → Snowflake Schema?
 
 A Star Schema means:
 
@@ -844,7 +841,6 @@ More relationships
 
 More tables with less duplicate data
 
-
 To convert to Snowflake, you normalize each dime
 
 1. Identify Repeating Attribute Groups in Dimensions
@@ -854,7 +850,7 @@ To convert to Snowflake, you normalize each dime
 
 To convert Star → Snowflake, break each large dimension table into smaller normalized hierarchy tables and create relationships between them.
 
-42. What is a Role-Playing Dimension?
+# 42. What is a Role-Playing Dimension?
 
 A Role-Playing Dimension is one physical dimension table that is used multiple times for different roles in the data model.
 
@@ -879,7 +875,7 @@ Date (Due)
 
 In Power BI, this is implemented either by duplicating the dimension or by using inactive relationships with USERELATIONSHIP() inside measures.
 
-43. How good are you in writing DAX queries?
+# 43. How good are you in writing DAX queries?
 
 I am very comfortable writing DAX and have strong hands-on experience with both basic and advanced DAX.
 I work confidently with CALCULATE, FILTER, SUMX, and all Time-Intelligence functions like YTD, MTD, LY, rolling periods, and moving averages.
@@ -896,7 +892,7 @@ I can write complex measures like dynamic period selection, rolling 12-month, dy
 
 Overall, I am very strong in DAX and can build optimized, accurate measures even for complicated business requirements.
 
-44. Explain Row Context vs Filter Context.
+# 44. Explain Row Context vs Filter Context.
 
 Row Context:
 
