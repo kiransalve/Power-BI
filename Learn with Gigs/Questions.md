@@ -423,19 +423,27 @@ Dynamic visuals: Toggling visual elements like charts or tables on/off without c
 
 https://www.youtube.com/watch?v=1RfJOlaqSUw
 
-17. Drill Throgh
+# 17. Drill Throgh
 
-Drillthrough lets the user select a value (for example, a customer, product, region, or date) → right-click → Drillthrough → Detail Page, and the destination page automatically filters to show details about that selected item.
+Drillthrough in Power BI is a feature that allows users to right-click a data point and navigate to a detailed report page that focuses only on that specific context (customer, product, region, etc.).
 
-Typical drillthrough scenarios:
+When you right-click "TATA Motors" → Drillthrough → Customer Details, Power BI opens another page showing:
 
-View Customer details from a summary sales page
+Monthly Sales
 
-View Product-level analysis from a category-level report
+Orders
 
-View Order details from aggregated sales
+Products purchased
 
-Jump into Year → Quarter → Month → Day analysis
+Trends
+
+KPIs only for TATA Motors
+
+How to setup
+
+create new page and make visual you wants
+
+drag field of main page to "Add drill throgh feild here"
 
 https://www.youtube.com/watch?v=k-uWcjbLv0E
 
