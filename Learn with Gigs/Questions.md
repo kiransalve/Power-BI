@@ -690,7 +690,7 @@ Page level filter
 
 Report level filter
 
-32. What is difference between Sum() and SumX() function?
+# 32. What is difference between Sum() and SumX() function?
 
 SUM() :
 
@@ -703,7 +703,6 @@ No row-by-row logic
 Fast and simple aggregation
 
 Total Sales = SUM(Sales[Amount]) // Just sums the column Amount.
-
 
 SUMX() :
 
@@ -729,7 +728,7 @@ SUMX(
     Sales[amt]
 )
 
-34. Optmize these DAX codes
+# 34. Optmize these DAX codes
  
 1. CALCULATE(SUM(REVENUE), REGION="INDIA")
 
