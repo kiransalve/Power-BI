@@ -1026,13 +1026,13 @@ All filters are combined using AND logic
 (unless you use OR/PARAMETER logic manually).
 
 Example:
-
+```
 CALCULATE(
     [Sales],
     Product[Category] = "A",
     Region[Zone] = "West"
 )
-
+```
 
 Both conditions apply.
 
@@ -1059,6 +1059,7 @@ If you want to filter rows where Cost > 5000, you must use the column, not the m
 CALCULATE([TOTAL SALES], Sales[Cost] > 5000)
 
 If you want to filter using a measure
+```
 CALCULATE(
     [TOTAL SALES],
     FILTER(
@@ -1066,7 +1067,7 @@ CALCULATE(
         [TOTAL COST] > 5000
     )
 )
-
+```
 This works because FILTER creates a row-by-row table, and the measure can evaluate row context.
 
 
@@ -1118,13 +1119,13 @@ Cardinality refers to the number of unique values in a column or the nature of t
 # 60. Find the rows in Table A that are not in Table B in Power BI.
 
 Usin DAX Function
-
+```
 ExtraRecords =
 EXCEPT(
     'TableA',
     'TableB'
 )
-
+```
 EXCEPT returns all rows in TableA that do not exist in TableB.
 
 The columns must have the same names and order (or you can select specific columns)
@@ -1143,17 +1144,15 @@ Left Anti = Only rows in TableA that don’t exist in TableB.
 
 Click OK → You will get the 2 extra rows.
 
-
-
 # 61. How to connect two discnnected table - one table have city nam and amount and other have years 2012, 2013, i want for every row of table 1 there will be two rows for 2012 and 2013
 
 You want to create a cross join in Power BI so that every row from Table1 is repeated for each year in Table2. This is common when you have a “fact table” with values (City, Amount) and a “dimension table” with years.
 
 Using DAX (Calculated Table)
-
+```
 CityAmount_Years =
 CROSSJOIN('CityAmount', 'Years')
-
+```
 CROSSJOIN creates all possible combinations of rows from both tables.
 
 Using Power Query (Merge Queries → Full Outer / Custom)
@@ -1174,21 +1173,23 @@ Expand the second table → you get all combinations.
 # 62. How to get sales of material containing "Bio"
 
 Method 1
-
+```
 Sales_KemBio =
 CALCULATE(
     SUM(Sales[Amount]),
     SEARCH("kem bio", Sales[Material], 1, 0) > 0
 )
+```
 
 Method 2
 
+```
 Sales_KemBio =
 CALCULATE(
     SUM(Sales[Amount]),
     CONTAINSSTRING(Sales[Material], "kem bio")
 )
-
+```
 
 # 63. How to append multiple file with same columns
 
@@ -1213,6 +1214,7 @@ By default, the measure shows CBS Enterprises sales
 
 If the user selects a different customer, it shows sales for the selected customer
 
+```
 Customer_Sales :=
 VAR SelectedCustomer = SELECTEDVALUE(Customers[CustomerName], "CBS Enterprises")
 RETURN
@@ -1220,9 +1222,11 @@ CALCULATE(
     SUM(Sales[Amount]),
     Customers[CustomerName] = SelectedCustomer
 )
+```
 
 # 65. How to calculate working days between two dates
 
+```
 WorkingDays =
 VAR StartDate = Sales[StartDate]
 VAR EndDate = Sales[EndDate]
@@ -1235,14 +1239,23 @@ CALCULATE(
         )
     )
 )
+```
 
 # 66. How to get rank by customer?
 
-Rankbycustomer = RANKX(ALLSELECTED('Sales Register'[Customer Name]), [CY Sales],, DESC,Dense)
-
+```
+Rankbycustomer =
+RANKX(
+ ALLSELECTED('Sales Register'[Customer Name]),
+               [CY Sales],,
+                  DESC,
+                   Dense
+               )
+```
 
 # 67. How to get sales of Top N customer?
 
+```
 Top N Values =
 VAR selected_top = SELECTEDVALUE('Top'[top], "Top 5")   -- default Top 5
 VAR TopN =
@@ -1255,25 +1268,28 @@ VAR TopN =
     )
 RETURN
 IF([Rankbycustomer] <= TopN, [CY Sales])
-
+```
 
 # 68. How to caclculate YTD Sales (for fiscal year apr-mar) using TOTALYTD()?
 
+```
 Sales YTD =
 TOTALYTD(
     [CY Sales],
     'Date'[Date],
     "03/31"          -- fiscal year end
 )
+```
 
 # 69. How to caclculate YTD Sales (for fiscal year apr-mar) using DATESYTD()?
 
+```
 Sales YTD =
 CALCULATE(
     [CY Sales],
     DATESYTD('Date'[Date], "03/31")
 )
-
+```
 
 | Feature                            | **TOTALYTD()**                                          | **DATESYTD()**                                                                |
 | ---------------------------------- | ------------------------------------------------------- | ----------------------------------------------------------------------------- |
@@ -1289,15 +1305,19 @@ CALCULATE(
 
 Method 1
 
+```
 = Text.Select([ColumnName], {"0".."9"})
+```
 
 Method 2
 
+```
 Home → Split Column → By Non-Digit to Digit
-
+```
 
 # 71. Give last 3 months sales.
 
+```
 Last 3 Month Sale = 
 VAR SelectedDate =
     IF(
@@ -1329,8 +1349,12 @@ DATESINPERIOD(
         KAY FILTER KARAYCH AAHE - DIVAS/MAHINA/VARSH
       )
 
+```
+
 
 # 72. GIVE LAST 12 MONTHS ROLLING SALES EXCULDING CURRENT MONTH?
+
+```
 
 Rolling12M_ExclCurrent = 
 CALCULATE(
@@ -1350,6 +1374,8 @@ EOMONTH(
 
 DILELYA TARKHEPASUN PUDHE KINVA MAGE JAUN TYA MAHINYACHA SHEVATCHA DIVAS DETO
 
+```
+
 # 73. CAN YOU CALCULATE YTD CALCULATION IN DIRECT QUERY MODE?
 
 DirectQuery does not support many DAX Time-Intelligence functions like:
@@ -1359,7 +1385,7 @@ DirectQuery does not support many DAX Time-Intelligence functions like:
 ❌ PREVIOUSYEAR()
 ❌ SAMEPERIODLASTYEAR()
 
-
+```
 YTD_SALES = 
     CALCULATE(
             [CY SALES],
@@ -1384,17 +1410,21 @@ CALCULATE(
     )
 )
 
+```
 
 # 73. HOW TO RESTRICT OUR TOTALYTD TO LAST SALES DATE?
 
+```
 TotalYTD = 
     var max_selected_date = MAX('Sales Register'[Invoice Date])
     var total_ytd_restricted = TOTALYTD([CY Sales],'Date'[Date], 'Date'[Date] <= max_selected_date)
     RETURN total_ytd_restricted
+```
 
 
 # 74. HOW TO GET WEEKEND AND WEEKDAYS SALES?
 
+```
 Weekday Sales = 
 CALCULATE(
     [CY Sales],
@@ -1413,10 +1443,11 @@ CALCULATE(
         WEEKDAY('Date'[Date], 2) > 5
     )
 )
-
+```
 
 # 75. Cumalative Sum over the year?
 
+```
 Cumulative Sales = 
 CALCULATE(
     [CY Sales],
@@ -1425,10 +1456,11 @@ CALCULATE(
         'Date'[Date] <= MAX('Date'[Date])    -- up to current date
     )
 )
-
+```
 
 # 76. Top 5 Product Sales
 
+```
 Top 5 Products = 
 CALCULATE(
     [CY Sales],
@@ -1438,10 +1470,11 @@ CALCULATE(
         [CY Sales],,
         DESC, 
         Dense) <=5))
-
+```
 
 # 77. Sales of CBC using Calculate table?
 
+```
 ABP Sales using CT =
 SUMX(
     CALCULATETABLE(
@@ -1450,6 +1483,7 @@ SUMX(
     ),
     [CY Sales]
 )
+```
 
 78. How to get activate inactive relationship in DAX.
 
@@ -1457,12 +1491,13 @@ In your data model, you may have multiple relationships between two tables, but 
 
 USERELATIONSHIP temporarily activates an inactive relationship for the calculation
 
+```
 Inactive Revenue =
 CALCULATE(
     [CY Sales],
     USERELATIONSHIP('Date'[Date], 'Sales Register'[Shipping Date])
 )
-
+```
 
 # 79. what is paginated reports?
 
