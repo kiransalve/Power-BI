@@ -355,13 +355,13 @@ Power BI lets me model them together using Composite Model
 
 https://www.youtube.com/watch?v=sq5kY5WPq0g
 
-# 15. import and direct query in power BI?
+# 15. Import and Direct query in power BI?
 
 Import mode -
 
 Power BI imports a copy of the data into its in-memory engine (VertiPaq).
 
-Data is stored inside the .pbix file
+Data is stored inside the .pbix file (Power BI experience file format)
 
 there is 1 GB of limit for the data we want to publish to power bi service
 
