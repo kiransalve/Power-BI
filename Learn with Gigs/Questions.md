@@ -274,6 +274,44 @@ Sales Amount, Quantity ,Cost,Discount
 
 types = Transaction, Snapshot, Accumulating Snapshot, Factless, and Aggregate.
 
+Transaction Fact Table
+
+Used to store individual business events.
+
+Granularity: One row per event / transaction.
+
+Use case: Sales, Payments, Attendance logs, Clickstream events
+
+Snapshot Fact Table
+
+Captures the state of a business at a specific scheduled time interval — daily, weekly, monthly.
+
+Granularity: One row per entity per time period.
+
+Use case: Inventory Levels, Bank Account Balance, Marketing funnel counts
+
+Accumulating Snapshot Fact Table
+
+Tracks a process that has a defined beginning and end, and updates over time.
+
+Use case: Order to Delivery, Loan process, Hiring process
+
+Factless Fact Table
+
+Contains no numeric measures, only keys.
+
+Used to record events or relationships.
+
+Use case: Attendance, Enrollment, Promotions, Approvals
+
+Aggregate Fact Table (Summary Fact)
+
+Stores pre-calculated summaries to improve reporting speed.
+
+Used when transaction table is too large.
+
+Use case: Performance reporting, KPIs, forecasting
+
 A Dimension Table contains descriptive, categorical data — like names, regions, product categories, customer segments, etc. 
 
 These tables are smaller and help provide context to the facts.
@@ -284,7 +322,7 @@ types = Conformed, Role-Playing, SCD Types 1–2–3, Junk, Degenerate, Outrigge
 
 https://www.youtube.com/watch?v=_0IdAb9Z5n4
 
-13. What is the difference between Star Schema and Snowflake Schema?
+# 13. What is the difference between Star Schema and Snowflake Schema?
 
 In a star schema, we have a central fact table directly connected to dimension tables and no dim table connected to other dim table.
 
