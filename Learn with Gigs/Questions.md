@@ -911,25 +911,25 @@ Total Sales = SUM(Sales[Amount])
 
 This respects filters like Year, Region, Product.
 
-45. What is Context Transition?
+# 45. What is Context Transition?
 
 When a row context becomes filter context, usually inside CALCULATE or measures.
 
 Inside a row context (like SUMX), CALCULATE converts the current row into filter context.
 
 
-46. Difference between CALCULATE and CALCULATETABLE?
+# 46. Difference between CALCULATE and CALCULATETABLE?
 
 CALCULATE → returns a scalar (single value).
 CALCULATETABLE → returns a table.
 
-47. Difference between ALL, ALLEXCEPT, ALLSELECTED?
+# 47. Difference between ALL, ALLEXCEPT, ALLSELECTED?
 
 ALL: Removes all filters from the specified table/columns.
 ALLEXCEPT: Removes all filters except the mentioned columns.
 ALLSELECTED: Removes filters but preserves filters coming from visuals (user selections)
 
-48. RELATED() vs LOOKUPVALUE()?
+# 48. RELATED() vs LOOKUPVALUE()?
 
 RELATED():
 Uses existing relationship to fetch a single value from a dimension table → works only with one-to-many.
