@@ -527,11 +527,11 @@ We can have two types of RLS static and dynamic
 
 Userprinciplename() : shows the username of currently logged in user in both Power bi dekstop and servive
 
-https://www.youtube.com/watch?v=r5XCpeQxXl4
-
 Username() : shows dekstop name in power bi dekstop and username in power bi service.
 
-23. Difference between power bi pro and premium licence?
+https://www.youtube.com/watch?v=VVkcWG42e3E
+
+# 23. Difference between power bi pro and premium licence?
 
 Power BI Pro - User based license basically for developers can leverage all content creation and interaction features
 
