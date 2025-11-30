@@ -375,8 +375,6 @@ Data not real-time
 
 Refresh limits in Service (for power bi pro - 8 schedule refresh per day and refresh must complete within 2 hours and for premium - 48 schedule refresh per day)
 
-Power BI does NOT store data.
-
 Direct Query Mode - 
 
 Power BI does not store data. Every visual sends a live SQL query to the database
