@@ -992,7 +992,7 @@ Example:
 Ranking within a calculated column before RANKX existed.
 
 
-54. Why does a measure show circular dependency?
+# 54. Why does a measure show circular dependency?
 
 Occurs when:
 
@@ -1020,7 +1020,7 @@ In DirectQuery, the data stays in SQL, so DAX cannot generate date ranges like Y
 Workaround:
 Use server-side SQL logic or custom DAX without built-ins.
 
-56. What happens when multiple filters are used inside CALCULATE?
+# 56. What happens when multiple filters are used inside CALCULATE?
 
 All filters are combined using AND logic
 (unless you use OR/PARAMETER logic manually).
@@ -1094,7 +1094,7 @@ This works because FILTER creates a row-by-row table, and the measure can evalua
 
 
 
-59. What is Cardinality?
+# 59. What is Cardinality?
 
 Cardinality refers to the number of unique values in a column or the nature of the relationship between tables.
 
@@ -1115,7 +1115,7 @@ Cardinality refers to the number of unique values in a column or the nature of t
 | **Medium Cardinality** | Not too many, not too few     | City names, Product categories                 |
 
 
-60. Find the rows in Table A that are not in Table B in Power BI.
+# 60. Find the rows in Table A that are not in Table B in Power BI.
 
 Usin DAX Function
 
@@ -1128,7 +1128,6 @@ EXCEPT(
 EXCEPT returns all rows in TableA that do not exist in TableB.
 
 The columns must have the same names and order (or you can select specific columns)
-
 
 Using Power Query (Merge Queries → Anti Join)
 
@@ -1146,7 +1145,7 @@ Click OK → You will get the 2 extra rows.
 
 
 
-61. How to connect two discnnected table - one table have city nam and amount and other have years 2012, 2013, i want for every row of table 1 there will be two rows for 2012 and 2013
+# 61. How to connect two discnnected table - one table have city nam and amount and other have years 2012, 2013, i want for every row of table 1 there will be two rows for 2012 and 2013
 
 You want to create a cross join in Power BI so that every row from Table1 is repeated for each year in Table2. This is common when you have a “fact table” with values (City, Amount) and a “dimension table” with years.
 
@@ -1172,7 +1171,7 @@ Expand the second table → you get all combinations.
 (Power Query doesn’t have a direct “Cross Join” button, but you can achieve it by adding an Index column to both tables and merging on 1 = 1.)
 
 
-62. How to get sales of material containing "Bio"
+# 62. How to get sales of material containing "Bio"
 
 Method 1
 
@@ -1191,8 +1190,7 @@ CALCULATE(
 )
 
 
-63. How to append multiple file with same columns
-
+# 63. How to append multiple file with same columns
 
 Load all files from a folder
 
@@ -1209,10 +1207,11 @@ Power BI automatically creates a sample file and appends the rest.
 Use Folder load if you expect new files to be added regularly — Power BI will automatically include them after refresh.
 
 
-64. We want a default selection in a Power BI visual (or measure) where:
-By default, the measure shows CBS Enterprises sales
-If the user selects a different customer, it shows sales for the selected customer
+# 64. We want a default selection in a Power BI visual (or measure) where:
 
+By default, the measure shows CBS Enterprises sales
+
+If the user selects a different customer, it shows sales for the selected customer
 
 Customer_Sales :=
 VAR SelectedCustomer = SELECTEDVALUE(Customers[CustomerName], "CBS Enterprises")
@@ -1222,8 +1221,7 @@ CALCULATE(
     Customers[CustomerName] = SelectedCustomer
 )
 
-
-65. How to calculate working days between two dates
+# 65. How to calculate working days between two dates
 
 WorkingDays =
 VAR StartDate = Sales[StartDate]
@@ -1238,12 +1236,12 @@ CALCULATE(
     )
 )
 
-66. How to get rank by customer?
+# 66. How to get rank by customer?
 
 Rankbycustomer = RANKX(ALLSELECTED('Sales Register'[Customer Name]), [CY Sales],, DESC,Dense)
 
 
-67. How to get sales of Top N customer?
+# 67. How to get sales of Top N customer?
 
 Top N Values =
 VAR selected_top = SELECTEDVALUE('Top'[top], "Top 5")   -- default Top 5
@@ -1259,7 +1257,7 @@ RETURN
 IF([Rankbycustomer] <= TopN, [CY Sales])
 
 
-68. How to caclculate YTD Sales (for fiscal year apr-mar) using TOTALYTD()?
+# 68. How to caclculate YTD Sales (for fiscal year apr-mar) using TOTALYTD()?
 
 Sales YTD =
 TOTALYTD(
@@ -1268,7 +1266,7 @@ TOTALYTD(
     "03/31"          -- fiscal year end
 )
 
-69. How to caclculate YTD Sales (for fiscal year apr-mar) using DATESYTD()?
+# 69. How to caclculate YTD Sales (for fiscal year apr-mar) using DATESYTD()?
 
 Sales YTD =
 CALCULATE(
@@ -1287,7 +1285,7 @@ CALCULATE(
 | **Supports Fiscal Year end date?** | Yes (optional parameter)                                | Yes (optional parameter)                                                      |
 
 
-70. If one column have data like this RS1000 then how to get only number in power query?
+# 70. If one column have data like this RS1000 then how to get only number in power query?
 
 Method 1
 
@@ -1298,7 +1296,7 @@ Method 2
 Home → Split Column → By Non-Digit to Digit
 
 
-71. Give last 3 months sales.
+# 71. Give last 3 months sales.
 
 Last 3 Month Sale = 
 VAR SelectedDate =
@@ -1332,7 +1330,7 @@ DATESINPERIOD(
       )
 
 
-72. GIVE LAST 12 MONTHS ROLLING SALES EXCULDING CURRENT MONTH?
+# 72. GIVE LAST 12 MONTHS ROLLING SALES EXCULDING CURRENT MONTH?
 
 Rolling12M_ExclCurrent = 
 CALCULATE(
@@ -1352,7 +1350,7 @@ EOMONTH(
 
 DILELYA TARKHEPASUN PUDHE KINVA MAGE JAUN TYA MAHINYACHA SHEVATCHA DIVAS DETO
 
-73. CAN YOU CALCULATE YTD CALCULATION IN DIRECT QUERY MODE?
+# 73. CAN YOU CALCULATE YTD CALCULATION IN DIRECT QUERY MODE?
 
 DirectQuery does not support many DAX Time-Intelligence functions like:
 
@@ -1387,7 +1385,7 @@ CALCULATE(
 )
 
 
-73. HOW TO RESTRICT OUR TOTALYTD TO LAST SALES DATE?
+# 73. HOW TO RESTRICT OUR TOTALYTD TO LAST SALES DATE?
 
 TotalYTD = 
     var max_selected_date = MAX('Sales Register'[Invoice Date])
@@ -1395,7 +1393,7 @@ TotalYTD =
     RETURN total_ytd_restricted
 
 
-74. HOW TO GET WEEKEND AND WEEKDAYS SALES?
+# 74. HOW TO GET WEEKEND AND WEEKDAYS SALES?
 
 Weekday Sales = 
 CALCULATE(
@@ -1417,7 +1415,7 @@ CALCULATE(
 )
 
 
-75. Cumalative Sum over the year?
+# 75. Cumalative Sum over the year?
 
 Cumulative Sales = 
 CALCULATE(
@@ -1429,7 +1427,7 @@ CALCULATE(
 )
 
 
-76. Top 5 Product Sales
+# 76. Top 5 Product Sales
 
 Top 5 Products = 
 CALCULATE(
@@ -1442,7 +1440,7 @@ CALCULATE(
         Dense) <=5))
 
 
-77. Sales of CBC using Calculate table?
+# 77. Sales of CBC using Calculate table?
 
 ABP Sales using CT =
 SUMX(
