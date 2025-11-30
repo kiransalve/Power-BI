@@ -939,7 +939,7 @@ Does not require relationships, performs lookup based on matching column values.
 Used when relationship doesn’t exist or is complex.
 
 
-49. When does a measure ignore slicers? How to control?
+# 49. When does a measure ignore slicers? How to control?
 
 A measure ignores slicers when using:
 
@@ -956,7 +956,7 @@ CROSSFILTER
 Removing ALL()
 
 
-50. What is a Virtual Table? Example?
+# 50. What is a Virtual Table? Example?
 
 A table created inside a DAX expression (not physical).
 
@@ -969,7 +969,7 @@ SUMX(
 
 FILTER returns a virtual table, evaluated row by row.
 
-51. Purpose of TREATAS()?
+# 51. Purpose of TREATAS()?
 
 To apply filters from a disconnected table to another table.
 
@@ -984,7 +984,7 @@ CALCULATE(
 RANKX creates a virtual table, computes a measure for each row, sorts it, and then assigns the rank.
 Ranks change when slicer changes because the underlying virtual table changes.
 
-53. What is EARLIER()?
+# 53. What is EARLIER()?
 
 Used when you have row context inside row context (nested).
 
@@ -1005,7 +1005,7 @@ A calculated column references a measure that depends on that column
 Fix:
 Rewrite logic using iterators, avoid mutual references, separate base measures.
 
-55. Why Time Intelligence doesn't work in DirectQuery?
+# 55. Why Time Intelligence doesn't work in DirectQuery?
 
 Because time-intelligence requires:
 
@@ -1037,10 +1037,9 @@ CALCULATE(
 Both conditions apply.
 
 
-57. can i make like this -> CALCULATE([TOTAL SALES], [TOTAL COST] > 5000)
+# 57. can i make like this -> CALCULATE([TOTAL SALES], [TOTAL COST] > 5000)
 
-NO,
-Because CALCULATE does NOT accept a measure-to-measure comparison as a filter.
+NO, Because CALCULATE does NOT accept a measure-to-measure comparison as a filter.
 
 Why it doesn't work?
 
@@ -1071,7 +1070,7 @@ CALCULATE(
 This works because FILTER creates a row-by-row table, and the measure can evaluate row context.
 
 
-58. How to Optimize Power BI Model?
+# 58. How to Optimize Power BI Model?
 
 1. Keep only those columns your users needs in report.
 
