@@ -447,7 +447,7 @@ drag field of main page to "Add drill throgh feild here"
 
 https://www.youtube.com/watch?v=k-uWcjbLv0E
 
-18. Whatif parameter?
+# 18. Whatif parameter?
 
 A What-If Parameter lets users increase/decrease a value and see changes in dashboards.
 
