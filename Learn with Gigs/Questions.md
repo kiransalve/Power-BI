@@ -335,7 +335,7 @@ here one dim table connected to multiple dim tables.
 For example, a Product dimension may be split into Product, Category, and Subcategory.
 
 
-14. What is Composite Model in Power BI?
+# 14. What is Composite Model in Power BI?
 
 A Composite Model in Power BI allows you to combine multiple data sources in the same data model, using both:
 
@@ -355,7 +355,7 @@ Power BI lets me model them together using Composite Model
 
 https://www.youtube.com/watch?v=sq5kY5WPq0g
 
-15. import and direct query in power BI?
+# 15. import and direct query in power BI?
 
 Import mode -
 
