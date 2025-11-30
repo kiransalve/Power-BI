@@ -1472,7 +1472,8 @@ CALCULATE(
 )
 
 
+# 79. what is paginated reports?
 
+Paginated Reports in Power BI are a type of formatted, print-ready report designed to fit nicely on a page — like invoices, statements, bills, forms, or reports you want to download/export as PDF, Excel, or print.
 
-
-
+They are called paginated because the content is organized into pages, and if data is long (like hundreds of rows), the report automatically continues on the next page — just like a traditional report.
