@@ -463,11 +463,11 @@ used in forecasting and scenario testing
 
 https://www.youtube.com/watch?v=28PDdA3SROU&t=134s
 
-19. Tell few scenarios where waterfall charts is useful?
+# 19. Tell few scenarios where waterfall charts is useful?
 
-To plot annual profit by showingv various sources of revenue and arrive at the total profit or loss
+To plot annual profit by showing various sources of revenue and arrive at the total profit or loss
 
-20. What are Tooltip and explain its types?
+# 20. What are Tooltip and explain its types?
 
 A Tooltip in Power BI is a small pop-up that appears when you hover over a visual.
 
