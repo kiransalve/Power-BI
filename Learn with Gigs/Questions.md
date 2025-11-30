@@ -237,7 +237,32 @@ It doesn’t return any data — it simply removes the filter effect, which is h
 
 On the other hand, ALL() not only removes filters but also returns the entire table or column, making it ideal for calculations like percent of total, ranks, and grand totals, where we need to consider the full dataset regardless of current filters.
 
-12. What are Fact and Dimension Tables in Power BI or Data Modeling?
+Example 
+
+Total Sales = SUM('Sales'[Amount])
+
+Sales % of Total =
+DIVIDE(
+    [Total Sales],
+    CALCULATE([Total Sales], ALL('Sales'))
+)
+
+Sales % of Total (RemoveFilters) =
+DIVIDE(
+    [Total Sales],
+    CALCULATE([Total Sales], REMOVEFILTERS('Sales'))
+)
+
+
+Product Rank =
+RANKX(
+    ALL('Product'[Product Name]),
+    [Total Sales],
+    ,
+    DESC
+)
+
+# 12. What are Fact and Dimension Tables in Power BI or Data Modeling?
 
 A Fact Table contains quantitative, measurable data — like sales, revenue, profit, or quantities. 
 
