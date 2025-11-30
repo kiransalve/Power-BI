@@ -397,7 +397,7 @@ DATESYTD, DATESMTD
 
 https://www.youtube.com/watch?v=J_keoBQ5EGk
 
-16. What is bookmarks in Power BI?
+# 16. What is bookmarks in Power BI?
 
 In Power BI, a bookmark is essentially a snapshot of the current state of a report page. It captures things like:
 
