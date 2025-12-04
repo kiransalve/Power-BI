@@ -1504,3 +1504,62 @@ CALCULATE(
 Paginated Reports in Power BI are a type of formatted, print-ready report designed to fit nicely on a page — like invoices, statements, bills, forms, or reports you want to download/export as PDF, Excel, or print.
 
 They are called paginated because the content is organized into pages, and if data is long (like hundreds of rows), the report automatically continues on the next page — just like a traditional report.
+
+# Explain process of dashboard deployment?
+
+Power BI deployment means moving reports and datasets from Development → Testing → Production in a controlled and secure way.
+
+Development (Dev Environment)
+
+This is where the report is initially built.
+
+✔ Connect to source systems (SQL, Excel, APIs, ERP)
+
+✔ Build data model (Star schema, relationships)
+
+✔ Create DAX Measures
+
+✔ Design visuals, bookmarks, drill-through
+
+✔ Apply performance optimization
+
+✔ Test with sample or full dataset
+
+
+Version Control & Documentation
+
+✔ Store PBIX and scripts in Git, SharePoint, OneDrive, Azure DevOps
+
+✔ Maintain naming standards, change logs, deployment notes
+
+
+Publish to Workspace
+
+Publish the PBIX to a Dev Workspace in Power BI Service.
+
+✔ Create data source credentials
+
+✔ Configure refresh schedule
+
+✔ Connect gateway if using on-premises data
+
+Apply Security
+
+✔ Implement Row-Level Security (RLS)
+
+✔ Test with "View As Role"
+
+User Acceptance Testing (UAT)
+
+✔ Move the report from Dev → Test/UAT workspace
+
+✔ Business users validate numbers, filters, logic
+
+✔ Fix issues based on feedback
+
+✔ Freeze version after approval
+
+Deploy to Production (Prod)
+
+Once approved, move the final PBIX to the Prod workspace.
+
