@@ -90,4 +90,12 @@ SELECT MAX(salary) AS Second_Highest_Salary
 FROM employees
 WHERE salary < (SELECT MAX(salary) FROM employees);
 
+6. What is T-SQL?
+
+7. What is View? can we update the view? give syntax?
+
+8. What is trigger? 
+
+
+
 ```
