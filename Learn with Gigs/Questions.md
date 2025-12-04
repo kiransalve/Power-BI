@@ -1505,7 +1505,7 @@ Paginated Reports in Power BI are a type of formatted, print-ready report design
 
 They are called paginated because the content is organized into pages, and if data is long (like hundreds of rows), the report automatically continues on the next page — just like a traditional report.
 
-# Explain process of dashboard deployment?
+# 80. Explain process of dashboard deployment?
 
 Power BI deployment means moving reports and datasets from Development → Testing → Production in a controlled and secure way.
 
@@ -1563,3 +1563,14 @@ Deploy to Production (Prod)
 
 Once approved, move the final PBIX to the Prod workspace.
 
+81. What is Power BI?
+
+82. What is SSRS?
+
+83. Where did data stored in Power BI?
+
+84. Limitation of storage?
+
+85. Is any performance issue with Direct Query?
+
+86. How to improve performance of Direct query?
