@@ -1563,14 +1563,103 @@ Deploy to Production (Prod)
 
 Once approved, move the final PBIX to the Prod workspace.
 
-81. What is Power BI?
+# 81. What is Power BI?
 
-82. What is SSRS?
+Power BI is an end-to-end analytics platform that enables data modeling, visualization, and enterprise reporting
 
-83. Where did data stored in Power BI?
+It includes components such as:
 
-84. Limitation of storage?
+Power Query for ETL and data transformation,
 
-85. Is any performance issue with Direct Query?
+Power BI Desktop for building data models and reports,
 
-86. How to improve performance of Direct query?
+DAX for advanced calculations,
+
+Power BI Service for publishing, managing workspaces, security, and collaboration,
+
+Power BI Gateway for scheduled refresh from on-premise sources,
+
+Row-Level Security (RLS) for controlled access.
+
+Power BI supports Import, DirectQuery, and Live Connection modes depending on performance and data size needs. 
+
+It integrates with Azure, SQL, Excel, and other 160+ enterprise applications, making it suitable for operational and strategic analytics
+
+# 82. What is SSRS?
+
+SSRS, or SQL Server Reporting Services, is an enterprise reporting platform used to generate interactive and paginated reports. 
+
+It supports parameterized and drill-through reporting, role-based security, caching, and scheduled report delivery.
+
+Users can consume reports via:
+
+Web portal
+
+Email subscriptions
+
+Embedded reports in applications
+
+SSRS integrates with SQL Server, Power BI Report Server, SharePoint (older versions), and supports exporting reports into multiple formats such as Excel, PDF, Word, and CSV."
+
+
+# 84. Where did data stored in Power BI?
+
+Power BI stores data in a compressed, in-memory storage engine called VertiPaq when using Import mode. 
+
+The data is saved in the .pbix file locally, and once published, it is stored in Power BI Service storage, which is part of Azure cloud.
+
+# 85. Limitation of storage?
+
+Power BI storage limitations depend on the licensing model. In Power BI Desktop, a single PBIX file can store up to 10 GB of data after compression. When published to Power BI Service:
+
+Free and Pro users get 10 GB total storage per user and a dataset size limit of 1 GB (Import mode).
+
+Power BI Premium Per User (PPU) supports datasets up to 100 GB.
+
+Power BI Premium Capacity allows datasets up to 400 GB and total storage of 100 TB or more depending on the capacity tier.
+
+The actual usable storage also depends on refresh limits, DirectQuery mode, and data compression
+
+# 86. Is any performance issue with Direct Query?
+
+Yes. 
+
+DirectQuery can have performance issues because it does not store data inside Power BI — instead, every visual or filter interaction sends a query back to the data source. 
+
+If the source system or network is slow, the report performance may become slow.
+
+Unlike Import mode where data is cached in-memory using VertiPaq, DirectQuery relies on the external system’s speed—so query execution time, concurrency, and database load can affect performance.
+
+Other limitations include limited DAX functions, frequent timeout issues, row-level slow scanning, and restricted data transformations.
+
+# 87. How to improve performance of Direct query?
+
+Remove unnecessary columns and tables
+
+Avoid complex relationships
+
+Use star schema instead of snowflake
+
+Use appropriate data types
+
+Ensure transformations in Power Query can push back to the source
+
+Avoid steps like custom columns that prevent folding
+
+Create proper indexes, partitions, and tuning on source database
+
+Improve SQL source performance
+
+Use materialized views or aggregated stored tables
+
+Limit visuals per page (recommended 8 or fewer)
+
+Avoid high-cardinality slicers and complex DAX calculations
+
+Use measures instead of calculated columns
+
+Use Import mode for summarized data and DirectQuery for detailed drill-down
+
+Enable Query Caching in Power BI Service
+
+Use Composite Models and Incremental Refresh
