@@ -62,6 +62,8 @@ Appending tables (Union)
 
 Selecting top rows
 
+https://youtu.be/-K8_tARqF0w?si=wqN5T4P5NIr89Bvr
+
 https://www.phdata.io/blog/query-folding-in-power-bi-the-secret-to-faster-data-refresh-performance/
 
 # 3. What is difference between copy and reference?
