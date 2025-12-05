@@ -322,11 +322,20 @@ types = Conformed, Role-Playing, SCD Types 1–2–3, Junk, Degenerate, Outrigge
 
 https://www.youtube.com/watch?v=_0IdAb9Z5n4
 
-# 13. What is the difference between Star Schema and Snowflake Schema?
+# 13. What is the types of schemas?
 
 In a star schema, we have a central fact table directly connected to dimension tables and no dim table connected to other dim table.
 
 The dimensions are usually denormalized, meaning all descriptive fields are in one single table per dimension.
+
+```
+           Dim Customer
+                  |
+Dim Product — Fact Sales — Dim Date
+                  |
+             Dim Region
+
+```
 
 In a snowflake schema, dimensions are normalized — meaning they are broken into multiple related tables. 
 
@@ -334,6 +343,25 @@ here one dim table connected to multiple dim tables.
 
 For example, a Product dimension may be split into Product, Category, and Subcategory.
 
+```
+Dim Product → Dim Category
+          \ 
+           Fact Sales → Dim Date → Dim Fiscal Calendar
+
+```
+
+Galaxy Schema (Fact Constellation)
+
+Multiple fact tables sharing common dimensions
+
+Used when modeling multiple business processes
+
+```
+        Dim Customer    Dim Date     Dim Product
+              |            |              |
+ Fact Sales ——|—— Fact Inventory ——|—— Fact Orders
+
+```
 
 # 14. What is Composite Model in Power BI?
 
@@ -1694,4 +1722,10 @@ Use Composite Models and Incremental Refresh
 
 102. In Power BI Service what is Subscription?
 
-103. 
+103. Can there is two active relationship in tables?
+
+104. How to make inactive to active relationship?
+
+105. How to made Fiscal Year Table start with april?
+
+106. 
