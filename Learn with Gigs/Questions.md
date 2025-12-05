@@ -1692,6 +1692,8 @@ Enable Query Caching in Power BI Service
 
 Use Composite Models and Incremental Refresh
 
+https://www.youtube.com/watch?v=F1WW6jOipno
+
 88. How to see loading time of visual?
 
 89. If any visual taking 10 seconds and it is very important?
