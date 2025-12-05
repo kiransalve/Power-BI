@@ -31,3 +31,10 @@ so i rename it
 ```
 RENAME TABLE sales.`sales register` TO sales.sales_register;
 ```
+
+To use sales database 
+
+```
+USE sales;
+SELECT * FROM sale_register;
+```
