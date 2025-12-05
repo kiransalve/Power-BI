@@ -21,3 +21,13 @@ for sheet_name in xls.sheet_names:
     print(f"Saved {csv_file}")
     
 ```
+
+imported 4 files - sales_register, customer, HQ, business and budget to mysql workbench using Table data import wizard
+
+the name has spaces in sales register so sql takes it as - SELECT * FROM sales.`sales register`;
+
+so i rename it 
+
+```
+RENAME TABLE sales.`sales register` TO sales.sales_register;
+```
