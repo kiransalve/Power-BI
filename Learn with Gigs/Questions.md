@@ -1663,3 +1663,13 @@ Use Import mode for summarized data and DirectQuery for detailed drill-down
 Enable Query Caching in Power BI Service
 
 Use Composite Models and Incremental Refresh
+
+88. How to see loading time of visual?
+
+89. If any visual taking 10 seconds and it is very important?
+
+90. When QnA option not coming after double click?
+
+91. Difference between add column and transform tab in power query?
+
+92. 
