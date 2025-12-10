@@ -41,32 +41,17 @@ If folding happens → database does the processing → Power BI receives only t
 
 It helps Faster refresh, Less RAM used, Better performance, Less load on Power BI
 
-Filtering rows (Table.SelectRows)
+I keep steps like filtering rows, removing columns, grouping, merging, and aggregations at the top of the Power Query steps so that Power BI can translate them into the source SQL query.
 
-Sorting data (Table.Sort)
+Query folding is mandatory for incremental refresh.
 
-Removing columns (Table.RemoveColumns)
+I have created incremental refresh policies where I ensure:
 
-Renaming columns (Table.RenameColumns)
-
-Changing data types (when done early in the query)
-
-Merging queries (joins)
-
-Grouping data
-
-Aggregating data (Table.Group)
-
-Expanding related tables or fields
-
-Appending tables (Union)
-
-Selecting top rows
+RangeStart / RangeEnd filters fold back to SQL
 
 https://youtu.be/-K8_tARqF0w?si=wqN5T4P5NIr89Bvr
 
 https://www.phdata.io/blog/query-folding-in-power-bi-the-secret-to-faster-data-refresh-performance/
-
 
 
 # 3. What is difference between copy and reference?
