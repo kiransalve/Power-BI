@@ -1698,40 +1698,40 @@ Use Composite Models and Incremental Refresh
 
 https://www.youtube.com/watch?v=F1WW6jOipno
 
-88. How to see loading time of visual?
+# 88. How to see loading time of visual?
 
-89. If any visual taking 10 seconds and it is very important?
+# 89. If any visual taking 10 seconds and it is very important?
 
-90. When QnA option not coming after double click?
+# 90. When QnA option not coming after double click?
 
-91. Difference between add column and transform tab in power query? Which is better performancce?
+# 91. Difference between add column and transform tab in power query? Which is better performancce?
 
-92. 5 Table in power query and want 3 Tables to import in power BI?
+# 92. 5 Table in power query and want 3 Tables to import in power BI?
 
-93. what do when we want to make one schedule refresh after 8 in pro account?
+# 93. what do when we want to make one schedule refresh after 8 in pro account?
 
-94. What is difference between premium and pro licence?
+# 94. What is difference between premium and pro licence?
 
-95. In Power BI Dekstop and size go up on 1.1 GB, what you do to make it 1 GB?
+# 95. In Power BI Dekstop and size go up on 1.1 GB, what you do to make it 1 GB?
 
-96. Which are two DAX function in Direct Query?
+# 96. Which are two DAX function in Direct Query?
 
-97. If you can update and delete the workspace, which role you have?
+# 97. If you can update and delete the workspace, which role you have?
 
-98. What is Sync Slicer?
+# 98. What is Sync Slicer?
 
-99. What you do if map is not working?
+# 99. What you do if map is not working?
 
-100. What is DAX function to generate series while using what if parameter?
+# 100. What is DAX function to generate series while using what if parameter?
 
-101. How to create dashboard in power BI service?
+# 101. How to create dashboard in power BI service?
 
-102. In Power BI Service what is Subscription?
+# 102. In Power BI Service what is Subscription?
 
-103. Can there is two active relationship in tables?
+# 103. Can there is two active relationship in tables?
 
-104. How to make inactive to active relationship?
+# 104. How to make inactive to active relationship?
 
-105. How to made Fiscal Year Table start with april?
+# 105. How to made Fiscal Year Table start with april?
 
-106. 
+# 106. What are types of context in Power BI?
