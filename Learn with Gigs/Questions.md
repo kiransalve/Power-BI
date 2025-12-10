@@ -7,13 +7,13 @@ Merge, Combines data from two tables based on a common column, creating new colu
 
 Kind of Join :
 
-a. Left Outer Join means all from First, matching from second
+a. Left Outer Join means all from First, common from second
 
-b. Right Outer Join means all from second, matching from first 
+b. Right Outer Join means all from second, common from first 
 
 c. Full outer join means all from both - produce null if no match found
 
-d. Inner join means only matching
+d. Inner join means only common
 
 e. Left Anti - uncommon from left
 
