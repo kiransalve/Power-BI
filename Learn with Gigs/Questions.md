@@ -416,6 +416,37 @@ PriorityFlag (High/Low)
 Instead of storing these in the fact table, we create a separate Junk Dimension.
 
 
+5. Degenerate Dimension
+
+A dimension that has no separate table; it lives inside the fact table.
+
+Example:
+
+Invoice Number
+
+Order Number
+
+Transaction ID
+
+These are identifiers but not descriptive enough to create a separate dimension table.
+
+“Degenerate dimension is a dimension key stored in the fact table itself.”
+
+6. Outrigger Dimension
+
+A dimension table that is connected to another dimension (not directly to the fact).
+
+Example:
+```
+Product Dimension
+→ linked to Brand Dimension
+
+HQ Dimension
+→ linked to Customer Dimension
+```
+
+“When a dimension references another dimension, it is an outrigger.”
+
 https://www.youtube.com/watch?v=_0IdAb9Z5n4
 
 # 13. What is the types of schemas?
