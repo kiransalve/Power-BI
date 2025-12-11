@@ -327,7 +327,7 @@ A single dimension used in multiple roles inside the same model.
 
 ✔ Example:
 
-``
+```
 The Date Dimension can act as:
 
 Order Date
@@ -346,7 +346,7 @@ SCD Type 0 – Fixed Record (No Change)
 
 Old values never change.
 
-✔ Example:
+Example:
 
 Date of Birth
 
@@ -357,11 +357,13 @@ These values remain constant.
 SCD Type 1 – Overwrite Old Data
 
 Old value is replaced with the new value.
+
 No history is kept.
 
 Example:
 
 Customer Name corrected from
+
 “Rahul Kumar” → “Rahul K.”
 
 You don’t need to track the wrong spelling.
@@ -369,8 +371,6 @@ You don’t need to track the wrong spelling.
 In One line
 
 “Type 1 maintains no history.”
-
-https://www.youtube.com/watch?v=_0IdAb9Z5n4
 
 SCD Type 2 – Keep History (Most Important)
 
@@ -386,6 +386,37 @@ Example (customer changed HQ):
 | ---------- | ------------ | ------ | --------- | ------- |
 | C001       | Rahul        | Mumbai | 2019      | 2022    |
 | C001       | Rahul        | Delhi  | 2022      | NULL    |
+
+SCD Type 3 – Keep Partial History
+
+Only stores previous value and current value.
+
+Example :
+
+| CustomerID | HQ_Current | HQ_Previous |
+| ---------- | ---------- | ----------- |
+| C001       | Delhi      | Mumbai      |
+
+You don’t store every change, only 1 previous value.
+
+4. Junk Dimension
+
+A table that stores miscellaneous attributes that don’t fit anywhere.
+
+Example:
+
+Flags, yes/no fields, small codes:
+
+IsNewCustomer (Y/N)
+
+PaymentStatus (Paid/Unpaid)
+
+PriorityFlag (High/Low)
+
+Instead of storing these in the fact table, we create a separate Junk Dimension.
+
+
+https://www.youtube.com/watch?v=_0IdAb9Z5n4
 
 # 13. What is the types of schemas?
 
