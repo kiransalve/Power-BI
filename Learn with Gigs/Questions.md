@@ -447,6 +447,116 @@ HQ Dimension
 
 “When a dimension references another dimension, it is an outrigger.”
 
+
+Fact table
+
+A Fact Table stores the numerical, measurable, or transactional data of the business.
+
+It answers “how much?”, “how many?”, “what is the value?”.
+
+It contains:
+
+Numbers
+
+Calculations
+
+Foreign keys (link to dimensions)
+
+Transaction-level details
+
+A fact table stores the business performance data — like sales, profit, quantity, budget, payments, inventory levels, etc.
+
+
+Key Characteristics
+
+1. Stores Numeric Metrics
+
+Sales amount, Quantity, Profit, Cost, Inventory level, Score, Budget
+
+These values are used for DAX Measures.
+
+2. Contains Foreign Keys
+
+It links to dimension tables using:
+
+DateKey, CustomerID, ProductID, HQID
+
+These keys create relationships in Power BI.
+
+3. Huge Row Count (Grows Daily)
+
+Fact tables grow continuously.
+
+Example:
+
+Every new invoice creates new rows
+
+Sales register becomes millions of rows
+
+4. Granularity (Grain)
+
+Fact tables represent the lowest level of detail.
+
+Examples:
+
+Per invoice line item (very common)
+
+5. Used to Create Measures
+
+You write DAX measures from fact columns:
+
+eg. - SUM(Sales[Amount])
+
+
+Types of Fact Tables
+
+1. Transaction Fact Table (Most Common)
+
+Stores transaction-level details.
+This is the fact table used in most dashboards.
+
+Example:
+
+Sales Register → each invoice row.
+
+2. Periodic Snapshot Fact Table
+
+Captures data at regular intervals (daily, monthly, yearly).
+
+Example:
+
+Monthly Sales Summary
+
+Daily Stock Summary
+
+Weekly Revenue Report
+
+3. Accumulating Snapshot Fact Table
+
+Tracks the status of a process over time.
+It updates as the process moves through stages.
+
+✔ Example:
+
+Order Processing
+(Stages: Order Received → Packed → Shipped → Delivered)
+
+
+4. Factless Fact Table
+
+Contains no numeric values.
+Only stores relationships or events.
+
+✔ Example:
+
+Student attendance
+
+Employee badge-in events
+
+Customer promotion eligibility
+
+
+
 https://www.youtube.com/watch?v=_0IdAb9Z5n4
 
 # 13. What is the types of schemas?
