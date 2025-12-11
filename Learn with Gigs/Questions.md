@@ -203,8 +203,6 @@ Sales Both = CALCULATE(SUM(Sales[Amount]), CROSSFILTER(Sales[ProductID], Product
 
 https://www.youtube.com/watch?v=KPEiLH5J-Cw
 
-
-
 ALL() - Returns all rows in a table, or all values in column ignoring any filter that might have been applied
 
 REMOVEFILTERS() - Removes filters from a column or table similar to ALL, but does not return a table, it only clears filters.
@@ -229,6 +227,7 @@ On the other hand, ALL() not only removes filters but also returns the entire ta
 
 Example 
 
+```
 Total Sales = SUM('Sales'[Amount])
 
 Sales % of Total =
@@ -252,65 +251,141 @@ RANKX(
     DESC
 )
 
+```
+
 # 12. What are Fact and Dimension Tables in Power BI or Data Modeling?
 
-A Fact Table contains quantitative, measurable data — like sales, revenue, profit, or quantities. 
+A Dimension table describes the “who”, “what”, “where”, and “when” of the business.
+It contains textual or descriptive attributes that help you slice and analyze fact data.
 
-These tables are usually large and store transaction-level or aggregated numeric values.
+Example:
 
-It typically includes foreign keys that link to dimension tables, along with metrics like:
+```
+Who bought? → Customer Dimension
 
-Sales Amount, Quantity ,Cost,Discount
+What product? → Product Dimension
 
-types = Transaction, Snapshot, Accumulating Snapshot, Factless, and Aggregate.
+When did it happen? → Date Dimension
 
-Transaction Fact Table
+Where? → Region / HQ Dimension
+```
 
-Used to store individual business events.
+Key Characteristics :
 
-Granularity: One row per event / transaction.
+1. Contains descriptive text columns
 
-Use case: Sales, Payments, Attendance logs, Clickstream events
+Examples:
 
-Snapshot Fact Table
+Customer Name, City, Product Category, Employee Name, Brand, HQ, Region.
 
-Captures the state of a business at a specific scheduled time interval — daily, weekly, monthly.
+2. Does not grow frequently
 
-Granularity: One row per entity per time period.
+Only changes when new customers, products, or employees are added.
 
-Use case: Inventory Levels, Bank Account Balance, Marketing funnel counts
+3. Has a Primary Key
 
-Accumulating Snapshot Fact Table
+Example: CustomerID, ProductID
 
-Tracks a process that has a defined beginning and end, and updates over time.
+This key connects to the Fact table.
 
-Use case: Order to Delivery, Loan process, Hiring process
+4. Used in slicers and filters
 
-Factless Fact Table
+Whenever we put something in:
 
-Contains no numeric measures, only keys.
+Slicer → HQ
 
-Used to record events or relationships.
+Filter → Category
 
-Use case: Attendance, Enrollment, Promotions, Approvals
+Axis → Month
 
-Aggregate Fact Table (Summary Fact)
+We are using a dimension table.
 
-Stores pre-calculated summaries to improve reporting speed.
+Types :
 
-Used when transaction table is too large.
+1. Conformed Dimension
 
-Use case: Performance reporting, KPIs, forecasting
+A Conformed Dimension is a dimension table that is shared across multiple fact tables.
 
-A Dimension Table contains descriptive, categorical data — like names, regions, product categories, customer segments, etc. 
+Why this is used?
 
-These tables are smaller and help provide context to the facts.
+Because multiple reports should slice data in the same way.
 
-They usually have a primary key that connects to the fact table and are used for filtering, grouping, or slicing data.
+Example:
 
-types = Conformed, Role-Playing, SCD Types 1–2–3, Junk, Degenerate, Outrigger, and Hierarchical dimensions.
+The Date table is used by:
+
+```
+Sales Fact
+Purchase Fact
+Inventory Fact
+The same Date table works for all.
+```
+
+2. Role-Playing Dimension
+
+A single dimension used in multiple roles inside the same model.
+
+✔ Example:
+
+``
+The Date Dimension can act as:
+
+Order Date
+Invoice Date
+Delivery Date
+
+Power BI allows you to create multiple relationships with inactive relationships and use USERELATIONSHIP in DAX.
+```
+
+3. Slowly Changing Dimension (SCD)
+
+These dimensions change slowly, not every day.
+There are 4 important types:
+
+SCD Type 0 – Fixed Record (No Change)
+
+Old values never change.
+
+✔ Example:
+
+Date of Birth
+
+GST Registration ID
+
+These values remain constant.
+
+SCD Type 1 – Overwrite Old Data
+
+Old value is replaced with the new value.
+No history is kept.
+
+Example:
+
+Customer Name corrected from
+“Rahul Kumar” → “Rahul K.”
+
+You don’t need to track the wrong spelling.
+
+In One line
+
+“Type 1 maintains no history.”
 
 https://www.youtube.com/watch?v=_0IdAb9Z5n4
+
+SCD Type 2 – Keep History (Most Important)
+
+A new row is inserted for every change.
+
+When used?
+
+When history needs to be maintained.
+
+Example (customer changed HQ):
+
+| CustomerID | CustomerName | HQ     | StartDate | EndDate |
+| ---------- | ------------ | ------ | --------- | ------- |
+| C001       | Rahul        | Mumbai | 2019      | 2022    |
+| C001       | Rahul        | Delhi  | 2022      | NULL    |
 
 # 13. What is the types of schemas?
 
