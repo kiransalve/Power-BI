@@ -68,7 +68,7 @@ Creates a linked version of the original query.
 
 If you change the original query, the referenced one will also reflect those changes.
 
-we have used it to create start schema.  Raw table → cleaned → multiple dimensions/fact tables.
+we have used it to create star schema.  Raw table → cleaned → multiple dimensions/fact tables.
 
 # 4. What is M-Code?
 
