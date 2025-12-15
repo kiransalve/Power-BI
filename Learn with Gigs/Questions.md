@@ -1957,35 +1957,134 @@ for Visual issue, avoid too many fields in one visual, avoid custom visual
 
 for other issue, remove unused columns, avoid bi directional relationships, use star schema
 
-
-
 # 90. When QnA option not coming after double click?
+
+Go to File → Options and settings → Options
+
+Under Current File → Q&A
+
+Enable “Use Q&A to ask questions about your data”
+
+Restart Power BI Desktop
 
 # 91. Difference between add column and transform tab in power query? Which is better performancce?
 
+1. Transform tab - The same column is updated.
+
+Modifies an existing column
+
+Replaces the original column values
+
+No extra column is created
+
+Examples:
+
+Change data type
+
+Replace values
+
+Trim / Clean
+
+Split column
+
+Extract text
+
+2. Add Column tab - Original columns remain + new column added.
+
+Creates a new column
+
+Keeps original column unchanged
+
+Used for derivations & calculations
+
+Examples:
+
+Conditional column
+
+Custom column
+
+Date difference
+
+Calculated logic
+
+
+Transform tab is better for performance
+
+No additional column
+
+Less memory usage
+
 # 92. 5 Table in power query and want 3 Tables to import in power BI?
+
+In Queries pane, right-click on the table
+
+Uncheck “Enable Load”
+
+Repeat for the 2 tables you don’t want
 
 # 93. what do when we want to make one schedule refresh after 8 in pro account?
 
-# 94. What is difference between premium and pro licence?
+In Power BI Pro, scheduled refresh is limited to 8 times per day. If more refreshes are needed, we do manual refresh in power BI service, or we either optimize using incremental refresh or upgrade to Premium, which supports up to 48 refreshes per day.
 
 # 95. In Power BI Dekstop and size go up on 1.1 GB, what you do to make it 1 GB?
 
+remove unused columns
+
+aggregrate data in daily/monthly summary
+
+
 # 96. Which are two DAX function in Direct Query?
+
+DirectQuery supports only those DAX functions that can be translated into native source queries
+
+so all aggregration dax like sum, avg, min, max are supported but time intelligent function not supported.
 
 # 97. If you can update and delete the workspace, which role you have?
 
+Admin
+
 # 98. What is Sync Slicer?
+
+Sync Slicer allows the same slicer selection to be applied across multiple pages in a Power BI report, ensuring consistent filtering.
 
 # 99. What you do if map is not working?
 
+File → Options and settings → Options
+
+Security
+
+Enable Map and Filled Map visuals
+
+Restart Power BI Desktop
+
+or check columns have - Location column: City, State, Country
+
 # 100. What is DAX function to generate series while using what if parameter?
+
+GENERATESERIES() - we need to give start value , end value, increament value
 
 # 101. How to create dashboard in power BI service?
 
+Dashboards are created in Power BI Service by pinning visuals or report pages from published reports into a single-page canvas
+
 # 102. In Power BI Service what is Subscription?
 
+A Subscription in Power BI Service is a feature that allows you to automatically receive report pages or dashboard snapshots via email on a scheduled basis. It is only for pro or premium users
+
 # 103. Can there is two active relationship in tables?
+
+No, Power BI does not allow two active relationships between the same two tables.
+
+How to use inactive relationship?
+
+```
+Sales by Ship Date =
+CALCULATE(
+    [Total Sales],
+    USERELATIONSHIP(Sales[Ship Date], Date[Date])
+)
+
+```
 
 # 104. How to make inactive to active relationship?
 
