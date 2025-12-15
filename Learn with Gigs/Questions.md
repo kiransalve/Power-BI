@@ -1933,6 +1933,14 @@ https://www.youtube.com/watch?v=F1WW6jOipno
 
 # 88. How to see loading time of visual?
 
+In View tab there is "Performance Analyzer" 
+
+In the Performance Analyzer pane → click Start recording
+
+Refresh visuals (or interact with slicers)
+
+You’ll see each visual listed with timing details
+
 # 89. If any visual taking 10 seconds and it is very important?
 
 # 90. When QnA option not coming after double click?
