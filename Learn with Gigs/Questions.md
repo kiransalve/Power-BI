@@ -2086,8 +2086,13 @@ CALCULATE(
 
 ```
 
-# 104. How to make inactive to active relationship?
+# 104. How to made Fiscal Year Table start with april?
 
-# 105. How to made Fiscal Year Table start with april?
+We will create calender table and in that we create month index column
 
-# 106. What are types of context in Power BI?
+then we create fiscal year column where if the monthindex is greater than 3 then it has current FY Year and if month index is 1, 2 or 3 then it will last FY year
+
+
+# 105. What are types of context in Power BI?
+
+Power BI has two main contexts: Row Context (row-by-row evaluation, e.g., in calculated columns) and Filter Context (filters applied via slicers, visuals, or CALCULATE).
