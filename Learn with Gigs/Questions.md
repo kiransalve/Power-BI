@@ -1943,6 +1943,22 @@ You’ll see each visual listed with timing details
 
 # 89. If any visual taking 10 seconds and it is very important?
 
+If it is business critical then we don't remove it, we optimize it
+
+We use performance analyser if dax query is high, then problem in measure logic
+
+if visual display is high, then problem is in visual design
+
+if other is high, then model or relationship issue
+
+for Dax issue, we avoid Calculate + Filter, replace iterator (like SUMX, FILTER) with simple aggregation, use var to avoid recalculations
+
+for Visual issue, avoid too many fields in one visual, avoid custom visual
+
+for other issue, remove unused columns, avoid bi directional relationships, use star schema
+
+
+
 # 90. When QnA option not coming after double click?
 
 # 91. Difference between add column and transform tab in power query? Which is better performancce?
