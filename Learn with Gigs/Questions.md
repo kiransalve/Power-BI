@@ -2096,3 +2096,28 @@ then we create fiscal year column where if the monthindex is greater than 3 then
 # 105. What are types of context in Power BI?
 
 Power BI has two main contexts: Row Context (row-by-row evaluation, e.g., in calculated columns) and Filter Context (filters applied via slicers, visuals, or CALCULATE).
+
+Row Context
+
+Applies row by row inside a table or calculated column.
+
+DAX evaluates each row individually.
+
+Exists automatically in:
+
+Calculated columns
+
+Iterators (SUMX, FILTER, AVERAGEX, etc.)
+
+
+Filter Context
+
+Applies filters to a calculation, often via slicers, report filters, or DAX functions like CALCULATE.
+
+Changes the subset of data considered for the calculation
+
+```
+Total Sales FY23 = CALCULATE([Total Sales], 'Date'[Fiscal Year] = 2023)
+
+```
+Only rows where Fiscal Year = 2023 are included → Filter Contex
