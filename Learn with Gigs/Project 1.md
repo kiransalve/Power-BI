@@ -5,9 +5,9 @@ The goal was to provide Sales Managers and the VP with real-time visibility into
 
 I connected data from MySQL Server for all division. I designed a star schema with a three fact table like sales register, collection and budget and dimension tables for Products, Customers, Region and Date to optimize performance.
 
-I created key DAX measures such as Total Sales, Sales vs. Target, Cumulative Sales, and Year-over-Year growth.
+I created key DAX measures such as Total Sales, Total Target, YTD Sales and Target, and Year-over-Year growth.
 
-Also some KPI like Variance from last year, deficit/surplus from budget, ach% etc.
+Also some KPI like Variance from last year, deficit/surplus from target, ach% etc.
 
 Visualizations included cards for KPIs, line chart for monthly trend, and bar chart to highlight monthwise last year sales, this year sales and budget.
 
@@ -15,6 +15,6 @@ Used Drill-through to get detailed view of Customer and Product contribution, bo
 
 I also implemented row-level security so divisional managers could see only their respective division sales. 
 
-As a result, manual reporting time was reduced by over 80%, and leadership could proactively make data-driven decisions, like reallocating resources or discontinuing low-performing products.
+As a result, manual reporting time was reduced by over 2 hours per day, and leadership could proactively make data-driven decisions, like planing tour plan or discontinuing low-performing products.
 
 The biggest challenge was handling performance with such large datasets, which I solved through optimized data modeling and efficient DAX measures
