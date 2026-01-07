@@ -35,19 +35,17 @@ We can check this by right-clicking a step in Power Query and selecting "View Na
 
 Example: Relational Database that has query engine SQL Server, Snowflake, Amazon Redshift, Google BigQuery, PostgreSQL, and SAP HANA.
 
-Database engines are much faster than Power BI at: Filtering, Group By, Joins, Selecting columns, Sorting, Removing duplicates
+Database engines are much faster than Power BI 
 
 If folding happens → database does the processing → Power BI receives only the final, small result.
 
 It helps Faster refresh, Less RAM used, Better performance, Less load on Power BI
 
-I keep steps like filtering rows, removing columns, grouping, merging, and aggregations at the top of the Power Query steps so that Power BI can translate them into the source SQL query.
+Transformation support: Filtering, Group By, Joins, Sorting, Removing duplicates, Renaming header, merging/appending querries from same source
+
+Transformation not support : Adding columns that have complex logic, merge or append querries from different data sources
 
 Query folding is mandatory for incremental refresh.
-
-I have created incremental refresh policies where I ensure:
-
-RangeStart / RangeEnd filters fold back to SQL
 
 https://youtu.be/-K8_tARqF0w?si=wqN5T4P5NIr89Bvr
 
