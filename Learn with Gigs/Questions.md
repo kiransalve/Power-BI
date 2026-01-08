@@ -276,43 +276,15 @@ Where? → Region / HQ Dimension
 
 Key Characteristics :
 
-1. Contains descriptive text columns
+1. Contains descriptive text columns like Customer Name, City, Product Category, Employee Name, Brand, HQ, Region.
 
-Examples:
+2. Does not grow frequently - Only changes when new customers, products, or employees are added.
 
-Customer Name, City, Product Category, Employee Name, Brand, HQ, Region.
-
-2. Does not grow frequently
-
-Only changes when new customers, products, or employees are added.
-
-3. Has a Primary Key
-
-Example: CustomerID, ProductID
-
-This key connects to the Fact table.
-
-4. Used in slicers and filters
-
-Whenever we put something in:
-
-Slicer → HQ
-
-Filter → Category
-
-Axis → Month
-
-We are using a dimension table.
+3. Has a Primary Key - This key connects to the Fact table.
 
 Types :
 
-1. Conformed Dimension
-
-A Conformed Dimension is a dimension table that is shared across multiple fact tables.
-
-Why this is used?
-
-Because multiple reports should slice data in the same way.
+1. Conformed Dimension - It is a dimension table that is shared across multiple fact tables.
 
 Example:
 
@@ -325,11 +297,9 @@ Inventory Fact
 The same Date table works for all.
 ```
 
-2. Role-Playing Dimension
+2. Role-Playing Dimension - A single dimension used in multiple roles inside the same model.
 
-A single dimension used in multiple roles inside the same model.
-
-✔ Example:
+Example:
 
 ```
 The Date Dimension can act as:
@@ -341,28 +311,15 @@ Delivery Date
 Power BI allows you to create multiple relationships with inactive relationships and use USERELATIONSHIP in DAX.
 ```
 
-3. Slowly Changing Dimension (SCD)
+3. Slowly Changing Dimension (SCD) - These dimensions change slowly, not every day.
 
-These dimensions change slowly, not every day.
 There are 4 important types:
 
-SCD Type 0 – Fixed Record (No Change)
+SCD Type 0 – Fixed Record (No Change) some values were never change.
 
-Old values never change.
+Example: Date of Birth, GST Registration ID, These values remain constant.
 
-Example:
-
-Date of Birth
-
-GST Registration ID
-
-These values remain constant.
-
-SCD Type 1 – Overwrite Old Data
-
-Old value is replaced with the new value.
-
-No history is kept.
+SCD Type 1 – Old value is replaced with the new value.
 
 Example:
 
@@ -372,17 +329,7 @@ Customer Name corrected from
 
 You don’t need to track the wrong spelling.
 
-In One line
-
-“Type 1 maintains no history.”
-
-SCD Type 2 – Keep History (Most Important)
-
-A new row is inserted for every change.
-
-When used?
-
-When history needs to be maintained.
+SCD Type 2 – Keep History - A new row is inserted for every change.
 
 Example (customer changed HQ):
 
@@ -391,9 +338,7 @@ Example (customer changed HQ):
 | C001       | Rahul        | Mumbai | 2019      | 2022    |
 | C001       | Rahul        | Delhi  | 2022      | NULL    |
 
-SCD Type 3 – Keep Partial History
-
-Only stores previous value and current value.
+SCD Type 3 – Keep Partial History - Only stores previous value and current value.
 
 Example :
 
@@ -401,44 +346,19 @@ Example :
 | ---------- | ---------- | ----------- |
 | C001       | Delhi      | Mumbai      |
 
-You don’t store every change, only 1 previous value.
-
 4. Junk Dimension
 
 A table that stores miscellaneous attributes that don’t fit anywhere.
 
-Example:
+Example: Flags, yes/no fields, IsNewCustomer (Y/N), PaymentStatus (Paid/Unpaid), PriorityFlag (High/Low)
 
-Flags, yes/no fields, small codes:
+5. Degenerate Dimension - A dimension that has no separate table; it lives inside the fact table.
 
-IsNewCustomer (Y/N)
-
-PaymentStatus (Paid/Unpaid)
-
-PriorityFlag (High/Low)
-
-Instead of storing these in the fact table, we create a separate Junk Dimension.
-
-
-5. Degenerate Dimension
-
-A dimension that has no separate table; it lives inside the fact table.
-
-Example:
-
-Invoice Number
-
-Order Number
-
-Transaction ID
+Example: Invoice Number, Order Number, Transaction ID
 
 These are identifiers but not descriptive enough to create a separate dimension table.
 
-“Degenerate dimension is a dimension key stored in the fact table itself.”
-
-6. Outrigger Dimension
-
-A dimension table that is connected to another dimension (not directly to the fact).
+6. Outrigger Dimension - A dimension table that is connected to another dimension (not directly to the fact).
 
 Example:
 ```
@@ -449,117 +369,40 @@ HQ Dimension
 → linked to Customer Dimension
 ```
 
-“When a dimension references another dimension, it is an outrigger.”
 
-
-Fact table
+Fact table - 
 
 A Fact Table stores the numerical, measurable, or transactional data of the business.
 
 It answers “how much?”, “how many?”, “what is the value?”.
 
-It contains:
-
-Numbers
-
-Calculations
-
-Foreign keys (link to dimensions)
-
-Transaction-level details
+It contains: Numbers, Calculations, Foreign keys (link to dimensions), Transaction-level details
 
 A fact table stores the business performance data — like sales, profit, quantity, budget, payments, inventory levels, etc.
 
-
 Key Characteristics
 
-1. Stores Numeric Metrics
+1. Stores Numeric Metrics - Sales amount, Quantity, Profit, Cost, Inventory level, Score, Budget. These values are used for DAX Measures.
 
-Sales amount, Quantity, Profit, Cost, Inventory level, Score, Budget
+2. Contains Foreign Keys - It links to dimension tables using: DateKey, CustomerID, ProductID, HQID, These keys create relationships in Power BI.
 
-These values are used for DAX Measures.
+3. Huge Row Count (Grows Daily) - Fact tables grow continuously.
 
-2. Contains Foreign Keys
-
-It links to dimension tables using:
-
-DateKey, CustomerID, ProductID, HQID
-
-These keys create relationships in Power BI.
-
-3. Huge Row Count (Grows Daily)
-
-Fact tables grow continuously.
-
-Example:
-
-Every new invoice creates new rows
-
-Sales register becomes millions of rows
-
-4. Granularity (Grain)
-
-Fact tables represent the lowest level of detail.
-
-Examples:
-
-Per invoice line item (very common)
-
-5. Used to Create Measures
-
-You write DAX measures from fact columns:
-
-eg. - SUM(Sales[Amount])
-
+4. Granularity (Grain) - Fact tables represent the lowest level of detail.
 
 Types of Fact Tables
 
-1. Transaction Fact Table (Most Common)
+1. Transaction Fact Table - Stores transaction-level details. Example: Sales Register → each invoice row.
 
-Stores transaction-level details.
-This is the fact table used in most dashboards.
+2. Periodic Snapshot Fact Table - Captures data at regular intervals (daily, monthly, yearly).
 
-Example:
+3. Accumulating Snapshot Fact Table - Tracks the status of a process over time. It updates as the process moves through stages.
 
-Sales Register → each invoice row.
+Example: Order Processing (Stages: Order Received → Packed → Shipped → Delivered)
 
-2. Periodic Snapshot Fact Table
+4. Factless Fact Table - Contains no numeric values. Only stores relationships or events.
 
-Captures data at regular intervals (daily, monthly, yearly).
-
-Example:
-
-Monthly Sales Summary
-
-Daily Stock Summary
-
-Weekly Revenue Report
-
-3. Accumulating Snapshot Fact Table
-
-Tracks the status of a process over time.
-It updates as the process moves through stages.
-
-✔ Example:
-
-Order Processing
-(Stages: Order Received → Packed → Shipped → Delivered)
-
-
-4. Factless Fact Table
-
-Contains no numeric values.
-Only stores relationships or events.
-
-✔ Example:
-
-Student attendance
-
-Employee badge-in events
-
-Customer promotion eligibility
-
-
+Example: Student attendance, Employee badge-in events, Customer promotion eligibility
 
 https://www.youtube.com/watch?v=_0IdAb9Z5n4
 
