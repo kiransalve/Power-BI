@@ -1,9 +1,15 @@
 
 # 1. What is difference between Append and Merge Query?
 
-Append, Combine rows of two or more tables vertically, When all tables have same columns, same order and same data types
+Append will Combine rows of two or more tables vertically, When all tables have same columns, same order and same data types
 
-Merge, Combines data from two tables based on a common column, creating new columns in the resulting table. 
+Append means add rows one below another
+
+We use this when we want to combin multiple months data vertically, like Jan, Feb, Mar till Dec separate sales sheets and when we use append we get one sheet of Jan to Dec sales
+
+To use this we go Transform -> Home -> Append queries 
+
+Merge will Combines data from two tables based on a common column, creating new columns in the resulting table. 
 
 Kind of Join :
 
