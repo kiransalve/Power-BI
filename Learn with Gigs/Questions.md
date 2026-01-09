@@ -441,9 +441,9 @@ Multiple fact tables sharing common dimensions
 Used when modeling multiple business processes
 
 ```
-        Dim Customer    Dim Date     Dim Product
-              |            |              |
- Fact Sales ——|—— Fact Inventory ——|—— Fact Orders
+              Dim Customer     Dim Date  
+                |     |         |  |       
+       Fact Sales  Fact Inventory  Fact Orders
 
 ```
 
