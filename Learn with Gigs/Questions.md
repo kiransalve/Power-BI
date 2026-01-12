@@ -179,13 +179,16 @@ Resolving :
 
 https://www.youtube.com/watch?v=rOGjSt4AVts
 
-If you only need cross-filtering in a single measure, NOT the whole model:
+```
+Count Products Bought by Each Customer
 
-Total Sales by Product :=
+Products Bought = 
 CALCULATE(
-    SUM(Sales[Amount]),
-    CROSSFILTER(Product[ProductID], Sales[ProductID], BOTH)
-)
+    DISTINCTCOUNT('Product'[Code]), 
+    CROSSFILTER('Sales Register'[Customer No.],Customer[Customer No.], Both),
+    CROSSFILTER('Sales Register'[Item Code],'Product'[Code],Both)
+    )
+```
 
 Filters apply both ways only inside this measure
 
