@@ -748,7 +748,7 @@ It is used for all advanced DAX calculations like YTD, MTD, LY, conditional tota
 
 Sales_India = CALCULATE( SUM(Sales[Amount]), Sales[Country] = "India" )
 
-30. How can you create a one row table using DAX?
+# 30. How can you create a one row table using DAX?
 
 Using ROW() : 
 
