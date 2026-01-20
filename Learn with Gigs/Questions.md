@@ -2025,3 +2025,45 @@ Total Sales FY23 = CALCULATE([Total Sales], 'Date'[Fiscal Year] = 2023)
 
 ```
 Only rows where Fiscal Year = 2023 are included → Filter Contex
+
+
+# 106. YoY Growth
+
+```
+Total Sales = SUM(Sales[Amount])
+
+Sales LY =
+CALCULATE(
+    [Total Sales],
+    SAMEPERIODLASTYEAR('Date'[Date])
+)
+
+YoY Growth =
+[Total Sales] - [Sales LY]
+
+YoY Growth % =
+DIVIDE(
+    [Total Sales] - [Sales LY],
+    [Sales LY]
+)
+
+```
+
+# 107. MoM Growth
+
+```
+Sales PM =
+CALCULATE(
+    [Total Sales],
+    PREVIOUSMONTH('Date'[Date])
+)
+
+MoM Growth =
+[Total Sales] - [Sales PM]
+
+MoM Growth % =
+DIVIDE(
+    [Total Sales] - [Sales PM],
+    [Sales PM]
+)
+```
