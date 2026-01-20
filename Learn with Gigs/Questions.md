@@ -1267,28 +1267,23 @@ This works because FILTER creates a row-by-row table, and the measure can evalua
 
 10. Try to use Report Level tooltip instead of standared tooltip for better performance.
 
-
-
 # 59. What is Cardinality?
 
-Cardinality refers to the number of unique values in a column or the nature of the relationship between tables.
+When you create a relationship between two tables, Power BI asks for cardinality.
 
+It answers this question: How many rows in one table match rows in the other table?
 
+Common types
 
-| Cardinality Type       | Meaning                                                     | Example                              |
-| ---------------------- | ----------------------------------------------------------- | ------------------------------------ |
-| **One-to-One (1:1)**   | One record in Table A relates to only one record in Table B | One employee → one ID card           |
-| **One-to-Many (1:M)**  | One record in Table A can relate to many in Table B         | One customer → many orders           |
-| **Many-to-One (M:1)**  | Opposite of one-to-many                                     | Many orders → belong to one customer |
-| **Many-to-Many (M:M)** | Multiple records in both tables relate to each other        | Students ↔ Courses                   |
+One-to-Many (1:*) One value in Table A → many rows in Table B
 
+Many-to-One (*:1) - Same as above, just opposite direction
 
-| Cardinality Type       | Description                   | Example                                        |
-| ---------------------- | ----------------------------- | ---------------------------------------------- |
-| **High Cardinality**   | Column has many unique values | Email, Phone number, Invoice ID                |
-| **Low Cardinality**    | Column has few unique values  | Gender (Male/Female), Status (Active/Inactive) |
-| **Medium Cardinality** | Not too many, not too few     | City names, Product categories                 |
+One-to-One (1:1) - One value matches only one value
 
+Many-to-Many (:) - Same value appears many times in both tables
+
+Cardinality in Power BI defines how rows in one table relate to rows in another table, such as one-to-many or many-to-many, and also refers to how many unique values a column contains.
 
 # 60. Find the rows in Table A that are not in Table B in Power BI.
 
