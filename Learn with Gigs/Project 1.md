@@ -16,7 +16,7 @@ I have created DAX measures like Total sales, budget and YTD sales, budget also 
 
 I also made KPIs like ach %, variance from last year, surplus or deficit from target.
 
-For visuals I used KPI cards, line chart for monthly trend, and bar chart to compare ly sales, cy sales and targets.
+For visuals I used KPI cards, line chart for monthly trend, and column chart to compare ly sales, cy sales and targets.
 
 I have added drill throgh so users can check customer or product details.
 
