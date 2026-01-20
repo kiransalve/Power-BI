@@ -6,4 +6,4 @@ My work in current company is data cleaning, to make interactive dashboards, wri
 
 In current company I handled sales, finance and marketing data of 8 divisions, I work closely with stackholders like Sales VP ASM, RSM, CFO, Costing Managers and other team members.
 
-also I have worked on Sales Dashboard, Product Margin dashboard and Incentive Dashboard.
+also I have worked on Sales Dashboard, Product Margin dashboard, Outstanding Aging Dashboard, Marketing Campaign Tracker and Incentive Dashboard.
