@@ -6,6 +6,8 @@ The main purpose was to help sales managers and the VP quickly understand how sa
 
 The data is in MySQL, so I connected Power BI to MySQL and designed star schema using fact tables like sales register, budget and dimmension table like customer, product, date.
 
+To Create fiscal date table i created month index that map april as 1st month and march as last month.
+
 for budget table, budget are hq wise and months are in separate columns, so i have used unpivot so all budget comes in one single rows.
 
 I have created DAX measures like Total sales, budget and YTD sales, budget also year on year growth 
