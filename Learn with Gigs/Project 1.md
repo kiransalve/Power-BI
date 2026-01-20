@@ -24,4 +24,4 @@ I also applied dynamic row-level security, so each divisional manager can see on
 
 I implemented incremental scheduled refresh so only last 6 months of data will refreshed. 
 
-Because of this dashboard, manual reporting reduced by more than 2 hours every day, and management could take faster decisions, like planning field visits
+Because of this dashboard, manual reporting reduced by more than 2 hours every day, and management could take faster decisions
