@@ -20,8 +20,6 @@ For visuals I used KPI cards, line chart for monthly trend, and bar chart to com
 
 I have added drill throgh so users can check customer or product details.
 
-I also applied row-level security, so each divisional manager can see only their own division data
+I also applied dynamic row-level security, so each divisional manager can see only their own division data
 
 Because of this dashboard, manual reporting reduced by more than 2 hours every day, and management could take faster decisions, like planning field visits or stopping low-performing products.
-
-
