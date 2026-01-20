@@ -688,6 +688,8 @@ can be shared and used by multiple users, can be used by power bi , power apps, 
 
 supports schedule refresh and live query (dataflow) for power bi
 
+https://www.youtube.com/watch?v=TQrEGfR0ChQ
+
 # 26. What are different access levels that one can have in a workplace?
 
 Power BI Admin :
