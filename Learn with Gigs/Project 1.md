@@ -1,6 +1,8 @@
-In my previous role, I worked on a sales reporting project using Power BI.
+In my current role, I worked on a sales project.
 
-I built dashboards to track sales performance versus targets for the sales team. The data covered more than 50 headquarters, 3 divisions, and 4 zones across India.
+I built dashboards to track sales versus targets for the sales team. 
+
+The data covered more than 50 headquarters, 3 divisions, and 4 zones across India and has about 1 Lakhs rows.
 
 The main purpose was to help sales managers and the VP quickly understand how sales are hapening, what is growth, which HQs are achiveing there targets and which are underperformer and which region have most deficit etc.
 
