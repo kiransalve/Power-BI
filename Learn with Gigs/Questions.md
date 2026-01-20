@@ -692,25 +692,80 @@ https://www.youtube.com/watch?v=TQrEGfR0ChQ
 
 # 26. What are different access levels that one can have in a workplace?
 
-Power BI Admin :
+1. Admin / Owner
 
-Person owns/manage the workplace with full control over other members in workplace
+Highest level access
 
-Member :
+What they can do:
 
-The Developer of report has a member access having capabilities of doing modifications, sharing report through apps, managing gatways, and many more 
+Full control over system or workspace
 
-Member can give contributor and viewer access while adding new people in the workplace
+Create, delete users
 
-Contributor :
+Change permissions
 
-Contributes by doing modifications if any and publishing it to the service.
+Manage security, gateways, refresh
 
-can give only viewer access to the new people added to the workplace.
+Publish and delete reports
 
-Viewer :
+Example: IT Admin, Power BI Workspace Owner
 
-The Business/End User are given Viewer's access who can only view the report shared to them
+
+2. Contributor / Editor
+
+Can create and modify content
+
+What they can do:
+
+Create and edit reports
+
+Publish datasets
+
+Configure refresh
+
+Update dashboards
+
+What they cannot do:
+
+Manage users
+
+Change workspace ownership
+
+Example: BI Developer, Data Analyst
+
+3. Member
+
+Limited creation access
+
+What they can do:
+
+View and sometimes edit content
+
+Publish reports (depends on tool)
+
+Collaborate with team
+
+Example: Team member, Junior analyst
+
+4. Viewer / Read-only User
+
+View only
+
+What they can do:
+
+View dashboards and reports
+
+Interact with filters and slicers
+
+What they cannot do:
+
+Edit
+
+Share
+
+Download data
+
+Example: Business users, Management
 
 # 27. What is difference between calculated measure and calculated column?
 
