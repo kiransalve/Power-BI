@@ -1098,8 +1098,10 @@ CALCULATETABLE → returns a table.
 # 47. Difference between ALL, ALLEXCEPT, ALLSELECTED?
 
 ALL: Removes all filters from the specified table/columns.
+
 ALLEXCEPT: Removes all filters except the mentioned columns.
-ALLSELECTED: Removes filters but preserves filters coming from visuals (user selections)
+
+ALLSELECTED: Removes filters but preserves filters coming from slicers (user selections)
 
 # 48. RELATED() vs LOOKUPVALUE()?
 
