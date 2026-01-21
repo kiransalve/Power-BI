@@ -2067,3 +2067,36 @@ DIVIDE(
     [Sales PM]
 )
 ```
+
+# 108. Difeerence between rankx and denserank
+
+RANKX - skip in ranking 
+
+```
+Rank_Normal =
+RANKX(
+    ALL(Product[Product]),
+    [Total Sales],
+    ,
+    DESC
+)
+
+Rank Result - 1, 2, 2, 4 (rank 3 is skipped)
+```
+
+DENSE RANK - No skip in ranking
+
+```
+Rank_Dense =
+RANKX(
+    ALL(Product[Product]),
+    [Total Sales],
+    ,
+    DESC,
+    DENSE
+)
+
+Rank Result : 1, 2, 2, 3 (continuous)
+```
+
+
