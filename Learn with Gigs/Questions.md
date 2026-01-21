@@ -2099,4 +2099,11 @@ RANKX(
 Rank Result : 1, 2, 2, 3 (continuous)
 ```
 
+# 109. What is Disconnected Table?
+
+A Disconnected Table is a table in Power BI that has no relationship with any other table in the data model.
+
+It does not filter data automatically.
+
+We use a disconnected table to : Control logic using DAX, Create dynamic calculations, Avoid changing the data model relationships
 
