@@ -2107,3 +2107,11 @@ It does not filter data automatically.
 
 We use a disconnected table to : Control logic using DAX, Create dynamic calculations, Avoid changing the data model relationships
 
+# 110. What is Paginated Reports?
+
+Paginated Reports are used in Power BI when we need pixel-perfect, printable reports.
+
+They are page-based, not scrolling like dashboards, and are mainly used for invoices, financial statements, and detailed tabular reports with large data.
+
+These reports are created using Power BI Report Builder and are best for exporting to PDF or Excel with exact formatting.
+
