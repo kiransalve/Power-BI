@@ -260,20 +260,7 @@ RANKX(
 
 # 12. What are Fact and Dimension Tables in Power BI or Data Modeling?
 
-A Dimension table describes the “who”, “what”, “where”, and “when” of the business.
-It contains textual or descriptive attributes that help you slice and analyze fact data.
-
-Example:
-
-```
-Who bought? → Customer Dimension
-
-What product? → Product Dimension
-
-When did it happen? → Date Dimension
-
-Where? → Region / HQ Dimension
-```
+A Dimension contains textual or descriptive attributes that help you slice and analyze fact data.
 
 Key Characteristics :
 
@@ -298,7 +285,7 @@ Inventory Fact
 The same Date table works for all.
 ```
 
-2. Role-Playing Dimension - A single dimension used in multiple roles inside the same model.
+2. Role-Playing Dimension -  A role-playing dimension is a single dimension table that connects to a fact table multiple times for different roles, like Order Date and Ship Date.
 
 Example:
 
