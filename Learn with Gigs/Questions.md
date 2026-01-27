@@ -3,8 +3,6 @@
 
 Append will Combine rows of two or more tables vertically, When all tables have same columns, same order and same data types
 
-Append means add rows one below another
-
 We use this when we want to combin multiple months data vertically, like Jan, Feb, Mar till Dec separate sales sheets and when we use append we get one sheet of Jan to Dec sales
 
 To use this we go Transform -> Home -> Append queries 
@@ -132,9 +130,9 @@ Power BI automatically detects this if columns name and data types are same in b
 
 -> One-to-One (1:1) - Both tables have unique values in the join column.
 
-
 # 8. How to handle many to many?
 
+```
 We can use bridge table with distinct values
 
 Create two One-to-Many relationships:
@@ -144,6 +142,33 @@ Bridge → Sales Table
 Bridge → Target Table
 
 Now both tables are indirectly connected through the bridge.
+```
+
+Problem :
+
+Many-to-many happens when both tables have duplicate values in the joining column.
+
+Example:
+
+Sales table → same Customer appears multiple times
+
+Inventory table → same Customer also appears multiple times
+
+Power BI cannot understand which row matches which, and results can become wrong.
+
+Solution :
+
+Create a new table with distinct values of the common column (like CustomerID).
+
+This table becomes the Bridge table
+
+Create relationships:
+
+Bridge → Table 1 (One-to-Many)
+
+Bridge → Table 2 (One-to-Many)
+
+This removes ambiguity and gives correct results
 
 https://www.youtube.com/watch?v=BbKQ5eWjE-Y
 
