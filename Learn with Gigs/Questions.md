@@ -348,8 +348,8 @@ Example (customer changed HQ):
 
 | CustomerID | CustomerName | HQ     | StartDate | EndDate |
 | ---------- | ------------ | ------ | --------- | ------- |
-| C001       | Rahul        | Mumbai | 2019      | 2022    |
-| C001       | Rahul        | Delhi  | 2022      | NULL    |
+| C001       | Kiran        | Mumbai | 2019      | 2022    |
+| C001       | Kiran        | Delhi  | 2022      | NULL    |
 
 SCD Type 3 – Keep Partial History - Only stores previous value and current value.
 
@@ -381,7 +381,6 @@ Product Dimension
 HQ Dimension
 → linked to Customer Dimension
 ```
-
 
 Fact table - 
 
@@ -488,7 +487,9 @@ Power BI imports a copy of the data into its in-memory engine (VertiPaq).
 
 Data is stored inside the .pbix file (Power BI experience file format)
 
-there is 1 GB of limit for the data we want to publish to power bi service
+there is 1 GB of limit for the data we can to publish to power bi service
+
+Supports full DAX & modeling features
 
 it has fast performance than any other mode.
 
@@ -502,7 +503,7 @@ Refresh limits in Service (for power bi pro - 8 schedule refresh per day and ref
 
 Direct Query Mode - 
 
-Power BI does not store data. Every visual sends a live SQL query to the database
+Data stays in source database. Power BI does not store data. Every visual sends a live SQL query to the database
 
 the data will be pulled by query to database with every user interaction
 
