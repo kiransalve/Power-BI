@@ -283,7 +283,7 @@ RANKX(
 
 ```
 
-# 12. What are Fact and Dimension Tables in Power BI or Data Modeling?
+# 12. What are Fact and Dimension Tables?
 
 A Dimension contains textual or descriptive attributes that help you slice and analyze fact data.
 
@@ -418,7 +418,7 @@ Example: Student attendance, Employee badge-in events, Customer promotion eligib
 
 https://www.youtube.com/watch?v=_0IdAb9Z5n4
 
-# 13. What is the types of schemas?
+# 13. What is schemas and their types?
 
 In a star schema, we have a central fact table directly connected to dimension tables and no dim table connected to other dim table.
 
@@ -435,9 +435,9 @@ Dim Product — Fact Sales — Dim Date
 
 In a snowflake schema, dimensions are normalized — meaning they are broken into multiple related tables. 
 
-here one dim table connected to multiple dim tables.
+here one dim table can be connected with multiple dim tables.
 
-For example, a Product dimension may be split into Product, Category, and Subcategory.
+For example, a Product dimension may be split into Brand, Category, and Subcategory.
 
 ```
 Dim Product → Dim Category
