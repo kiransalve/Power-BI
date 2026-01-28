@@ -2206,3 +2206,9 @@ Step 5. Create Relationships
 
 Fact → Dimension: Many to One, using Surrogate Keys
 
+# 116. VALUES() vs DISTINCT()
+
+Values() - It returns unique values, it includes blank if exists, it respects filter context
+
+DISTINCT() - It also return unique values and also respects filter context, It does not return BLANK()
+
