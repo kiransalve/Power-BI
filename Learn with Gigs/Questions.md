@@ -2126,3 +2126,13 @@ They are page-based, not scrolling like dashboards, and are mainly used for invo
 
 These reports are created using Power BI Report Builder and are best for exporting to PDF or Excel with exact formatting.
 
+# 111. In Power Query is null and blank is same? and how to handle them?
+
+No, null and blank are NOT the same in Power Query
+
+Null means no value at all - like missing or unknown values
+
+Blank means empty text - "" - there is a value but it's an empty string 
+
+We can replace blank with Null or impute the values by talking with data provider.
+
