@@ -2168,3 +2168,32 @@ CALENDARAUTO() creates a date table automatically, The number inside defines the
 
 CALENDARAUTO(3) means year ends in March, so It scans all date columns in the model, Finds min and max date, Creates date table and Treats March as year end
 
+# 115. How to build multiple dimmension table from one Big Fact Table?
+
+Step 1. Identify Fact and Dimensions
+
+Identify measures (Sales, Quantity, Amount) → Fact
+
+Identify descriptive fields (Customer, Product, Date, Region) → Dimensions
+
+Step 2. Create Dimension Tables (Power Query)
+
+Right-click Fact table → Reference
+
+Keep only dimension-related columns
+
+Remove unnecessary columns
+
+Remove Duplicates
+
+Rename table as DimCustomer, DimProduct, etc.
+
+Step 3. Create Surrogate Keys
+
+Select each dimension table
+
+Add Column → Index Column (Start from 1)
+
+Rename as CustomerID, ProductID, etc.
+
+Step 4. 
