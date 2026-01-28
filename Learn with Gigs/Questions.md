@@ -2196,4 +2196,13 @@ Add Column → Index Column (Start from 1)
 
 Rename as CustomerID, ProductID, etc.
 
-Step 4. 
+Step 4. Clean Fact Table
+
+Remove descriptive text columns
+
+Keep only: Surrogate keys, Date key, Measures (Sales, Qty)
+
+Step 5. Create Relationships
+
+Fact → Dimension: Many to One, using Surrogate Keys
+
