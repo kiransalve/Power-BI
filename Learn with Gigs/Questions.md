@@ -2136,3 +2136,35 @@ Blank means empty text - "" - there is a value but it's an empty string
 
 We can replace blank with Null or impute the values by talking with data provider.
 
+# 112. How to create date table in power BI?
+
+```
+DateTable =
+ADDCOLUMNS (
+    CALENDAR (DATE(2018,1,1), DATE(2030,12,31)),
+    "Year", YEAR ( [Date] ),
+    "Month No", MONTH ( [Date] ),
+    "Month", FORMAT ( [Date], "MMM" ),
+    "Month Year", FORMAT ( [Date], "MMM-YYYY" ),
+    "Quarter", "Q" & FORMAT ( [Date], "Q" ),
+    "Day", DAY ( [Date] ),
+    "Weekday", FORMAT ( [Date], "DDD" )
+)
+```
+
+Go to Table tools -> Mark as Date Table
+
+Connect DateTable[Date] -> With FactTable[Date]
+
+# 113. Difference between CALENDAR and CALENDARAUTO in Power BI?
+
+CALENDAR() -  Manual Date Range, so you can decide the start date and end date
+
+CALENDARAUTO() - Auto date range, Power BI scans all date columns in model and pick minimum and maximum date.
+
+# 114. What is CALENDARAUTO(3) in Power BI?
+
+CALENDARAUTO() creates a date table automatically, The number inside defines the last month of the year.
+
+CALENDARAUTO(3) means year ends in March, so It scans all date columns in the model, Finds min and max date, Creates date table and Treats March as year end
+
