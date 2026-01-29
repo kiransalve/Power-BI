@@ -2234,5 +2234,79 @@ CALCULATE(
     PARALLELPERIOD('Date'[Date], -1, YEAR)
 )
 ```
-
 Using SAMEPERIODLASTYEAR, we only go one year backword, but using PARALLELPERIOD we can go any number of year backword, any number of month
+
+# 118. Custom Chart - Sankey Chart , Ribbon Chart
+
+A Sankey chart shows flow of data from one stage to another, and the thickness of the line shows volume.
+
+A Ribbon chart shows ranking changes over time.
+
+# 119. Conditional Formatting
+
+Conditional formatting means changing color, icons, or data bars based on values, so important numbers stand out automatically.
+
+We used it when we need to highlights high / low values
+
+It help Helps users understand data quickly and Reduces need to read numbers carefully
+
+We can use it in Tables, Cards, Charts.
+
+There are 4 typs of conditional formating - Background Color, Font Color, Data Bars and Icons
+
+we can also do this by measure 
+
+```
+Profit Color =
+IF([Profit] > 0, "Green", "Red")
+
+Then apply Format by → Field value.
+```
+
+# 120. Difference between Table and Matrix
+
+A Table shows data in simple rows and columns, just like Excel.
+
+A Matrix is like Pivot Table in Excel. It supports rows & columns grouping, it has drill-down / expand-collapse and it shows subtotals & grand totals
+
+# 121. ALL() , ALLSELECTED() , ALLEXCEPT() 
+
+ALL() - Removes all filters from a table or column.
+
+```
+% of Selected Sales =
+      DIVIDE(
+         [Total Sales],
+         CALCULATE(
+            [Total Sales],
+            ALLSELECTED('Sales Register')
+         )
+      )
+Even if user selects Year, Region, Product → ALL ignores everything
+```
+
+ALLSELECTED() - Removes visual-level filters, but keeps slicer and page filters.
+
+```
+Sales % within selected region:
+
+Sales % =
+DIVIDE([Total Sales],
+CALCULATE([Total Sales], ALLSELECTED(Sales)))
+
+If slicer = Region = West
+It calculates total only for West, not entire company.
+```
+
+ALLEXCEPT() - Removes all filters except specific columns.
+
+```
+Total Sales by Region ignoring Product filter:
+
+Sales by Region =
+CALCULATE([Total Sales],
+ALLEXCEPT(Sales, Sales[Region]))
+
+Keeps Region filter, removes others.
+```
+
