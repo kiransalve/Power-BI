@@ -2212,3 +2212,27 @@ Values() - It returns unique values, it includes blank if exists, it respects fi
 
 DISTINCT() - It also return unique values and also respects filter context, It does not return BLANK()
 
+# 117. SAMEPERIODLASTYEAR vs PARALLELPERIOD
+
+SAMEPERIODLASTYEAR compares the exact same date range with the previous year
+
+```
+Sales LY =
+CALCULATE(
+    [Total Sales],
+    SAMEPERIODLASTYEAR('Date'[Date])
+)
+If [Total Sales] shows Jan 2025, this measure shows Jan 2024 sales
+```
+
+PARALLELPERIOD shifts the time context by month, quarter, or year and is more flexible
+
+```
+Sales Prev Year =
+CALCULATE(
+    [Total Sales],
+    PARALLELPERIOD('Date'[Date], -1, YEAR)
+)
+```
+
+Using SAMEPERIODLASTYEAR, we only go one year backword, but using PARALLELPERIOD we can go any number of year backword, any number of month
