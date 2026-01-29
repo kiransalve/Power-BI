@@ -1,0 +1,2 @@
+What is your role in project?
+In this project, my role was end-to-end Power BI developer. I understood the business requirement from stakeholders, cleaned and transformed raw Excel data using Power Query, designed a proper data model with fact and dimension tables, and wrote DAX measures for KPIs. I built interactive dashboards with slicers and visuals, validated numbers with business users, and finally published the report to Power BI Service with proper access and refresh setup
