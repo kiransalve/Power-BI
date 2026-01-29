@@ -150,3 +150,30 @@ Composite model for complex enterprise needs
 So in my experience, Import vs DirectQuery is not about which is better — it’s about choosing the right tool for the right business problem.
 When designed correctly, both can scale very well, and I’ve successfully implemented all three patterns — Import, DirectQuery, and Composite mode across my 5 projects.
 
+# 3. How to handle Many to Many Relationship?
+
+When we join two tables based on common column, and both column have duplicate values then it is Many To Many Relationship
+
+means suppose I am making Sales Register with daily sales records 
+
+and Budget Table with monthly and HQ wise Budgets 
+
+both have HQ column common
+
+Now problem is one HQ suppose Pune HQ have multiple Sales Records in Sales Register
+
+and in Budget Table Pune HQ has multiple budget rows (like monthwise from apr-mar)
+
+so both table has many rows with Pune HQ
+
+and IF we connect this both table then it Create Many to Many relationship
+
+Most many-to-many issues happen because: Data is not normalized
+
+To handle this scenario we can nonrmalize data into dimension table
+
+we make one bridge table that contain unique values of HQ column
+
+and then connect this to Sales register and Budget table by one to many relationship
+
+so this way our both table indirectly connected 
