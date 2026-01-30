@@ -2312,19 +2312,37 @@ Keeps Region filter, removes others.
 
 # 122. Filter vs Slicer
 
-Filter - Page filter have separate pane in rightside of power bi dekstop
+Filter (Page Filter)
 
-where we can drag columns and define the filter criteria like Region = East
+Page filters have a separate pane on the right side of Power BI Desktop
 
-It has option like basic and advance filter where we can filter based on text or value that contain, does not contain, start with etc
+We can drag columns into the Page-level filter section
 
-Users don't always see it.
+Then define filter criteria, for example: Region = East
 
-Slicer - It has visual and clickable control like button, dropdown, list
+It provides Basic and Advanced filter options
 
-Users can filter data
+Filter based on contains, does not contain, starts with, etc.
 
-there are button slicer also that give grid buttons tiles.
+It works in the background
 
+Users don’t always see page filters
 
+Slicer
+
+A slicer is a visual and clickable control
+
+Users can interactively filter data
+
+It appears on the report page
+
+Supports list, dropdown, and button-style slicers
+
+Button slicers show data as grid tiles or buttons for easy selection
+
+One-line difference
+
+Page Filter → background filtering for a full page
+
+Slicer → visible, interactive filtering for users
 
