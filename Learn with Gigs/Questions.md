@@ -2310,3 +2310,21 @@ ALLEXCEPT(Sales, Sales[Region]))
 Keeps Region filter, removes others.
 ```
 
+# 122. Filter vs Slicer
+
+Filter - Page filter have separate pane in rightside of power bi dekstop
+
+where we can drag columns and define the filter criteria like Region = East
+
+It has option like basic and advance filter where we can filter based on text or value that contain, does not contain, start with etc
+
+Users don't always see it.
+
+Slicer - It has visual and clickable control like button, dropdown, list
+
+Users can filter data
+
+there are button slicer also that give grid buttons tiles.
+
+
+
