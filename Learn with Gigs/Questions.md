@@ -2279,7 +2279,7 @@ ALL() - Removes all filters from a table or column.
          [Total Sales],
          CALCULATE(
             [Total Sales],
-            ALLSELECTED('Sales Register')
+            ALL('Sales Register')
          )
       )
 Even if user selects Year, Region, Product → ALL ignores everything
