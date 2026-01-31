@@ -96,8 +96,6 @@ We can used it values like file paths, date ranges and incremental refresh rules
    
 Incremental Refresh means Power BI refreshes only new or changed data, instead of loading the entire dataset every time.
 
-It is useful because faster refresh times, less memory and CPU uses and ideal for large dataset
-
 Let’s say you have 5 years of sales data: The first time, Power BI loads all 5 years
 
 Next time, it only refreshes the latest 1 month (or as defined) instead of reloading everything
