@@ -72,15 +72,15 @@ we have used it to create star schema.  Raw table → cleaned → multiple dimen
 
 # 4. What is M-Code?
 
+Whenever we click: Remove Columns, Filter Rows, Merge Queries, Group By, Change Types Power BI automatically writes M code in the background.
+
+We can see it in: Home → Advanced Editor
+
 M Code is the formula language used in Power Query to clean and transform data before loading it into your model.
 
 It’s called M because it was originally named “Mashup” language.
 
 It's functional and case sensitive language
-
-Whenever we click: Remove Columns, Filter Rows, Merge Queries, Group By, Change Types Power BI automatically writes M code in the background.
-
-We can see it in: Home → Advanced Editor
 
 M code is used mostly when point-and-click options in Power Query aren’t enough
 
