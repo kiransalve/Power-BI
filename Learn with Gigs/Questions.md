@@ -102,6 +102,8 @@ Let’s say you have 5 years of sales data: The first time, Power BI loads all 5
 
 Next time, it only refreshes the latest 1 month (or as defined) instead of reloading everything
 
+Here power BI keeps old data as it is and refresh only recent data based on date filter
+
 Incremental Refresh requires:
 
 It need Power BI Pro or premium per user licence 
