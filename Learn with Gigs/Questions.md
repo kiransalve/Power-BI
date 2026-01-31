@@ -33,15 +33,15 @@ Query folding is the process of pushing data transformation steps back to the na
 
 When we do data transformation in Power Query, Power BI tries to translate each transformation from M- Query to native query language, such as SQL
 
-We can check this by right-clicking a step in Power Query and selecting "View Native Query" — if it's greyed out, folding is not happening.
-
-Example: Relational Database that has query engine SQL Server, Snowflake, Amazon Redshift, Google BigQuery, PostgreSQL, and SAP HANA.
-
 Database engines are much faster than Power BI to make data transformations.
 
 If folding happens → database does the processing → Power BI receives only the final and small result.
 
 It helps in Faster refresh, Less RAM used, Better performance, Less load on Power BI
+
+We can check this by right-clicking a step in Power Query and selecting "View Native Query" — if it's greyed out, folding is not happening.
+
+Example: Relational Database that has query engine SQL Server, Snowflake, Amazon Redshift, Google BigQuery, PostgreSQL, and SAP HANA.
 
 Transformation support: Filtering, Group By, Joins, Sorting, Removing duplicates, Renaming header, merging/appending querries from same source
 
