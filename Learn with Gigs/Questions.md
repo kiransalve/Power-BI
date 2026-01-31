@@ -88,7 +88,7 @@ We can see it in: Home → Advanced Editor
    
 In Power Query, a Parameter is a dynamic value that can be reused in queries to make your data transformations more flexible, reusable, and user-controlled.
 
-Think of it like a variable that you can change once, and it updates everywhere it’s used.
+You can think of a parameter like a variable — change it once, and it automatically updates everywhere it’s used.
 
 We can used it values like file paths, date ranges and incremental refresh rules (RangeStart and RangeEnd)
 
