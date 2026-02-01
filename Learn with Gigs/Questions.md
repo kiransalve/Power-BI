@@ -855,18 +855,6 @@ HASONEFILTER() : Checks whether a column (or table) has exactly one filter appli
 
 ISFILTERED() : Checks whether any filter is applied on a column or table.
 
-Returns TRUE when:
-
-Slicer applied
-
-Manual filter applied
-
-Visual level filter
-
-Page level filter
-
-Report level filter
-
 # 32. What is difference between Sum() and SumX() function?
 
 SUM() :
