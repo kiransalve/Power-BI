@@ -527,27 +527,21 @@ https://www.youtube.com/watch?v=J_keoBQ5EGk
 
 # 16. What is bookmarks in Power BI?
 
-In Power BI, a bookmark is essentially a snapshot of the current state of a report page. It captures things like:
+A Bookmark is a snapshot of the current state of a report page and come back to it anytime with one click.
 
-Filters and slicers applied
+It captures things like:
 
-Selected visuals
+Filters and slicers applied, Selected visuals, Sort order, Visibility of visuals (show/hide), Drill state (expanded/collapsed visuals)
 
-Sort order
+We can save this state and later return to it with a click. 
 
-Visibility of visuals (show/hide)
+Bookmarks are mainly used for:
 
-Drill state (expanded/collapsed visuals)
+Navigation (Page Switching) - Create buttons, Link buttons to bookmarks, Move between report views without changing pages
 
-We can save this state and later return to it with a click. Bookmarks are mainly used for:
+Show / Hide Visuals - Hide charts, tables, or panels, Show them using buttons, Common for filters panel, help popup, tooltips
 
-Navigation: Creating buttons that take users to different views or report pages.
-
-Storytelling / presentations: Showing different insights step by step.
-
-Switching views: For example, switching between a detailed view and a summary view.
-
-Dynamic visuals: Toggling visual elements like charts or tables on/off without creating separate pages.
+Storytelling - Create step-by-step views, Used in presentations and demos
 
 https://www.youtube.com/watch?v=1RfJOlaqSUw
 
