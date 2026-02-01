@@ -776,13 +776,11 @@ Example: Business users, Management
 
 # 27. What is difference between calculated measure and calculated column?
 
-Measure :
+Calculated Column - Calculated row by row, Stored in the table, Uses row context, Calculated during data refresh, Increases model size
 
-Works on filter context, return different data results depending on filters applied, not stored in RAM and can be reused for other measures
+Calculated Measure - Calculated on the fly, Not stored in table, Uses filter context, Calculated at query time, Does not increase model size
 
-Columns :
-
-Works on row context means used for row by row calculation, takes up space in RAM and recalculates itself only on data source refresh 
+Calculated columns are computed row by row and stored in the model, while calculated measures are calculated dynamically based on filter context and used for aggregations.
 
 # 28. What is difference between Count() and CountA() function?
 
