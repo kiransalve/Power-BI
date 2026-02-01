@@ -414,6 +414,10 @@ Example: Order Processing (Stages: Order Received → Packed → Shipped → Del
 
 Example: Student attendance, Employee badge-in events, Customer promotion eligibility
 
+5. Aggregate Fact Table (Summary Fact Table) - Stores pre-aggregated data for performance, Derived from detailed fact tables, Improves query speed
+
+Example : Monthly sales by product and region
+ 
 https://www.youtube.com/watch?v=_0IdAb9Z5n4
 
 # 13. What is schemas and their types?
