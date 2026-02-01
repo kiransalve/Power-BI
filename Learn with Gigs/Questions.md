@@ -533,15 +533,15 @@ It captures things like:
 
 Filters and slicers applied, Selected visuals, Sort order, Visibility of visuals (show/hide), Drill state (expanded/collapsed visuals)
 
-We can save this state and later return to it with a click. 
+Yes, I have used bookmarks to create interactive reports.
 
-Bookmarks are mainly used for:
+For example, in a sales dashboard, I created a Show Filters and Hide Filters button using bookmarks.
 
-Navigation (Page Switching) - Create buttons, Link buttons to bookmarks, Move between report views without changing pages
+I used the Selection Pane to hide the filter panel and created two bookmarks—one to show the filters and one to hide them.
 
-Show / Hide Visuals - Hide charts, tables, or panels, Show them using buttons, Common for filters panel, help popup, tooltips
+I turned Data OFF in the bookmarks so only the visibility of visuals changes, not the slicer selections.
 
-Storytelling - Create step-by-step views, Used in presentations and demos
+This improved the user experience by keeping the dashboard clean while still allowing users to apply filters when needed.
 
 https://www.youtube.com/watch?v=1RfJOlaqSUw
 
