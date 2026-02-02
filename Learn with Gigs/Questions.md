@@ -2328,3 +2328,134 @@ Page Filter → background filtering for a full page
 
 Slicer → visible, interactive filtering for users
 
+# 123. Use cases of charts in Power BI?
+
+Column & Bar Charts
+
+Best for: Comparing values
+
+Use cases:
+
+Sales by product or category
+
+Revenue by region or country
+
+Employee count by department
+
+- Easy to see which item is highest or lowest.
+
+Line Charts
+
+Best for: Trends over time
+
+Use cases:
+
+Sales growth month by month
+
+Website traffic over time
+
+Stock price or KPI trends
+
+- Great for seeing increases, decreases, and patterns.
+
+Pie & Donut Charts
+
+Best for: Proportions / percentages
+
+Use cases:
+
+Market share by brand
+
+Expense split by category
+
+Customer type distribution
+
+- Shows how each part contributes to the whole (use with few categories).
+
+Area Charts
+
+Best for: Trend + volume
+
+Use cases:
+
+Cumulative sales over time
+
+Growth of multiple products together
+
+Similar to line charts but more visual impact
+
+Stacked Charts
+
+Best for: Comparing parts of a total
+
+Use cases:
+
+Sales by region and product
+
+Budget vs actual expenses
+
+Helps understand both total and breakdown
+
+Map Charts
+
+Best for: Location-based data
+
+Use cases:
+
+Sales by country/state/city
+
+Customers by region
+
+Store performance by location
+
+Perfect when geography matters.
+
+Table & Matrix
+
+Best for: Detailed data view
+
+Use cases:
+
+Transaction-level data
+
+Financial statements
+
+KPI tables with filters
+
+When users want exact numbers.
+
+KPI & Gauge Charts
+
+Best for: Performance tracking
+Use cases:
+
+Target vs actual sales
+
+Profit margin status
+
+SLA or goal tracking
+
+- Quick health check of business metrics.
+
+Funnel Charts
+
+Best for: Process stages
+Use cases:
+
+Sales pipeline (leads → deals)
+
+Customer conversion steps
+
+- Shows where drop-offs happen.
+
+Scatter Charts
+
+Best for: Relationships between variables
+
+Use cases:
+
+Price vs sales volume
+
+Advertising spend vs revenue
+
+- Helps find correlations and outliers.
