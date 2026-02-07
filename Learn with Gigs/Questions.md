@@ -2459,3 +2459,39 @@ Price vs sales volume
 Advertising spend vs revenue
 
 - Helps find correlations and outliers.
+
+# 124. which dax gives scaler and table?
+
+Scalar DAX (returns one value) - SUM(), AVERAGE(), COUNT(), MAX(), MIN(), SELECTEDVALUE(), IF(), CALCULATE()
+
+Table DAX (returns a table) - ILTER(), ALL(), VALUES(), SUMMARIZE(),  ADDCOLUMNS(), SELECTCOLUMNS(), CALCULATETABLE()
+
+
+# 125. How to do calculation with disconnected table?
+
+A disconnected table has no relationship with fact tables, so it does not filter data automatically.
+
+To use it in calculations, we capture the user’s selection using SELECTEDVALUE and then apply that value inside a measure using CALCULATE, SWITCH, or simple arithmetic.
+
+If we need the disconnected table to behave like a relationship, we use TREATAS to pass filters from the disconnected table to the fact table
+
+# 126. If ALLSELECTED has a page-level filter, what happens?
+
+ALLSELECTED respects page--level filters.
+
+It removes only visual-level filters, but keeps page-level and report-level filters
+
+# 127. What does SUMX return if applied on one column?
+
+SumX Iterates row by row
+
+Adds each value
+
+Returns one number
+
+This return same result as Sum() but have slow calculation.
+
+# 128. If slicer does not filter table and edit interaction enabled but does not affect table and slicer and have active relationship
+
+the most common reason is that “Show items with no data” is enabled
+
