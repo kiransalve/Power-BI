@@ -2497,6 +2497,8 @@ the most common reason is that “Show items with no data” is enabled
 
 # 129. Last 3 Month Average sales?
 
+```
+
 AvgLast3Months = 
 var _month = 3
 var _sales = 
@@ -2507,3 +2509,5 @@ CALCULATE(
                     -3,MONTH)
 )
 RETURN _sales / _month
+
+```
