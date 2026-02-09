@@ -2511,3 +2511,16 @@ CALCULATE(
 RETURN _sales / _month
 
 ```
+# 130. Last Year Sales with fiscal year?
+```
+YTD LY Sales = CALCULATE(
+            [Total Sales], 
+                DATESBETWEEN(
+                    'Date'[Date],
+                        EDATE(MIN('Date'[Date]), -12),  // EDATE(DATE(2024,4,15), -12) ==> Returns 15-Apr-2023
+                        EDATE(MAX('Sales Register'[Invoice Date]),-12)
+                )
+            )
+
+```
+
