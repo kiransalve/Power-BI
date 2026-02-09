@@ -2495,3 +2495,15 @@ This return same result as Sum() but have slow calculation.
 
 the most common reason is that “Show items with no data” is enabled
 
+# 129. Last 3 Month Average sales?
+
+AvgLast3Months = 
+var _month = 3
+var _sales = 
+CALCULATE(
+    [Total Sales],
+    DATESINPERIOD('Date'[Date], 
+                    MAX('Sales Register'[Invoice Date]),
+                    -3,MONTH)
+)
+RETURN _sales / _month
