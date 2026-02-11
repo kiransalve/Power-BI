@@ -2511,6 +2511,7 @@ CALCULATE(
 RETURN _sales / _month
 
 ```
+
 # 130. Last Year Sales with fiscal year?
 ```
 YTD LY Sales = CALCULATE(
@@ -2524,3 +2525,212 @@ YTD LY Sales = CALCULATE(
 
 ```
 
+# 131. Maths, English, Science
+       SS, Maths
+       English
+       Output - 
+       3
+       2
+       1
+
+```
+Subject Count =
+IF (
+    ISBLANK ( [Subjects] ),
+    0,
+    LEN ( [Subjects] ) - LEN ( SUBSTITUTE ( [Subjects], ",", "" ) ) + 1
+)
+
+OR
+
+Subject Count = COUNTROWS ( TEXTSPLIT ( [Subjects], "," ) )
+
+```
+
+# 132. What you do if sementic model refresh is failed?
+
+1. Check the error message first - Go to Power BI Service, Open the semantic model, Click Refresh history
+
+Read the error details, Most times the message already tells the problem
+
+2. Check data source connection - Common issues: Password expired, Token expired, Database/server down, File moved or deleted (Excel/CSV), Fix credentials and try refresh again
+
+3. Check Gateway (very important) - If using On-premises data gateway: Is gateway online?, Correct gateway selected?, Gateway user still has access?, Restart gateway service if needed
+
+4. Check recent data or changes - Ask : Any new column added in source?, Column name changed?, Data type changed?, New values breaking rules (text in number column)?, Refresh in Power BI Desktop to catch errors
+
+5. Check DAX & Power Query - Invalid DAX formula, Column removed but still used, Power Query step failing, Open Transform Data and refresh step-by-step
+
+6. Check refresh settings - Scheduled refresh turned ON?, Correct time zone?, Refresh frequency limit reached?
+
+7. Check capacity / size issues - Dataset too large, Memory limit exceeded, Too many refreshes, Optimize model or use incremental refresh
+
+8. Try manual refresh - Run refresh manually in Service, Compare error with scheduled refresh
+
+9. Re-publish if needed - If nothing works: Refresh successfully in Desktop, Publish again to Service
+
+Always fix the error in Desktop first, then publish.
+
+Service errors are easier once Desktop refresh works.
+
+
+# 133. How you handle security and governance in power bi service?
+
+Simple and interview-ready answer 👍
+
+I handle security and governance in Power BI Service using a mix of access control, data protection, and good practices.
+
+Security in Power BI Service
+
+1. Workspace security - Use Azure AD groups, not individual users, Assign proper roles:
+
+Admin – full control
+
+Member – build & publish
+
+Contributor – publish only
+
+Viewer – read-only
+
+Least access principle (only what is needed)
+
+2. Row-Level Security (RLS)
+
+Create roles in Power BI Desktop
+
+Filter data by user (USERPRINCIPALNAME)
+
+Assign users/groups in Service
+
+Users see only their own data
+
+3. Object-Level Security (OLS)
+
+Hide sensitive tables or columns
+
+Used for salary, PII data, etc.
+
+4. App access control
+
+Publish reports via Power BI Apps
+
+Control who can view the app
+
+Users don’t need workspace access
+
+5. Dataset / Semantic model permissions
+
+Control:
+
+Build
+
+Read
+
+Reshare
+
+Prevent users from creating wrong reports
+
+Governance in Power BI Service
+
+6. Data protection & sensitivity labels
+
+Apply Sensitivity labels (Public, Confidential, Restricted)
+
+Helps with compliance and data leakage prevention
+
+7. Certified & promoted datasets
+
+Certified → trusted, IT-approved datasets
+
+Promoted → business-approved
+
+Avoid multiple versions of same data
+
+8. Sharing & export control
+
+Disable:
+
+Export data
+
+Print
+
+Share outside org (if required)
+
+Control via Tenant settings
+
+9. Tenant settings (Admin portal)
+
+Control:
+
+External sharing
+
+Publish to web
+
+Custom visuals
+
+Build permissions
+
+Central governance by admins
+
+10. Auditing & monitoring
+
+Use Audit logs
+
+Monitor:
+
+Who accessed reports
+
+Who shared data
+
+Usage metrics
+
+11. Deployment pipelines
+
+Dev → Test → Prod
+
+Avoid direct changes in production
+
+Controlled releases
+
+
+Best practices I follow
+
+Use one golden semantic model
+
+Avoid sharing datasets directly
+
+Use apps instead of report sharing
+
+Document security rules clearly
+
+Review access regularly
+
+I manage security using workspace roles, RLS/OLS, dataset permissions, and apps, and governance using tenant settings, certified datasets, sensitivity labels, audit logs, and deployment pipelines.
+
+# 134. three columns - person_id, steps, date give columns person_id, yesterday_count_steps, total_steps - sql
+
+```
+SELECT
+    person_id,
+    SUM(CASE 
+            WHEN date = CURRENT_DATE - INTERVAL '1 day' 
+            THEN steps 
+            ELSE 0 
+        END) AS yesterday_count_steps,
+    SUM(steps) AS total_steps
+FROM steps_table
+GROUP BY person_id;
+```
+
+```
+SELECT
+    person_id,
+    SUM(CASE 
+            WHEN date = CAST(GETDATE() - 1 AS DATE)
+            THEN steps 
+            ELSE 0 
+        END) AS yesterday_count_steps,
+    SUM(steps) AS total_steps
+FROM steps_table
+GROUP BY person_id;
+```
