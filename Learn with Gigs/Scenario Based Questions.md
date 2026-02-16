@@ -29,3 +29,17 @@ IF(
      [Total Sales]
    )
 ```
+
+# 3. Sales using calculatetable
+
+```
+Sales using calculate table =
+SUMX (
+    CALCULATETABLE (
+        'Sales Register',
+        'Sales Register'[Item Code] = 10063077
+    ),
+    'Sales Register'[AMOUNT]
+)
+```
+
