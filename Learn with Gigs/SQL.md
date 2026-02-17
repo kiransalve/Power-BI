@@ -131,9 +131,14 @@ select first_name
 from patients
 order by len(first_name), first_name;
 
+18.
+Show the total amount of male patients and the total amount of female patients in the patients table.
+Display the two results in the same row.
 
-
-
+select 
+	sum(case when gender = "M" then 1 else 0 end) as male_count,
+    sum(case when gender = "F" then 1 else 0 end) as female_count
+from patients;
 
 
 
