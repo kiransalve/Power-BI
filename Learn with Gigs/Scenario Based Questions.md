@@ -51,3 +51,11 @@ Rev =
         [Total Sales],
         USERELATIONSHIP('Date'[Date], 'Sales Register'[Invoice Date]))
 ```
+
+# 5. Uncommon from left table
+
+```
+Table = EXCEPT(Left_table, Right_table)
+
+```
+
