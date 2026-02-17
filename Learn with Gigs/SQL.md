@@ -1,100 +1,89 @@
 ```
+1.
+Show first name of patients that start with the letter 'C'
 
-1. Differerece between primary key and foreign key ?
+select first_name 
+from patients
+where first_name like "C%";
 
-Primary Key
+2.
+Show first name and last name of patients that weight within the range of 100 to 120 (inclusive)
 
-A Primary Key uniquely identifies each record (row) in a table.
+select first_name, last_name
+from patients
+where weight between 100 and 120;
 
-Values must be unique (no duplicate allowed)
+3.
+Update the patients table for the allergies column. If the patient's allergies is null then replace it with 'NKA'
 
-Cannot be NULL
+update patients
+set allergies = "NKA"
+where allergies is null;
 
-Only one primary key per table (but can consist of multiple columns — Composite Key)
+4.
+Show first name and last name concatinated into one column to show their full name.
 
+select first_name || " " || last_name from patients
 
-Foreign Key
+5.
+Show how many patients have a birth_date with 2010 as the birth year.
 
-A Foreign Key creates a relationship between two tables.
+select count(*) 
+from patients
+where year(birth_date) = 2010
 
-It refers to a Primary Key in another table.
+6.
+Show the first_name, last_name, and height of the patient with the greatest height.
 
-Can have duplicate values
+Option - 1
+select first_name, last_name, height
+from patients
+order by height desc
+limit 1;
 
-Can be NULL (unless restricted)
+Option - 2
+select first_name, last_name, height
+from patients
+where height = (select max(height) from patients);
 
-Used to maintain referential integrity
+7.
+Show all columns for patients who have one of the following patient_ids:
+1,45,534,879,1000
 
+select * from patients
+where patient_id in (1,45,534,879,1000);
 
-2. Difference between UNION and UNION ALL?
+8.
+Show the total number of admissions
 
-UNION
+select count(*)
+from admissions
 
-Combines the result sets of two queries
+9.
+Show all the columns from admissions where the patient was admitted and discharged on the same day.
 
-Removes duplicate rows
+select *
+from admissions
+where admission_date = discharge_date;
 
-Performs sorting/distinct check, so it’s slower compared to UNION ALL
+10.
+Show the patient id and the total number of admissions for patient_id 579.
 
-SELECT City FROM Customers
-UNION
-SELECT City FROM Vendors;
+select patient_id, count(*)
+from admissions
+where patient_id = 579;
 
-If both tables have the same city name, it will appear only once.
-
-
-UNION ALL
-
-Combines result sets from two queries
-
-Does NOT remove duplicates
-
-Faster because no comparison or sorting
-
-SELECT City FROM Customers
-UNION ALL
-SELECT City FROM Vendors;
-
-If the same city appears in both tables, it will show multiple times.
-
-UNION removes duplicate rows and is slower, while UNION ALL returns all rows including duplicates and is faster.
-
-
-3. Use of Having"
-
-The HAVING clause in SQL is used to filter records after aggregation (after GROUP BY).
-It works like a WHERE clause but is applied on grouped results — not on individual rows.
-
-WHERE filters rows before grouping, HAVING filters groups after aggregation
-
-
-4. Query to Delete Duplicate Records (Keeping Only One)
-
-WITH CTE AS (
-    SELECT *,
-        ROW_NUMBER() OVER (PARTITION BY EmpID, Name, City ORDER BY EmpID) AS rn
-    FROM Employees
-)
-DELETE FROM CTE WHERE rn > 1;
-
-ROW_NUMBER() assigns sequence numbers to duplicate rows.
-
-rn = 1 → first/unique record (kept)
-
-rn > 1 → duplicate records (deleted) 
+11.
 
 
-5. Second highest salasy using subqueries?
 
-SELECT MAX(salary) AS Second_Highest_Salary
-FROM employees
-WHERE salary < (SELECT MAX(salary) FROM employees);
 
-6. What is T-SQL?
 
-7. What is View? can we update the view? give syntax?
 
-8. What is trigger? 
+
+
+
+
 
 
 
