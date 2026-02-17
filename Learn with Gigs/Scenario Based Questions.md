@@ -67,3 +67,12 @@ var a = SELECTEDVALUE(HQ[Business],"Dairy")
 var b = CALCULATE([Total Sales], HQ[Business] = a)
 RETURN b
 ```
+
+# 7. Calculate Business Days
+
+```
+Business Days = 
+var a = SELECTEDVALUE('Business Days'[ShipDate])
+var b = SELECTEDVALUE('Business Days'[DeliveryDate])
+RETURN NETWORKDAYS(a,b)
+```
