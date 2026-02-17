@@ -76,3 +76,17 @@ var a = SELECTEDVALUE('Business Days'[ShipDate])
 var b = SELECTEDVALUE('Business Days'[DeliveryDate])
 RETURN NETWORKDAYS(a,b)
 ```
+# 8. Last N months Avg Sales
+
+```
+Rolling N Month Avg Sales = 
+var month_count = 2
+VAR TotalSalesL12M = 
+    CALCULATE(
+        [Total Sales], 
+        DATESINPERIOD('Date'[Date], MAX('Sales Register'[Invoice Date]), -(month_count), MONTH)
+    )
+RETURN
+    DIVIDE(TotalSalesL12M, month_count)
+```
+
