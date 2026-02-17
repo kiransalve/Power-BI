@@ -9,14 +9,16 @@ from patients
 where first_name like "C%";
 
 2.
-Show first name and last name of patients that weight within the range of 100 to 120 (inclusive)
+Show first name and last name of patients that weight
+within the range of 100 to 120 (inclusive)
 
 select first_name, last_name
 from patients
 where weight between 100 and 120;
 
 3.
-Update the patients table for the allergies column. If the patient's allergies is null then replace it with 'NKA'
+Update the patients table for the allergies column.
+If the patient's allergies is null then replace it with 'NKA'
 
 update patients
 set allergies = "NKA"
@@ -110,8 +112,9 @@ order by yr;
 
 15.
 Show unique first names from the patients table which only occurs once in the list.
-
-For example, if two or more people are named 'John' in the first_name column then don't include their name in the output list. If only 1 person is named 'Leo' then include them in the output.
+For example, if two or more people are named 'John' in the first_name column
+then don't include their name in the output list. If only 1 person is named 'Leo'
+then include them in the output.
 
 select first_name
 from patients
@@ -119,7 +122,8 @@ group by first_name
 having count(*) = 1;
 
 16.
-Show patient_id and first_name from patients where their first_name start and ends with 's' and is at least 6 characters long.
+Show patient_id and first_name from patients where their first_name
+start and ends with 's' and is at least 6 characters long.
 
 SELECT patient_id, first_name
 FROM patients
@@ -156,12 +160,25 @@ WHERE allergies IN ('Penicillin', 'Morphine')
 ORDER BY allergies, first_name, last_name;
 
 20.
-Show patient_id, diagnosis from admissions. Find patients admitted multiple times for the same diagnosis.
+Show patient_id, diagnosis from admissions. Find patients admitted
+multiple times for the same diagnosis.
 
 SELECT patient_id, diagnosis
 FROM admissions
 GROUP BY patient_id, diagnosis
 HAVING COUNT(*) > 1;
+
+21.
+Show the city and the total number of patients in the city.
+Order from most to least patients and then by city name ascending.
+
+select city, count(*)
+from patients
+group by city
+order by count(*) desc, city asc;
+
+
+
 
 
 
