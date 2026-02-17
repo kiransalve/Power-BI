@@ -177,6 +177,27 @@ from patients
 group by city
 order by count(*) desc, city asc;
 
+22.
+Show first name, last name and role of every person that is either patient or doctor.
+The roles are either "Patient" or "Doctor"
+
+select first_name, last_name, "Patient" as role
+from patients
+
+union all
+
+select first_name, last_name, "Doctor" as role
+from doctors;
+
+23.
+Show all allergies ordered by popularity. Remove NULL values from query.
+
+select allergies, count(*)
+from patients 
+where allergies is not null
+group by allergies
+order by count(*) desc;
+
 
 
 
