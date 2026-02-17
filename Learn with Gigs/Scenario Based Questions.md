@@ -43,3 +43,11 @@ SUMX (
 )
 ```
 
+# 4. total revenue with inactive relationship
+
+```
+Rev = 
+    CALCULATE(
+        [Total Sales],
+        USERELATIONSHIP('Date'[Date], 'Sales Register'[Invoice Date]))
+```
