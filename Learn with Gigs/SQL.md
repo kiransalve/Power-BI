@@ -280,6 +280,21 @@ from admissions
 group by day(admission_date)
 order by count(*) desc;
 
+29.
+Show all columns for patient_id 542's most recent admission_date.
+
+select * from admissions
+where patient_id = 542
+order by admission_date desc
+limit 1;
+
+SELECT *
+FROM admissions
+GROUP BY patient_id
+HAVING
+  patient_id = 542
+  AND max(admission_date)
+
 
 
 
