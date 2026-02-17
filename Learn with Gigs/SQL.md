@@ -62,7 +62,8 @@ select count(*)
 from admissions
 
 9.
-Show all the columns from admissions where the patient was admitted and discharged on the same day.
+Show all the columns from admissions where the patient was admitted and
+discharged on the same day.
 
 select *
 from admissions
@@ -76,13 +77,15 @@ from admissions
 where patient_id = 579;
 
 11.
-Based on the cities that our patients live in, show unique cities that are in province_id 'NS'.
+Based on the cities that our patients live in, show unique cities
+that are in province_id 'NS'.
 
 select distinct city from patients
 where province_id = "NS";
 
 12.
-Write a query to find the first_name, last name and birth date of patients who has height greater than 160 and weight greater than 70
+Write a query to find the first_name, last name and birth date of patients
+who has height greater than 160 and weight greater than 70
 
 select first_name, last_name, birth_date
 from patients
@@ -90,7 +93,8 @@ where height > 160
 and weight > 70;
 
 13.
-Write a query to find list of patients first_name, last_name, and allergies where allergies are not null and are from the city of 'Hamilton'
+Write a query to find list of patients first_name, last_name, and allergies
+where allergies are not null and are from the city of 'Hamilton'
 
 select first_name, last_name, allergies
 from patients
@@ -132,7 +136,8 @@ from patients
 order by len(first_name), first_name;
 
 18.
-Show the total amount of male patients and the total amount of female patients in the patients table.
+Show the total amount of male patients and the total amount of female
+patients in the patients table.
 Display the two results in the same row.
 
 select 
@@ -140,6 +145,15 @@ select
     sum(case when gender = "F" then 1 else 0 end) as female_count
 from patients;
 
+19.
+Show first and last name, allergies from patients which have allergies to
+either 'Penicillin' or 'Morphine'.
+Show results ordered ascending by allergies then by first_name then by last_name.
+
+SELECT first_name, last_name, allergies
+FROM patients
+WHERE allergies IN ('Penicillin', 'Morphine')
+ORDER BY allergies, first_name, last_name;
 
 
 
