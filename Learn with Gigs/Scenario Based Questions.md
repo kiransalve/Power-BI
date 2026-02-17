@@ -43,7 +43,7 @@ SUMX (
 )
 ```
 
-# 4. total revenue with inactive relationship
+# 4. Total revenue with inactive relationship
 
 ```
 Rev = 
@@ -59,3 +59,11 @@ Table = EXCEPT(Left_table, Right_table)
 
 ```
 
+# 6. Default selection
+
+```
+Default = 
+var a = SELECTEDVALUE(HQ[Business],"Dairy")
+var b = CALCULATE([Total Sales], HQ[Business] = a)
+RETURN b
+```
