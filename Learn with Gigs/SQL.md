@@ -1,4 +1,5 @@
 ```
+17-Feb-26
 # Easy
 
 1.
@@ -294,6 +295,44 @@ GROUP BY patient_id
 HAVING
   patient_id = 542
   AND max(admission_date)
+
+18-Feb-2026
+30.
+Show patient_id, attending_doctor_id, and diagnosis for admissions that match one of the two criteria:
+1. patient_id is an odd number and attending_doctor_id is either 1, 5, or 19.
+2. attending_doctor_id contains a 2 and the length of patient_id is 3 characters.
+
+select patient_id, attending_doctor_id, diagnosis
+from admissions
+where 
+(patient_id % 2 <> 0 
+and attending_doctor_id in (1,5,19)
+) 
+or
+(attending_doctor_id like "%2%"
+and len(patient_id) = 3
+);
+
+31.
+For each doctor, display their id, full name, and the first and last admission date they attended.
+
+select d.doctor_id, concat(d.first_name," ", d.last_name),
+min(a.admission_date),
+max(a.admission_date)
+from admissions a
+join doctors d on a.attending_doctor_id = d.doctor_id
+group by d.doctor_id, d.first_name, d.last_name;
+
+32.
+Display the total amount of patients for each province. Order by descending.
+
+select pr.province_name, count(p.patient_id)
+from patients p
+join province_names pr 
+on p.province_id = pr.province_id
+group by pr.province_name
+order by count(p.patient_id) desc;
+
 
 
 
