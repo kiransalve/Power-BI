@@ -378,8 +378,18 @@ from patients p
 left join admissions a on p.patient_id = a.patient_id
 where a.patient_id is null;
 
+37.
+Display a single row with max_visits, min_visits, average_visits where the maximum, minimum and average
+number of admissions per day is calculated. Average is rounded to 2 decimal places.
 
-
+select 
+max(daily_visit) as max_visit,
+mIN(daily_visit) as min_visit,
+round(avg(daily_visit),2) as avg_visit
+from (
+select admission_date, count(*) as daily_visit
+from admissions
+group by admission_date) as daily_count;
 
 
 
