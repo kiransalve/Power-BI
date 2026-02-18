@@ -333,6 +333,15 @@ on p.province_id = pr.province_id
 group by pr.province_name
 order by count(p.patient_id) desc;
 
+33.
+For every admission, display the patient's full name, their admission diagnosis, and their doctor's full name who diagnosed their problem.
+
+select p.first_name || " " || p.last_name as patient_name,
+a.diagnosis, 
+d.first_name || " " || d.last_name as doctor_name
+from patients p
+join admissions a on p.patient_id = a.patient_id
+join doctors d on a.attending_doctor_id = d.doctor_id
 
 
 
