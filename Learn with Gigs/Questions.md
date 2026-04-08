@@ -2525,6 +2525,7 @@ YTD LY Sales = CALCULATE(
 
 ```
 
+```
 # 131. Maths, English, Science
        SS, Maths
        English
@@ -2533,7 +2534,6 @@ YTD LY Sales = CALCULATE(
        2
        1
 
-```
 Subject Count =
 IF (
     ISBLANK ( [Subjects] ),
