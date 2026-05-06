@@ -1,4 +1,4 @@
-```
+
 How to handle Power bi report while migration from tally to ms Navision?
 
 In my first company MRK Healthcare, During the migration from Tally to Microsoft Dynamics NAV, my role in Power BI was focused on ensuring data continuity, accuracy, and minimal business disruption
