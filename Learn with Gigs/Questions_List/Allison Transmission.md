@@ -1,5 +1,5 @@
 
-#1. How to handle Power bi report while migration from tally to ms Navision?
+# 1. How to handle Power bi report while migration from tally to ms Navision?
 
 In my first company MRK Healthcare, During the migration from Tally to Microsoft Dynamics NAV, my role in Power BI was focused on ensuring data continuity, accuracy, and minimal business disruption
 
@@ -29,7 +29,7 @@ Updating report visuals if business logic changed
 Communicating changes clearly to stakeholders
 Ensuring reports remained stable post-migration
 
-#2. What is DAX?
+# 2. What is DAX?
 
 DAX means Data Analysis Expression that used to create dynamic calculation as per business logic.
 
@@ -41,8 +41,10 @@ For example, a simple measure like Total Sales can be written using the SUM func
 I try to avoid unnecessary calculated columns when measures could achieve the same result dynamically
 like suppose their is qty and rate column and we need total sales we can use sumx function which do calculation row by row and give total sales without creating separate column, it called context transition where the dax convert row context to filter context.
 
-Their are Aggregation dax function like sum, average, max, min, count.
-then their are iterator dax function also called x function like sumx and averagex
+Their are Aggregation dax function like sum, average, max, min, count, distinctcount, divide
+then their are iterator dax function also called x function like sumx, rankx, averagex
 their are filter function to slice the data like calculate, filter, all, allselected, allexcept 
-their are time intelligence function which work only on import mode and required separate date table like totalytd, dateadd, sameperiodlastyear, parallelperiod, datesinperiod, datediff etc.
-their are relationship dax function also like related, Userelationship, lookup, treatas
+their are time intelligence function which work only on import mode and required separate date table like totalytd to get year to date sales, dateadd will shift the timeline to backword or forward, sameperiodlastyear to calculate last year sales, parallelperiod, datesinperiod, datediff etc.
+their are relationship dax function also like related function which used to fetch column from another table with active relationship,USERELATIONSHIP is used to activate an inactive relationship between columns within CALCULATE. In my project, the Sales table had multiple date columns like Invoice Date and Shipping Date, but only the Invoice Date had an active relationship with the Date table. When business needed analysis based on Shipping Date, I used USERELATIONSHIP inside CALCULATE to temporarily activate that relationship. This allowed me to build measures like shipping-based sales without changing the default model relationship, lookupvalue means same as vlookup in excelwhich fetch column from another table even their is no relationship between them and treatas dax function used to filter the data based on column of another table - To highlight a specific month in a column chart, I used a disconnected parameter table and applied TREATAS inside CALCULATE to pass the selected month filter to the Date table. This created a virtual relationship, allowing me to isolate and highlight only the selected month dynamically
+their are also some condition dax function like if and switch function 
+and text function like concatenate and format.
